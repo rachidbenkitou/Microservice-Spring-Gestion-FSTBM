@@ -8,7 +8,7 @@
 		<version>3.0.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.prjt</groupId>
+	<groupId>com.weCouldCode.fstBmManagement</groupId>
 	<artifactId>Note-Service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Note-Service</name>
