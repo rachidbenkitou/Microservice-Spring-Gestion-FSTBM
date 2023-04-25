@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
@@ -24,7 +25,7 @@ public class Examen {
     Date creationDateTime;
     private Date dateExam;
     @ManyToOne
-    @JoinColumn(name = "module_id")
     private Module module;
+
 
 }
