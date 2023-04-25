@@ -23,5 +23,8 @@ public class Examen {
     @Temporal(TemporalType.TIMESTAMP)
     Date creationDateTime;
     private Date dateExam;
+    @ManyToOne
+    @JoinColumn(name = "module_id")
+    private Module module;
 
 }
