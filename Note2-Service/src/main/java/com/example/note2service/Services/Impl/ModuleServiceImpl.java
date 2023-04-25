@@ -1,7 +1,9 @@
 package com.example.note2service.Services.Impl;
 
+import com.example.note2service.DAO.ModuleDAO;
 import com.example.note2service.DTO.RequestModuleDTO;
 import com.example.note2service.DTO.ResponseModuleDTO;
+import com.example.note2service.Mappers.ModuleMapper;
 import com.example.note2service.Services.ModuleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -13,8 +15,11 @@ import java.util.List;
 @RequiredArgsConstructor
 @Transactional
 public class ModuleServiceImpl implements ModuleService {
+    private  final ModuleDAO dao;
+    private final ModuleMapper mapper;
     @Override
     public List<ResponseModuleDTO> getModules() {
+
         return null;
     }
 
