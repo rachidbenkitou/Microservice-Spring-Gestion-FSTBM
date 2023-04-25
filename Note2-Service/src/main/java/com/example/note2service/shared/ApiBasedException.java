@@ -1,4 +1,4 @@
-package com.ecommerce.shared;
+package com.example.note2service.shared;
 
 import org.springframework.http.HttpStatus;
 

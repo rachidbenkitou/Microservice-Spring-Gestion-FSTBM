@@ -1,4 +1,4 @@
-package com.ecommerce.shared.handlers;
+package com.example.note2service.shared.handlers;
 
 interface ErrorDetailsFactory {
     //This Interface is created to respect dependency injection and inversion of control.

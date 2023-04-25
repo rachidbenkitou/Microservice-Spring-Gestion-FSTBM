@@ -20,6 +20,7 @@ public class Note {
     private String mention;
     @ManyToOne
     @MapsId("examenId")
+    @JoinColumn(name = "examen_id")
     private Examen examen;
     @Transient
     private  Etudiant etudiant;

@@ -29,7 +29,7 @@ public class NoteController {
         return noteService.getNoteById(id);
     }
     @PostMapping("/save")
-    ResponseNoteDTO save(@RequestBody RequesteNoteDTO requesteNoteDTO) throws ExamenNotFoundException {
+    ResponseNoteDTO save(@RequestBody RequesteNoteDTO requesteNoteDTO){
         return noteService.addNote(requesteNoteDTO);
     }
 

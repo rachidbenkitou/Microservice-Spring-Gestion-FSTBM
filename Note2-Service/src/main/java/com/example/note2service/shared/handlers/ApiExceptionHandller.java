@@ -1,6 +1,6 @@
-package com.ecommerce.shared.handlers;
+package com.example.note2service.shared.handlers;
 
-import com.ecommerce.shared.ApiBasedException;
+import com.example.note2service.shared.ApiBasedException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

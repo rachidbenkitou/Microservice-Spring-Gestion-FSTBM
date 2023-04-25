@@ -1,4 +1,4 @@
-package com.ecommerce.shared.handlers;
+package com.example.note2service.shared.handlers;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;

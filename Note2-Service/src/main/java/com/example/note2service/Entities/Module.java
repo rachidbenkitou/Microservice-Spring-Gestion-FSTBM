@@ -16,12 +16,13 @@ import java.util.List;
 @Builder
 public class Module implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int modeuleId;
     @Column(unique = true)
     private String moduleName;
     @Enumerated(EnumType.STRING)
     private Semestre moduleSemestre;
-
+    @OneToMany(mappedBy = "module")
+    private List<Examen> examens;
 
 }

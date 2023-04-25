@@ -51,11 +51,21 @@ public class NoteServiceImpl implements NoteService {
             throw new NoteNotFoundException("Il n' y a aucune note avec ce ID");
         }
         return noteMapper.modelToDto(note.get());
+    }
+    @Override
+    public ResponseNoteDTO addNote(RequesteNoteDTO requesteNoteDTO)  {
+        if(requesteNoteDTO.getExamen().getType().equals("rattrapage"))
+        {
 
+        }
+        return saveNote(requesteNoteDTO);
     }
 
     @Override
-    public ResponseNoteDTO addNote(RequesteNoteDTO requesteNoteDTO) throws ExamenNotFoundException {
+    public ResponseNoteDTO UpdateNote(RequesteNoteDTO requesteNoteDTO) {
+        return saveNote(requesteNoteDTO);
+    }
+    private ResponseNoteDTO saveNote(RequesteNoteDTO requesteNoteDTO){
         Note note = noteMapper.dtoToModel(requesteNoteDTO);
         note.setMention(mention(note.getNote()));
         note.setExamen(examenDAO.findById(note.getId().getExamenId()).get());
@@ -63,16 +73,6 @@ public class NoteServiceImpl implements NoteService {
         savedNote.setEtudiant(etudiantRestClient.getEtudiant(savedNote.getId().getEtudiantId()));
         return noteMapper.modelToDto(savedNote);
     }
-
-    @Override
-    public ResponseNoteDTO UpdateNote(RequesteNoteDTO requesteNoteDTO) {
-        Note note = noteMapper.dtoToModel(requesteNoteDTO);
-        note.setMention(mention(note.getNote()));
-        Note savedNote = noteDAO.save(note);
-        savedNote.setEtudiant(etudiantRestClient.getEtudiant(savedNote.getId().getEtudiantId()));
-        return noteMapper.modelToDto(savedNote);
-    }
-
     @Override
     public ResponseNoteDTO NoteByEtudiant(long etudiantId) {
         return null;
