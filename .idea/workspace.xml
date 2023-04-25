@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bbe9c57a-ff47-4741-ac13-f400e2fa3140" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Note2-Service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Note2ServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Note2ServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Openfeign/EtudiantRestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Openfeign/EtudiantRestClient.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2OcEJiwRmshRsGclOhsRf51RehZ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "ignore.preview.features.used": "true",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "C:/Users/Rachid Benkitou/Desktop/MyFirst/2-FullStack Projects/7-Microservices-Gestion-FSTBM/Microservice-Spring-Gestion-FSTBM/Enseignat-Service",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propCompiler",
+    "spring.configuration.checksum": "846fdc44d18d51dd7a662bf6d2694554",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.prjt.noteservice.Entities" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.NoteServiceApplication">
+    <configuration name="All in Note-Service" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Note-Service" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EcommerceMediPafApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="EcommerceMediPaf" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.medipaf.medipaf.ecommerce.EcommerceMediPafApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NoteServiceApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Note-Service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.weCouldCode.fstBmManagement.noteService.NoteServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NoteServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="Note-Service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.we-could-code.fst-management.note-service.null" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.All in Note-Service" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bbe9c57a-ff47-4741-ac13-f400e2fa3140" name="Changes" comment="" />
+      <created>1681851404216</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1681851404216</updated>
+      <workItem from="1681851406872" duration="34000" />
+      <workItem from="1681851466378" duration="23197000" />
+      <workItem from="1682289098548" duration="723000" />
+      <workItem from="1682290245103" duration="3458000" />
+      <workItem from="1682339893466" duration="2470000" />
+      <workItem from="1682361681336" duration="272000" />
+      <workItem from="1682434428166" duration="154000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

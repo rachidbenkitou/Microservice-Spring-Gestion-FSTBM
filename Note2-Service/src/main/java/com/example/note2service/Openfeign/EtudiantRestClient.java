@@ -14,3 +14,4 @@ public interface EtudiantRestClient {
     @GetMapping(path = "/api/etudiants")
     List<Etudiant> allEtudiants();
 }
+

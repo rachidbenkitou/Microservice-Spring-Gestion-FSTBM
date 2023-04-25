@@ -24,4 +24,5 @@ public class Module implements Serializable {
     private Semestre moduleSemestre;
     @OneToMany(mappedBy = "module")
     private List<Examen> examens;
+
 }
