@@ -11,5 +11,6 @@ public interface EtudiantService {
     ResponseEtudiantDTO getEtudiantById(long id) throws EtudiantNotFoundException;
     ResponseEtudiantDTO addEtudiant(RequestEtudiantDTo requestEtudiantDTo);
     ResponseEtudiantDTO UpdateEtudiant(RequestEtudiantDTo requestEtudiantDTo);
+    ResponseEtudiantDTO getEtudiantByApogee(long apogee);
     void  deleteEtudiant(long etudiantId);
 }

@@ -13,33 +13,35 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api3")
+@RequestMapping("notes")
 public class NoteController {
     @Autowired
     private NoteService noteService;
 
-    @GetMapping("/notes")
+    @GetMapping
     List<ResponseNoteDTO> getAllNotes(){
 
         return noteService.getAllNotes();
     }
-    @GetMapping("/notes/{etudiantId}/{examenId}")
+    @GetMapping("/{etudiantId}/{examenId}")
     ResponseNoteDTO getNoteById(@PathVariable(name = "etudiantId") long etudiantId , @PathVariable(name = "examenId") long examenId ) throws ExamenNotFoundException, NoteNotFoundException {
         NoteKey id = NoteKey.builder().etudiantId(etudiantId).examenId(examenId).build();
         return noteService.getNoteById(id);
     }
-    @PostMapping("/save")
+    @PostMapping
     ResponseNoteDTO save(@RequestBody RequesteNoteDTO requesteNoteDTO){
         return noteService.addNote(requesteNoteDTO);
     }
 
-    @PutMapping ("/update/{id}")
-    ResponseNoteDTO update(@PathVariable(name = "id") NoteKey id ,@RequestBody RequesteNoteDTO requesteNoteDTO){
+    @PutMapping ("/{etudiantId}/{examenId}")
+    ResponseNoteDTO update(@PathVariable(name = "etudiantId") long etudiantId,@PathVariable(name = "examenId") long examentId ,@RequestBody RequesteNoteDTO requesteNoteDTO){
+        NoteKey id = NoteKey.builder().etudiantId(etudiantId).examenId(examentId).build();
         requesteNoteDTO.setId(id);
         return noteService.UpdateNote(requesteNoteDTO);
     }
-    @DeleteMapping("/delete/{id}")
-    void delete(@PathVariable(name = "id") NoteKey id){
+    @DeleteMapping("/{etudiantId}/{examenId}")
+    void delete(@PathVariable(name = "etudiantId") long etudiantId,@PathVariable(name = "examenId") long examentId){
+        NoteKey id = NoteKey.builder().etudiantId(etudiantId).examenId(examentId).build();
         noteService.deleteNote(id);
     }
 }

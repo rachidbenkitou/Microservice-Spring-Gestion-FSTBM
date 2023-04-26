@@ -11,6 +11,8 @@ import java.util.List;
 public interface EtudiantRestClient {
     @GetMapping(path = "/api/etudiants/{id}")
     Etudiant getEtudiant(@PathVariable(name = "id") long id);
+    @GetMapping(path = "/api/etudiants/apogee/{apogee}")
+    Etudiant getEtudiantByApogee(@PathVariable(name = "apogee") long apogee);
     @GetMapping(path = "/api/etudiants")
     List<Etudiant> allEtudiants();
 }

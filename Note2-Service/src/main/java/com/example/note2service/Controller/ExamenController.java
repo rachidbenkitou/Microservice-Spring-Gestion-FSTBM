@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api1")
+@RequestMapping("examens")
 public class ExamenController {
 
     @Autowired
@@ -20,21 +20,21 @@ public class ExamenController {
     List<ResponseExamenDTO> getAllEtudiants(){
         return examenService.getAllExamens();
     }
-    @GetMapping("/examens/{id}")
+    @GetMapping
     ResponseExamenDTO getEtudiantById(@PathVariable(name = "id") long id) throws ExamenNotFoundException {
         return examenService.getExamenById(id);
     }
-    @PostMapping("/save")
+    @PostMapping
     ResponseExamenDTO save(@RequestBody RequestExamenDTO requestExamenDTO){
         return examenService.addExamen(requestExamenDTO);
     }
 
-    @PutMapping ("/update/{id}")
+    @PutMapping ("/{id}")
     ResponseExamenDTO update(@PathVariable(name = "id") long id ,@RequestBody RequestExamenDTO requestExamenDTO){
         requestExamenDTO.setId(id);
         return examenService.UpdateExamen(requestExamenDTO);
     }
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     void delete(@PathVariable(name = "id") long id){
         examenService.deleteExamen(id);
     }

@@ -51,6 +51,12 @@ public class EtudiantServiceImpl implements EtudiantService {
     }
 
     @Override
+    public ResponseEtudiantDTO getEtudiantByApogee(long apogee) {
+        Etudiant etudiant = etudiantDAO.findByApogee(apogee);
+        return etudiantMapper.modelToDto(etudiant);
+    }
+
+    @Override
     public void deleteEtudiant(long etudiantId) {
         etudiantDAO.deleteById(etudiantId);
     }

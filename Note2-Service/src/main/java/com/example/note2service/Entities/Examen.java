@@ -19,7 +19,8 @@ public class Examen {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String type;
+    @Enumerated(EnumType.STRING)
+    private TypeExamen type;
     @Temporal(TemporalType.TIMESTAMP)
     Date creationDateTime;
     private Date dateExam;

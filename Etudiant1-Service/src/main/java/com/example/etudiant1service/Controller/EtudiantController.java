@@ -22,6 +22,10 @@ public class EtudiantController {
     ResponseEtudiantDTO getEtudiantById(@PathVariable(name = "id") long id) throws EtudiantNotFoundException {
         return etudiantService.getEtudiantById(id);
     }
+    @GetMapping("/etudiants/apogee/{apogee}")
+    ResponseEtudiantDTO getEtudiantByApogee(@PathVariable(name = "apogee") long apogee)  {
+        return etudiantService.getEtudiantByApogee(apogee);
+    }
     @PostMapping("/save")
     ResponseEtudiantDTO save(@RequestBody RequestEtudiantDTo requestEtudiantDTo){
         return etudiantService.addEtudiant(requestEtudiantDTo);
