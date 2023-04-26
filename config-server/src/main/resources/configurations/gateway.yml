@@ -1,0 +1,32 @@
+eureka:
+  client:
+    register-with-eureka: false
+server:
+  port: 8222
+spring:
+  application:
+    name: GATEWAY-SERVER
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: NOTE-SERVICE
+          uri: http://localhost:8089
+          predicates:
+            - Path=/api/modules/**
+        - id: notes
+          uri: http://localhost:8089
+          predicates:
+            - Path=/api/notes/**
+        - id: examens
+          uri: http://localhost:8089
+          predicates:
+            - Path=/api/examens/**
+
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
