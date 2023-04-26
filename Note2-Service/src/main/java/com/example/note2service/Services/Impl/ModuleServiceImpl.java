@@ -21,34 +21,80 @@ import java.util.List;
 public class ModuleServiceImpl implements ModuleService {
     private  final ModuleDAO dao;
     private final ModuleMapper mapper;
+    /**
+     * Retrieves a list of all modules and maps them to a list of ResponseModuleDTO objects.
+     *
+     * @return a list of ResponseModuleDTO objects
+     */
     @Override
     public List<ResponseModuleDTO> getModules() {
         return listOfResponseModuleDTOS(dao.findAll());
     }
+    /**
+     * Retrieves a list of modules by name and maps them to a list of ResponseModuleDTO objects.
+     *
+     * @param moduleName the name of the module to search for
+     * @return a list of ResponseModuleDTO objects
+     * @throws ModuleListIsEmptyException if the list is empty
+     */
     @Override
     public List<ResponseModuleDTO> getModulesByName(String moduleName) {
         return listOfResponseModuleDTOS(dao.findModulesByModuleNameLikeIgnoreCase(moduleName));
     }
+    /**
+     * Maps a list of Module objects to a list of ResponseModuleDTO objects.
+     *
+     * @param modules the list of Module objects to map
+     * @return a list of ResponseModuleDTO objects
+     * @throws ModuleListIsEmptyException if the list is empty
+     */
     private List<ResponseModuleDTO> listOfResponseModuleDTOS(List<Module> modules){
         List<ResponseModuleDTO> responseModuleDTOS=mapper.modelToDtos(modules);
         if(responseModuleDTOS.isEmpty()) throw  new ModuleListIsEmptyException("The list is empty");
         return responseModuleDTOS;
     }
+    /**
+     * Adds a new module.
+     *
+     * @param moduleDTO the RequestModuleDTO object representing the new module
+     * @return the ResponseModuleDTO object representing the added module
+     * @throws ModuleAlreadyExistsException if a module with the same name already exists
+     */
     @Override
     public ResponseModuleDTO addModule(RequestModuleDTO moduleDTO) {
         if (dao.existsByModuleName(moduleDTO.getModuleName()))
             throw  new ModuleAlreadyExistsException(String.format("The module with name %s is already exists",moduleDTO.getModuleName()));
         return EntityResponseModuleDto(moduleDTO);
     }
+    /**
+     * Updates an existing module.
+     *
+     * @param moduleDTO the RequestModuleDTO object representing the updated module
+     * @return the ResponseModuleDTO object representing the updated module
+     * @throws ModuleRequestIsNull if the RequestModuleDTO object is null
+     */
     @Override
     public ResponseModuleDTO updateModule(RequestModuleDTO moduleDTO) {
         return EntityResponseModuleDto(moduleDTO);
     }
+    /**
+     * Maps a RequestModuleDTO object to a ResponseModuleDTO object and saves it to the database.
+     *
+     * @param moduleDTO the RequestModuleDTO object to map
+     * @return the ResponseModuleDTO object representing the mapped module
+     * @throws ModuleRequestIsNull if the RequestModuleDTO object is null
+     */
     public ResponseModuleDTO EntityResponseModuleDto(RequestModuleDTO moduleDTO){
         ResponseModuleDTO responseModuleDTO=mapper.modelToDto(dao.save(mapper.dtoToModule(moduleDTO)));
         if (responseModuleDTO==null) throw new ModuleRequestIsNull("The request is null, is doesn't contain any content");
         return  responseModuleDTO;
     }
+/**
+ * Deletes a module by name.
+ *
+ * @param moduleName the name of the module to delete.
+
+ */
     @Override
     public void deleteModuleByName(String moduleName) {
         dao.deleteByModuleName(moduleName);

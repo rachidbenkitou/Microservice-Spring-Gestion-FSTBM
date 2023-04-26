@@ -19,7 +19,14 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+/**
 
+ This class provides the implementation of the NoteService interface, which is responsible for managing notes in the application.
+
+ It uses NoteDAO and ExamenDAO objects for database access, NoteMapper object for mapping between DTO and entity objects,
+
+ and EtudiantRestClient object for retrieving data from external API.
+ */
 @Service
 public class NoteServiceImpl implements NoteService {
 
@@ -31,7 +38,11 @@ public class NoteServiceImpl implements NoteService {
     private NoteMapper noteMapper;
     @Autowired
     private EtudiantRestClient etudiantRestClient;
+    /**
 
+    * Returns a list of all notes with associated students from the database.
+     * @return a list of ResponseNoteDTO objects representing the notes and their associated students
+     */
     @Override
     public List<ResponseNoteDTO> getAllNotes() {
         List<Note> noteList =noteDAO.findAll();
@@ -41,7 +52,13 @@ public class NoteServiceImpl implements NoteService {
         }
         return noteMapper.modelToDtos(noteList);
     }
+    /**
 
+     * Returns a note with the specified ID and associated student from the database.
+     * @param id the ID of the note to retrieve
+     * @return a ResponseNoteDTO object representing the note and its associated student
+     * @throws NoteNotFoundException if there is no note with the specified ID
+     */
     @Override
     public ResponseNoteDTO getNoteById(NoteKey id) throws NoteNotFoundException {
         Optional<Note> note =  noteDAO.findById(id);
@@ -52,6 +69,14 @@ public class NoteServiceImpl implements NoteService {
         }
         return noteMapper.modelToDto(note.get());
     }
+    /**
+
+    * Adds a new note to the database.
+
+     * @param requesteNoteDTO a RequesteNoteDTO object representing the note to add
+
+     * @return a ResponseNoteDTO object representing the added note
+     */
     @Override
     public ResponseNoteDTO addNote(RequesteNoteDTO requesteNoteDTO)  {
         if(requesteNoteDTO.getExamen().getType().equals("rattrapage"))
@@ -60,11 +85,21 @@ public class NoteServiceImpl implements NoteService {
         }
         return saveNote(requesteNoteDTO);
     }
+    /**
 
+     * Updates an existing note in the database.
+     * @param requesteNoteDTO a RequesteNoteDTO object representing the note to update
+     * @return a ResponseNoteDTO object representing the updated note
+     */
     @Override
     public ResponseNoteDTO UpdateNote(RequesteNoteDTO requesteNoteDTO) {
         return saveNote(requesteNoteDTO);
     }
+    /**
+     * Saves a note to the database.
+     * @param requesteNoteDTO a RequesteNoteDTO object representing the note to save
+     * @return a ResponseNoteDTO object representing the saved note
+     */
     private ResponseNoteDTO saveNote(RequesteNoteDTO requesteNoteDTO){
         Note note = noteMapper.dtoToModel(requesteNoteDTO);
         note.setMention(mention(note.getNote()));
@@ -73,6 +108,10 @@ public class NoteServiceImpl implements NoteService {
         savedNote.setEtudiant(etudiantRestClient.getEtudiant(savedNote.getId().getEtudiantId()));
         return noteMapper.modelToDto(savedNote);
     }
+  /**
+   * Returns a specific note and the corresponding student information by student ID.
+   * @param etudiantId The ID of the student
+ */
     @Override
     public ResponseNoteDTO NoteByEtudiant(long etudiantId) {
         return null;
