@@ -5,19 +5,17 @@ server:
   port: 8222
 spring:
   application:
-    name: GATEWAY-SERVER
+    name: gateway
   cloud:
     gateway:
       discovery:
         locator:
           enabled: true
       routes:
-        - id: n1
+        - id: note
           uri: http://localhost:8089
           predicates:
             - Path=/api/modules/**
-
-
 
 
 

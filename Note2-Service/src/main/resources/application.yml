@@ -1,5 +1,11 @@
 spring:
   application:
-    name: notes
+    name: note
   config:
     import: optional:configserver:http://localhost:8888
+
+
+server:
+  port: 8089
+  servlet:
+    context-path: /api
