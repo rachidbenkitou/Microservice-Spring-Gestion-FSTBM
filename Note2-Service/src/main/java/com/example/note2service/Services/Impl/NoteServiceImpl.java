@@ -14,6 +14,7 @@ import com.example.note2service.Mappers.NoteMapper;
 import com.example.note2service.Openfeign.EtudiantRestClient;
 import com.example.note2service.Services.ExamenService;
 import com.example.note2service.Services.NoteService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,16 +29,13 @@ import java.util.Optional;
  and EtudiantRestClient object for retrieving data from external API.
  */
 @Service
+@RequiredArgsConstructor
 public class NoteServiceImpl implements NoteService {
 
-    @Autowired
-    private NoteDAO noteDAO;
-    @Autowired
-    private ExamenDAO examenDAO;
-    @Autowired
-    private NoteMapper noteMapper;
-    @Autowired
-    private EtudiantRestClient etudiantRestClient;
+    private final NoteDAO noteDAO;
+    private final ExamenDAO examenDAO;
+    private final NoteMapper noteMapper;
+    private final EtudiantRestClient etudiantRestClient;
     /**
 
     * Returns a list of all notes with associated students from the database.
@@ -78,11 +76,7 @@ public class NoteServiceImpl implements NoteService {
      * @return a ResponseNoteDTO object representing the added note
      */
     @Override
-    public ResponseNoteDTO addNote(RequesteNoteDTO requesteNoteDTO)  {
-        if(requesteNoteDTO.getExamen().getType().equals("rattrapage"))
-        {
-
-        }
+    public ResponseNoteDTO addNote(RequesteNoteDTO requesteNoteDTO) throws ExamenNotFoundException {
         return saveNote(requesteNoteDTO);
     }
     /**

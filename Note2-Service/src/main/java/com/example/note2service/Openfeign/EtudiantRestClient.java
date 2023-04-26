@@ -9,11 +9,11 @@ import java.util.List;
 
 @FeignClient(name = "ETUDIANT-SERVICE" , url = "http://localhost:8082")
 public interface EtudiantRestClient {
-    @GetMapping(path = "/api/etudiants/{id}")
+    @GetMapping(path = "/etudiants/{id}")
     Etudiant getEtudiant(@PathVariable(name = "id") long id);
-    @GetMapping(path = "/api/etudiants/apogee/{apogee}")
+    @GetMapping(path = "/etudiants/apogee/{apogee}")
     Etudiant getEtudiantByApogee(@PathVariable(name = "apogee") long apogee);
-    @GetMapping(path = "/api/etudiants")
+    @GetMapping(path = "/etudiants")
     List<Etudiant> allEtudiants();
 }
 

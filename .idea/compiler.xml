@@ -7,8 +7,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="config-server" />
+        <module name="gateway" />
+        <module name="Eureka_dis" />
       </profile>
-      <profile name="Annotation profile for Note-Service" enabled="true">
+      <profile name="Annotation profile for Note2-Service" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -17,17 +20,29 @@
           <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct-processor/1.5.3.Final/mapstruct-processor-1.5.3.Final.jar" />
           <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct/1.5.3.Final/mapstruct-1.5.3.Final.jar" />
         </processorPath>
+        <module name="Note2-Service" />
+        <module name="Etudiant1-Service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="config-server" target="17" />
       <module name="EcommerceMediPaf" target="17" />
+      <module name="Etudiant1-Service" target="17" />
+      <module name="Eureka_dis" target="17" />
+      <module name="gateway" target="17" />
       <module name="Note-Service" target="17" />
+      <module name="Note2-Service" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="EcommerceMediPaf" options="-parameters" />
+      <module name="Etudiant1-Service" options="-parameters" />
+      <module name="Eureka_dis" options="-parameters" />
       <module name="Note-Service" options="-parameters" />
+      <module name="Note2-Service" options="-parameters" />
+      <module name="config-server" options="-parameters" />
+      <module name="gateway" options="-parameters" />
     </option>
   </component>
 </project>
