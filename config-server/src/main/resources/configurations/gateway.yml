@@ -12,21 +12,12 @@ spring:
         locator:
           enabled: true
       routes:
-        - id: NOTE-SERVICE
+        - id: n1
           uri: http://localhost:8089
           predicates:
             - Path=/api/modules/**
-        - id: notes
-          uri: http://localhost:8089
-          predicates:
-            - Path=/api/notes/**
-        - id: examens
-          uri: http://localhost:8089
-          predicates:
-            - Path=/api/examens/**
 
 
-management:
-  tracing:
-    sampling:
-      probability: 1.0
+
+
+
