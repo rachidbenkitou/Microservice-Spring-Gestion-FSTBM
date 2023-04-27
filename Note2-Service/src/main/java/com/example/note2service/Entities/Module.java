@@ -1,5 +1,6 @@
 package com.example.note2service.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -22,7 +23,8 @@ public class Module implements Serializable {
     private String moduleName;
     @Enumerated(EnumType.STRING)
     private Semestre moduleSemestre;
-    @OneToMany(mappedBy = "module")
+    @OneToMany(mappedBy = "module" , fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<Examen> examens;
 
 }

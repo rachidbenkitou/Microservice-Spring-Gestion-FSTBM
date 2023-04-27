@@ -16,4 +16,6 @@ public class ResponseExamenDTO {
     private String type;
     Date creationDateTime;
     private Date dateExam;
+    private  Module module;
+
 }

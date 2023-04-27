@@ -1,9 +1,11 @@
 package com.example.note2service.Services.Impl;
 
 import com.example.note2service.DAO.ExamenDAO;
+import com.example.note2service.DAO.ModuleDAO;
 import com.example.note2service.DTO.RequestExamenDTO;
 import com.example.note2service.DTO.ResponseExamenDTO;
 import com.example.note2service.Entities.Examen;
+import com.example.note2service.Entities.Note;
 import com.example.note2service.Exceptions.ExamenNotFoundException;
 import com.example.note2service.Mappers.ExamenMapper;
 import com.example.note2service.Services.ExamenService;
@@ -22,6 +24,8 @@ public class ExamenServiceImpl implements ExamenService {
     private ExamenDAO examenDAO;
     @Autowired
     private ExamenMapper examenMapper;
+    @Autowired
+    private ModuleDAO moduleDAO;
     /**
      * Retrieves all Examens from the database.
      *
@@ -30,6 +34,10 @@ public class ExamenServiceImpl implements ExamenService {
     @Override
     public List<ResponseExamenDTO> getAllExamens() {
         List<Examen> examenList =examenDAO.findAll();
+        for ( Examen e : examenList){
+            e.setModule(moduleDAO.findById(e.getModule().getModeuleId()).get());
+
+        }
         return examenMapper.modelToDtos(examenList);
     }
 
