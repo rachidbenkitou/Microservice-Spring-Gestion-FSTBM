@@ -7,10 +7,12 @@
     <list default="true" id="bbe9c57a-ff47-4741-ac13-f400e2fa3140" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Controller/NoteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Controller/NoteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/DAO/NoteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/DAO/NoteDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/DTO/RequestExamenDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/DTO/RequestExamenDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/DTO/ResponseExamenDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/DTO/ResponseExamenDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/DTO/ResponseModuleDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/DTO/ResponseModuleDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Mappers/ExamenMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Mappers/ExamenMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Mappers/ModuleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Mappers/ModuleMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/NoteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/NoteServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-server/src/main/resources/configurations/gateway.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/resources/configurations/gateway.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-server/src/main/resources/configurations/note.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/resources/configurations/note.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +169,7 @@
       <workItem from="1682441203693" duration="45000" />
       <workItem from="1682543037919" duration="75000" />
       <workItem from="1682543140660" duration="15029000" />
-      <workItem from="1682596025453" duration="4611000" />
+      <workItem from="1682596025453" duration="8380000" />
     </task>
     <servers />
   </component>
@@ -184,5 +186,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Mappers/ExamenMapper.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

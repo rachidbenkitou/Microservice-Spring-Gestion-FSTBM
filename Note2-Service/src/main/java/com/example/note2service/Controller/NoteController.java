@@ -47,11 +47,11 @@ public class NoteController implements NoteApi {
         NoteKey id = NoteKey.builder().etudiantId(etudiantId).examenId(examentId).build();
         noteService.deleteNote(id);
     }
-/*
+
     @GetMapping("/test/{id}/{ide}/{moduleName}")
     public Note testNote(@PathVariable TypeExamen id, @PathVariable long ide, @PathVariable String  moduleName){
-        return dao.findByEtudiantNameAndTypeExamenAndNomModule(id,ide, moduleName);
+        TypeExamen typeExamen=TypeExamen.ORDINAIRE;
+        return dao.findByEtudiantNameAndTypeExamenAndNomModule(typeExamen,12, "analyse1");
     }
 
- */
 }

@@ -5,12 +5,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class RequestExamenDTO {
+public class RequestExamenDTO implements Serializable {
     private long id;
     private String type;
     Date creationDateTime;

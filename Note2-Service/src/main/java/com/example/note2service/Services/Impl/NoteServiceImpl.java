@@ -84,9 +84,7 @@ public class NoteServiceImpl implements NoteService {
             Etudiant etudiant=etudiantRestClient.getEtudiantByApogee(12);
 
            Note noteOrdinaire=noteDAO.findByEtudiantNameAndTypeExamenAndNomModule(TypeExamen.ORDINAIRE,12,"analyse1");
-           System.out.println(noteOrdinaire);
-           System.out.println(noteOrdinaire);
-
+           System.out.println("Note Ordinaire "+noteOrdinaire.getNote());
             //System.out.println("Ordinaire "+noteOrdinaire.getNote());
             //System.out.println("Rattrapage "+requesteNoteDTO.getNote());
 

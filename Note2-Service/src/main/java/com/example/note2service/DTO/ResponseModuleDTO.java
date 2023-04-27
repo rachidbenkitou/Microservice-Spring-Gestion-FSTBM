@@ -6,11 +6,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class ResponseModuleDTO {
+public class ResponseModuleDTO implements Serializable {
     private int modeuleId;
     private String moduleName;
     private Semestre moduleSemestre;

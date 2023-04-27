@@ -17,4 +17,7 @@ public interface ExamenMapper {
     ResponseExamenDTO modelToDto(Examen examen);
 
     List<ResponseExamenDTO> modelToDtos(List<Examen> examenList);
+
+
+
 }
