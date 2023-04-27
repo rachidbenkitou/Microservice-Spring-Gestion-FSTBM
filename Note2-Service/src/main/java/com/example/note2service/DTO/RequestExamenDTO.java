@@ -1,5 +1,6 @@
 package com.example.note2service.DTO;
 
+import com.example.note2service.Entities.Module;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,4 +17,5 @@ public class RequestExamenDTO implements Serializable {
     private String type;
     Date creationDateTime;
     private Date dateExam;
+    private Module module;
 }

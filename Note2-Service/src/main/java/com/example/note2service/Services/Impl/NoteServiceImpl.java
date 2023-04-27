@@ -79,23 +79,18 @@ public class NoteServiceImpl implements NoteService {
 
         if (requesteNoteDTO.getExamen().getType()==TypeExamen.RATTRAPAGE){
             TypeExamen typeExamen =TypeExamen.ORDINAIRE;
-            String moduleName="analyse1";
-            //long etudiantApogee=requesteNoteDTO.getEtudiant().getApogee();
-            Etudiant etudiant=etudiantRestClient.getEtudiantByApogee(12);
+            String moduleName=requesteNoteDTO.getExamen().getModule().getModuleName();
+            long etudiantApogee=requesteNoteDTO.getEtudiant().getApogee();
+            Etudiant etudiant=etudiantRestClient.getEtudiantByApogee(requesteNoteDTO.getEtudiant().getApogee());
 
-           Note noteOrdinaire=noteDAO.findByEtudiantNameAndTypeExamenAndNomModule(TypeExamen.ORDINAIRE,12,"analyse1");
-           System.out.println("Note Ordinaire "+noteOrdinaire.getNote());
-            //System.out.println("Ordinaire "+noteOrdinaire.getNote());
-            //System.out.println("Rattrapage "+requesteNoteDTO.getNote());
+           Note noteOrdinaire=noteDAO.findByEtudiantNameAndTypeExamenAndNomModule(typeExamen,etudiantApogee,moduleName);
 
-            /*
             if (requesteNoteDTO.getNote() > noteOrdinaire.getNote()){
-                System.out.println("I'am hare");
-                RequesteNoteDTO noteDTO=requesteNoteDTO;
-                noteDTO.setNote(noteOrdinaire.getNote());
-                noteDAO.save(noteMapper.dtoToModel(noteDTO));
+                noteOrdinaire.setNote(requesteNoteDTO.getNote());
+                //noteOrdinaire.setMention(requesteNoteDTO.getEtudiant().getFirstname());
+                noteDAO.save(noteOrdinaire);
+                saveNote(noteMapper.modelToRequestDto(noteOrdinaire));
             }
-             */
         }
         return saveNote(requesteNoteDTO);
     }

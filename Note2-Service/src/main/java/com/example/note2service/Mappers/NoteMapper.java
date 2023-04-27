@@ -17,4 +17,5 @@ public interface NoteMapper {
     ResponseNoteDTO modelToDto(Note note);
 
     List< ResponseNoteDTO > modelToDtos(List<Note> noteList);
+    RequesteNoteDTO modelToRequestDto(Note note);
 }
