@@ -49,7 +49,7 @@ public class ExamenServiceImpl implements ExamenService {
     public ResponseExamenDTO getExamenById(long id) throws ExamenNotFoundException {
         Optional<Examen> examen =  examenDAO.findById(id);
         if (!examen.isPresent()){
-            throw new ExamenNotFoundException("Il n' y a acun etudiant avec ce ID");
+            throw new ExamenNotFoundException("Il n' y a aucun examen avec cet ID");
         }
         return examenMapper.modelToDto(examen.get());
     }
