@@ -31,7 +31,10 @@ public class ModuleController implements ModuleApi {
     public ResponseEntity<List<ResponseModuleDTO>> getModulesByName(String name) {
         return new ResponseEntity<>(service.getModulesByName(name), HttpStatus.OK);
     }
-
+    @Override
+    public ResponseEntity<ResponseModuleDTO> getModuleById(int moduleId) {
+        return new ResponseEntity<>(service.getModuleById(moduleId), HttpStatus.OK);
+    }
     @Override
     public ResponseEntity<ResponseModuleDTO> addModule(RequestModuleDTO moduleDTO) {
         return new ResponseEntity<>(service.addModule(moduleDTO), HttpStatus.CREATED);

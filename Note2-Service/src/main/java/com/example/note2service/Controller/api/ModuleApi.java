@@ -23,13 +23,22 @@ public interface ModuleApi {
     })
     ResponseEntity<List<ResponseModuleDTO>> getModules();
     @GetMapping("/{name}")
-    @Operation(summary = "Get module by id", description = "This method allows you to find the modules by name and returns a List of ResponseModuleDTO objects.")
+    @Operation(summary = "Get module by name", description = "This method allows you to find the modules by name and returns a List of ResponseModuleDTO objects.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "The modules found",
                     content = {@Content(mediaType = "application/json",
                             schema = @Schema(implementation = ResponseModuleDTO.class))})
     })
     ResponseEntity<List<ResponseModuleDTO>> getModulesByName(@PathVariable String name);
+
+    @GetMapping("/moduleId/{moduleId}")
+    @Operation(summary = "Get module by id", description = "This method allows you to find the module by id and returns ResponseModuleDTO object.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "The module found",
+                    content = {@Content(mediaType = "application/json",
+                            schema = @Schema(implementation = ResponseModuleDTO.class))})
+    })
+    ResponseEntity<ResponseModuleDTO> getModuleById(@PathVariable int moduleId);
     @PostMapping
     @Operation(summary = "Add module", description = "this method allows you to add a Module.")
     @ApiResponses(value = {

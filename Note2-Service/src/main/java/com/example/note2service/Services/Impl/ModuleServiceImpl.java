@@ -4,6 +4,7 @@ import com.example.note2service.DAO.ModuleDAO;
 import com.example.note2service.DTO.RequestModuleDTO;
 import com.example.note2service.DTO.ResponseModuleDTO;
 import com.example.note2service.Entities.Module;
+import com.example.note2service.Exceptions.ModuleNotFoundException;
 import com.example.note2service.Exceptions.module.ModuleAlreadyExistsException;
 import com.example.note2service.Exceptions.module.ModuleListIsEmptyException;
 import com.example.note2service.Exceptions.module.ModuleRequestIsNull;
@@ -98,5 +99,12 @@ public class ModuleServiceImpl implements ModuleService {
     @Override
     public void deleteModuleByName(String moduleName) {
         dao.deleteByModuleName(moduleName);
+    }
+
+    @Override
+    public ResponseModuleDTO getModuleById(int moduleId) {
+        Module module=dao.findById(moduleId).orElseThrow(()->
+                new ModuleNotFoundException(String.format("the module with id %d not exist.", moduleId)));
+        return mapper.modelToDto(module);
     }
 }
