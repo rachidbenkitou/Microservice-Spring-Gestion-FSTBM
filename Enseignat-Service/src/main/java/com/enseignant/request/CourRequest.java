@@ -1,5 +1,7 @@
 package com.enseignant.request;
 
+import java.util.Date;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,8 +11,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class CourRequest {
 	private String intitule;
-	private String dateDebut;
-	private String date_update;
+	private Date dateUpdate;
+	private Date date_update;
 	private long idModule;
 	private long id_enseignant;
 }

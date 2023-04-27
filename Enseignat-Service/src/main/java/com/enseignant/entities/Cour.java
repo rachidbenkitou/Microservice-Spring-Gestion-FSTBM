@@ -24,7 +24,7 @@ public class Cour {
 	private String intitule;
 	private String documentPaht;
 	private Date dateDebut;
-	private Date date_update;
+	private Date dateUpdate;
 	@OneToOne
 	private Enseignant enseignant;
 	private Long idModule;

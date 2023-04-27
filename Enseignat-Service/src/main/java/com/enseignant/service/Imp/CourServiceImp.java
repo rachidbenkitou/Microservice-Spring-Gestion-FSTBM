@@ -5,9 +5,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Date;
 import java.util.List;
-import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.InputStreamResource;
@@ -37,7 +37,7 @@ public class CourServiceImp implements CourService {
 	
 	private final CourMapper courMapper;
 	
-	@Value("path.downloadFile")
+	@Value("${path.downloadFile}")
 	private String path;
 	
 	@Override
@@ -51,14 +51,8 @@ public class CourServiceImp implements CourService {
 
 	@Override
 	public List<CourDto> getCoursHavingIntituleLike(String intitule, Page page) {
-		List<Cour> cours=courRepo.findByIntituleLike(intitule, page.getPageRequest());
+		List<Cour> cours=courRepo.findByIntituleLike("%"+intitule+"%", page.getPageRequest());
 		return courMapper.coursToDtos(cours);
-	}
-
-	@Override
-	public List<CourDto> getCoursByModuleIds(Long[] id_modules, Page page) {
-		List<CourDto> courDtos= Stream.of(id_modules).map((id)->getCourByModuleId(id)).toList();
-		return courDtos;
 	}
 
 	@Override
@@ -79,30 +73,29 @@ public class CourServiceImp implements CourService {
 	}
 
 	@Override
-	public InputStreamResource downloadDoducment(Long courId) throws FileNotFoundException {
+	public InputStream downloadDoducment(Long courId) throws FileNotFoundException {
 		Cour cour=courRepo.findById(courId).orElseThrow();
-		File file=new File(cour.getDocumentPaht()+""+cour.getIntitule()+"_"+cour.getId_cour());
-		InputStreamResource resource= new InputStreamResource(
-				new FileInputStream(file)
-				);
-		return resource;
+		File file=new File(cour.getDocumentPaht(),cour.getIntitule()+"_"+cour.getId_cour());
+		
+		InputStream  inputStream=new FileInputStream(file);
+		return inputStream;
 	}
 
 	@Override
 	public List<CourDto> getAllCoursSortByDateUpdate(Page page) {
-		List<Cour> cours= courRepo.findAll(PageRequest.of(page.getFirstElement(), page.getLastElement(), Sort.by("date_update"))).getContent();
+		List<Cour> cours= courRepo.findAll(PageRequest.of(page.getPage(), page.getNbrElemet(), Sort.by("DateUpdate"))).getContent();
 		return courMapper.coursToDtos(cours);
 	}
 
 	@Override
 	public String uploadDocument(Long id_cour, MultipartFile file) throws IOException {
 		Cour cour=courRepo.findById(id_cour).orElseThrow();
-		File convertfile= new File(path+""+cour.getIntitule()+"_"+cour.getId_cour());
+		File convertfile= new File(path,cour.getIntitule()+"_"+cour.getId_cour());
 		FileOutputStream fout=new FileOutputStream(convertfile);
 		fout.write(file.getBytes());
 		fout.close();
 		cour.setDocumentPaht(path);
-		cour.setDate_update(new Date());
+		cour.setDateUpdate(new Date());
 		return "File is upload seccessfuly";
 	}
 
@@ -110,7 +103,7 @@ public class CourServiceImp implements CourService {
 	public CourDto addCour(CourDto courDto) {
 		Cour cour = courMapper.dtoTocour(courDto);
 		//TODO getModuleInfo and getEnseignant white repoEnseign
-		
+		cour.setDateUpdate(new Date());
 		return courMapper.courToDto(courRepo.save(cour));
 	}
 
@@ -118,7 +111,7 @@ public class CourServiceImp implements CourService {
 	public CourDto updateCour(Long idCour, CourDto courDto) {
 		Cour cour=courRepo.findById(idCour).orElseThrow();
         if(courDto.getDateDebut()!=null) cour.setDateDebut(courDto.getDateDebut());
-        if(courDto.getDate_update()!=null) cour.setDate_update(courDto.getDate_update());
+        if(courDto.getDateUpdate()!=null) cour.setDateUpdate(courDto.getDateUpdate());
         if(courDto.getId_enseignant()!=0) {
         	//TODO getEnseignatById
         	Enseignant enseignant=new Enseignant();

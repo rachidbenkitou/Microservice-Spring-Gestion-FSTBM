@@ -12,11 +12,11 @@ import lombok.Data;
 @AllArgsConstructor
 public class Page {
 
-	private Integer firstElement;
-	private Integer lastElement;
+	private Integer page;
+	private Integer nbrElemet;
 	
 	public Pageable getPageRequest(){
-		return PageRequest.of(firstElement, lastElement); 
+		return PageRequest.of(page, nbrElemet); 
 	}
 	
 	

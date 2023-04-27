@@ -2,6 +2,7 @@ package com.enseignant.service;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Date;
 import java.util.List;
 
@@ -15,11 +16,10 @@ public interface CourService {
 	
 	CourDto getCourById(Long id_cour);
 	List<CourDto> getCoursHavingIntituleLike(String intitule,Page page);
-	List<CourDto> getCoursByModuleIds(Long id_modules[],Page page);
 	CourDto getCourByModuleId(Long id_module);
 	CourDto getCourByEnseignantId(Long id_enseign);
 	List<CourDto> getCoursBetweenDates(Date Date1,Date Date2,Page page);
-	InputStreamResource downloadDoducment(Long courId) throws FileNotFoundException ;
+	InputStream downloadDoducment(Long courId) throws FileNotFoundException ;
 	List<CourDto> getAllCoursSortByDateUpdate(Page page);
 	String uploadDocument(Long id_cour,MultipartFile file)throws IOException ;
 	CourDto addCour(CourDto courDto);

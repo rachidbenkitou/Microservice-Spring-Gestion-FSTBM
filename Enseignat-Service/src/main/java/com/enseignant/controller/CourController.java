@@ -1,11 +1,15 @@
 package com.enseignant.controller;
 
 import java.io.IOException;
-import java.util.Date;
+import java.io.InputStream;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.core.io.InputStreamResource;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -43,27 +47,21 @@ public class CourController {
 						courService.getCourById(id_cour)
 						),HttpStatus.OK);
 	}
-	@GetMapping("/search/intitile/{intitule}?first={first},last={last}")
-	ResponseEntity<List<CourResponse>> getCoursHavingIntituleLike(@PathVariable String intitule,@PathVariable Integer  first,@PathVariable Integer last) {
+	@GetMapping("/search/intitile/{intitule}")
+	ResponseEntity<List<CourResponse>> getCoursHavingIntituleLike(@PathVariable String intitule,@RequestParam Integer  page,@RequestParam Integer nbrElement){
 		return new ResponseEntity<List<CourResponse>>(
 				courMapper.courDtosToResponses(
-						courService.getCoursHavingIntituleLike(intitule, new Page(first,last) )
+						courService.getCoursHavingIntituleLike(intitule, new Page(page,nbrElement) )
 						),HttpStatus.OK);
 	}
-	@GetMapping("/modules?id_modules={id_modules}")
-	ResponseEntity<List<CourResponse>>  getCoursByModuleIds(Long id_modules[],Integer  first,Integer last){
-		return new ResponseEntity<List<CourResponse>>(
-				courMapper.courDtosToResponses(
-						courService.getCoursByModuleIds(id_modules, new Page(first,last))
-						),HttpStatus.OK);
-	}
-	@GetMapping("/module?id={id_module}")
-	ResponseEntity<CourResponse>  getCourByModuleId(Long id_module){
+	@GetMapping("/module/id/{id_module}")
+	ResponseEntity<CourResponse>  getCourByModuleId(@PathVariable Long id_module){
 		return new ResponseEntity<CourResponse>(
 				courMapper.courDtoToResponse(
 						courService.getCourByModuleId(id_module)
 						),HttpStatus.OK);
 	}
+	//TODO test en postMan
 	@GetMapping("/enseignant/id/{id_enseign}")
 	ResponseEntity<CourResponse> getCourByEnseignantId(Long id_enseign) {
 		return new ResponseEntity<CourResponse>(
@@ -71,35 +69,34 @@ public class CourController {
 						courService.getCourByEnseignantId(id_enseign)
 						),HttpStatus.OK);
 	}
-	@GetMapping("/search/bettewenDates?date1={date1},date2={date2},first={first},last={last}")
-	ResponseEntity<List<CourResponse>>  getCoursBetweenDates(Date Date1,Date Date2,Integer  first,Integer last){
+	@GetMapping("/search/bettewenDates")
+	ResponseEntity<List<CourResponse>>  getCoursBetweenDates(@RequestParam  String date1,@RequestParam  String date2,@RequestParam Integer  page,@RequestParam Integer nbrElement) throws ParseException{
+		
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+
 		return new ResponseEntity<List<CourResponse>>(
 				courMapper.courDtosToResponses(
-						courService.getCoursBetweenDates(Date1, Date2,  new Page(first,last))
+						courService.getCoursBetweenDates(formatter.parse(date1),formatter.parse(date2),  new Page(page,nbrElement))
 						),HttpStatus.OK);
 	}
 	@GetMapping("/downloadDodument/{courId}")
-	ResponseEntity<?>  downloadDoducment(Long courId) throws IOException{
-		 InputStreamResource inputStreamResource= courService.downloadDoducment(courId);
-		HttpHeaders headers=new HttpHeaders();
-		headers.add("Contenet-Disposition",String.format("attachementfilename=\"%s\"", inputStreamResource.getFilename()));
-		headers.add("Cache-Control", "no-cachhe, no-store, must-revalide");
-		headers.add("Expires", "0");
+	ResponseEntity<?>  downloadDoducment(@PathVariable Long courId,HttpServletResponse response) throws IOException{
+		InputStream inputStream= courService.downloadDoducment(courId);
 		
-		return  ResponseEntity.ok().headers(headers)
-				.contentLength(inputStreamResource.contentLength())
-				.contentType(MediaType.parseMediaType("application/txt"))
-				.body(inputStreamResource);
+		
+		IOUtils.copy(inputStream,response.getOutputStream());
+	
+		return  ResponseEntity.ok().build();
 	}
-	@GetMapping("/allSortByDateUpdate?first={first},last={last}")
-	ResponseEntity<List<CourResponse>>  getAllCoursSortByDateUpdate(@RequestParam Integer  first,@RequestParam Integer last){
+	@GetMapping("/allSortByDateUpdate")
+	ResponseEntity<List<CourResponse>>  getAllCoursSortByDateUpdate(@RequestParam Integer  page,@RequestParam Integer nbrElement){
 		return new ResponseEntity<List<CourResponse>>(
 				courMapper.courDtosToResponses(
-						courService.getAllCoursSortByDateUpdate(new Page(first,last))
+						courService.getAllCoursSortByDateUpdate(new Page(page,nbrElement))
 						),HttpStatus.OK);
 	}
-	@PostMapping(value = "uploadDocument",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-	ResponseEntity<String> uploadDocument(Long id_cour,@RequestParam("file") MultipartFile file) throws IOException {
+	@PostMapping(value = "uploadDocument/id/{id_cour}",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+	ResponseEntity<String> uploadDocument(@PathVariable Long id_cour,@RequestParam("file") MultipartFile file) throws IOException {
 		return new ResponseEntity<String>(courService.uploadDocument(id_cour, file),HttpStatus.OK);
 	}
 	
@@ -122,7 +119,8 @@ public class CourController {
 						),HttpStatus.OK);
 	}
 	@DeleteMapping("delete/id/{idCour}")
-	ResponseEntity<?> deleteCour(Long idCour) {
+	ResponseEntity<?> deleteCour(@PathVariable Long idCour) {
+		
 		courService.deleteCour(idCour);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
