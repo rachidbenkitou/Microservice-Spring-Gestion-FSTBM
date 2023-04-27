@@ -8,11 +8,14 @@ spring:
   application:
     name: note
   datasource:
-    url: jdbc:h2:mem:note_service_db
+    url: jdbc:mysql://localhost/note_service?createDatabaseIfNotExist=true&serverTimezone=UTC
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
-    show-sql: true
     hibernate:
       ddl-auto: update
+    show-sql: true
 
 server:
   port: 8089

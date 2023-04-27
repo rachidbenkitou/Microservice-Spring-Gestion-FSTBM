@@ -22,6 +22,7 @@ public class Note {
     @MapsId("examenId")
     @JoinColumn(name = "examen_id")
     private Examen examen;
+    private long etudiantApogee;
     @Transient
     private  Etudiant etudiant;
 }

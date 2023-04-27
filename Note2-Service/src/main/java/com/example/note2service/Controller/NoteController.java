@@ -29,7 +29,7 @@ public class NoteController implements NoteApi {
         return noteService.getNoteById(id);
     }
     @Override
-    public ResponseNoteDTO save(@RequestBody RequesteNoteDTO requesteNoteDTO) throws ExamenNotFoundException {
+    public ResponseNoteDTO save(@RequestBody RequesteNoteDTO requesteNoteDTO) throws ExamenNotFoundException, NoteNotFoundException {
         return noteService.addNote(requesteNoteDTO);
     }
     @Override

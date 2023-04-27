@@ -40,7 +40,7 @@ public interface NoteApi {
                             schema = @Schema(implementation = ResponseNoteDTO.class))})
     })
     @PostMapping
-    ResponseNoteDTO save(@RequestBody RequesteNoteDTO requesteNoteDTO) throws ExamenNotFoundException;
+    ResponseNoteDTO save(@RequestBody RequesteNoteDTO requesteNoteDTO) throws ExamenNotFoundException, NoteNotFoundException;
 
     @Operation(summary = "Update note", description = "this method allows you to update a Note.")
     @ApiResponses(value = {

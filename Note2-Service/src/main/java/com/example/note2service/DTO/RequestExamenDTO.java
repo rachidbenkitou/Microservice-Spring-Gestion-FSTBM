@@ -11,8 +11,6 @@ import java.util.Date;
 @NoArgsConstructor
 @Builder
 public class RequestExamenDTO {
-
-
     private long id;
     private String type;
     Date creationDateTime;
