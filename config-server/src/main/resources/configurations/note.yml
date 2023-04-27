@@ -8,7 +8,7 @@ spring:
   application:
     name: note
   datasource:
-    url: jdbc:mysql://localhost/note_service?createDatabaseIfNotExist=true&serverTimezone=UTC
+    url: jdbc:mysql://localhost/note-service?createDatabaseIfNotExist=true&serverTimezone=UTC
     username: root
     password:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -21,3 +21,27 @@ server:
   port: 8089
   servlet:
     context-path: /api/note-service
+management:
+  health:
+    circuitbreakers:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include : health
+  endpoint:
+    health:
+      show-details: always
+resilience4j:
+  circuitbreaker:
+    instances:
+      notec:
+        registerHealthIndicator: true
+        eventConsumerBufferSize: 10
+        failureRateThreshold: 50
+        minimumNumberOfCalls: 5
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        waitDurationInOpenState: 5s
+        permittedNumberOfCallsInHalfOpenState : 3
+        slidingWindowSize: 10
+        slidingWindowType: COUNT_BASED
