@@ -1,16 +1,18 @@
 package com.example.note2service.Controller;
 
 import com.example.note2service.Controller.api.NoteApi;
+import com.example.note2service.DAO.NoteDAO;
 import com.example.note2service.DTO.RequesteNoteDTO;
 import com.example.note2service.DTO.ResponseNoteDTO;
+import com.example.note2service.Entities.Module;
+import com.example.note2service.Entities.Note;
 import com.example.note2service.Entities.NoteKey;
+import com.example.note2service.Entities.TypeExamen;
 import com.example.note2service.Exceptions.ExamenNotFoundException;
 import com.example.note2service.Exceptions.NoteNotFoundException;
 import com.example.note2service.Services.NoteService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,6 +20,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class NoteController implements NoteApi {
     private final NoteService noteService;
+    private final NoteDAO dao;
     @Override
     public List<ResponseNoteDTO> getAllNotes(){
 
@@ -44,4 +47,11 @@ public class NoteController implements NoteApi {
         NoteKey id = NoteKey.builder().etudiantId(etudiantId).examenId(examentId).build();
         noteService.deleteNote(id);
     }
+/*
+    @GetMapping("/test/{id}/{ide}/{moduleName}")
+    public Note testNote(@PathVariable TypeExamen id, @PathVariable long ide, @PathVariable String  moduleName){
+        return dao.findByEtudiantNameAndTypeExamenAndNomModule(id,ide, moduleName);
+    }
+
+ */
 }

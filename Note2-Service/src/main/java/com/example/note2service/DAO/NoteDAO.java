@@ -11,6 +11,10 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface NoteDAO extends JpaRepository<Note, NoteKey> {
-    @Query("SELECT n FROM Note n INNER JOIN n.examen e INNER JOIN e.module m  WHERE n.etudiantApogee=?1 AND e.type=?2 AND m.moduleName=?3")
-    Note findByEtudiantNameAndTypeExamenAndNomModule(long etudiantApogee,TypeExamen typeExamen,String nomModule);
+    //@Query("SELECT n FROM Note n INNER JOIN n.examen e INNER JOIN e.module m  WHERE n.etudiantApogee=?1 AND e.type=?2 AND m.moduleName=?3")
+    //Note findByEtudiantNameAndTypeExamenAndNomModule(long etudiantApogee,TypeExamen typeExamen,String nomModule);
+
+    @Query("SELECT n FROM Note n INNER JOIN n.examen e INNER JOIN e.module m where e.type=?1 and n.etudiantApogee=?2 and m.moduleName=?3")
+    Note findByEtudiantNameAndTypeExamenAndNomModule(TypeExamen typeExamen, long etudiantApogee, String moduleName);
+
 }

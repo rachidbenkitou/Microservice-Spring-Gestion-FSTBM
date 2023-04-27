@@ -75,7 +75,7 @@ public class NoteServiceImpl implements NoteService {
      * @return a ResponseNoteDTO object representing the added note
      */
     @Override
-    public ResponseNoteDTO addNote(RequesteNoteDTO requesteNoteDTO) throws ExamenNotFoundException, NoteNotFoundException {
+    public ResponseNoteDTO addNote(RequesteNoteDTO requesteNoteDTO){
 
         if (requesteNoteDTO.getExamen().getType()==TypeExamen.RATTRAPAGE){
             TypeExamen typeExamen =TypeExamen.ORDINAIRE;
@@ -83,9 +83,9 @@ public class NoteServiceImpl implements NoteService {
             //long etudiantApogee=requesteNoteDTO.getEtudiant().getApogee();
             Etudiant etudiant=etudiantRestClient.getEtudiantByApogee(12);
 
-            Note noteOrdinaire=noteDAO.findByEtudiantNameAndTypeExamenAndNomModule(12,TypeExamen.ORDINAIRE,"analyse1");
-            System.out.println(noteOrdinaire);
-            System.out.println(noteOrdinaire);
+           Note noteOrdinaire=noteDAO.findByEtudiantNameAndTypeExamenAndNomModule(TypeExamen.ORDINAIRE,12,"analyse1");
+           System.out.println(noteOrdinaire);
+           System.out.println(noteOrdinaire);
 
             //System.out.println("Ordinaire "+noteOrdinaire.getNote());
             //System.out.println("Rattrapage "+requesteNoteDTO.getNote());

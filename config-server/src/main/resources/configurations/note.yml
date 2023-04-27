@@ -8,8 +8,8 @@ spring:
   application:
     name: note
   datasource:
-    url: jdbc:mysql://localhost/note-service?createDatabaseIfNotExist=true&serverTimezone=UTC
-    username: roo
+    url: jdbc:mysql://localhost/note_service?createDatabaseIfNotExist=true&serverTimezone=UTC
+    username: root
     password:
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
@@ -20,4 +20,4 @@ spring:
 server:
   port: 8089
   servlet:
-    context-path: /api
+    context-path: /api/note-service
