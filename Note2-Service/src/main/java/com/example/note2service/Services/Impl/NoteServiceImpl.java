@@ -93,12 +93,8 @@ public class NoteServiceImpl implements NoteService {
                 throw new NoteOrdinaireNotExistException("there is no ordinary exam mark, so you can't give resit (rattrapage) mark");
 
             if (requesteNoteDTO.getNote() > noteOrdinaire.getOldNote()){
-                //noteOrdinaire.setOldNote(requesteNoteDTO.getNote());
                 noteOrdinaire.setNote(requesteNoteDTO.getNote());
-                //noteOrdinaire.setMention(requesteNoteDTO.getEtudiant().getFirstname());
-                //noteDAO.save(noteOrdinaire);
                 saveNote(noteMapper.modelToRequestDto(noteOrdinaire));
-
             }
             else {
                 System.out.println("La note ancienne "+noteOrdinaire.getOldNote());
