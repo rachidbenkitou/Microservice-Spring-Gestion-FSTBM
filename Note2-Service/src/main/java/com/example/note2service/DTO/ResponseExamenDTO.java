@@ -19,5 +19,4 @@ public class ResponseExamenDTO implements Serializable {
     Date creationDateTime;
     private Date dateExam;
     private Module module;
-
 }

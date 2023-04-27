@@ -15,6 +15,7 @@ import lombok.NoArgsConstructor;
 public class ResponseNoteDTO {
     private NoteKey id ;
     private double note;
+    private double oldNote;
     private String mention;
     private Examen examen;
     private Etudiant etudiant;

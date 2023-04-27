@@ -34,10 +34,7 @@ public class ExamenServiceImpl implements ExamenService {
     @Override
     public List<ResponseExamenDTO> getAllExamens() {
         List<Examen> examenList =examenDAO.findAll();
-        for ( Examen e : examenList){
-            e.setModule(moduleDAO.findById(e.getModule().getModeuleId()).get());
 
-        }
         return examenMapper.modelToDtos(examenList);
     }
 

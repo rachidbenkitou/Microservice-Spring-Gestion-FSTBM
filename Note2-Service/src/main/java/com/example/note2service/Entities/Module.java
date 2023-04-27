@@ -18,7 +18,7 @@ import java.util.List;
 public class Module implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int modeuleId;
+    private int moduleId;
     @Column(unique = true)
     private String moduleName;
     @Enumerated(EnumType.STRING)

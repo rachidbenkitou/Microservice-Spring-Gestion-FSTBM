@@ -17,6 +17,7 @@ public class Note {
     @EmbeddedId
     private NoteKey id ;
     private double note;
+    private double oldNote;
     private String mention;
     @ManyToOne
     @MapsId("examenId")

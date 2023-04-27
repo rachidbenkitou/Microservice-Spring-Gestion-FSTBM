@@ -15,6 +15,7 @@ import lombok.NoArgsConstructor;
 public class RequesteNoteDTO {
     private NoteKey id ;
     private double note;
+    private double oldNote;
     private Examen examen;
-    private Etudiant etudiant;
+    private long etudiantApogee;
 }

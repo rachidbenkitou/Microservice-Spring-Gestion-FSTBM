@@ -12,7 +12,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Builder
 public class RequestModuleDTO implements Serializable {
-    private int modeuleId;
+    private int moduleId;
     private String moduleName;
     private Semestre moduleSemestre;
 }

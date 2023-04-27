@@ -7,6 +7,7 @@ import com.example.note2service.DTO.ResponseNoteDTO;
 import com.example.note2service.Entities.*;
 import com.example.note2service.Exceptions.ExamenNotFoundException;
 import com.example.note2service.Exceptions.NoteNotFoundException;
+import com.example.note2service.Exceptions.NoteOrdinaireNotExistException;
 import com.example.note2service.Mappers.ExamenMapper;
 import com.example.note2service.Mappers.NoteMapper;
 import com.example.note2service.Openfeign.EtudiantRestClient;
@@ -77,22 +78,35 @@ public class NoteServiceImpl implements NoteService {
     @Override
     public ResponseNoteDTO addNote(RequesteNoteDTO requesteNoteDTO){
 
+        changeNoteOridinaireIfNoteRattrapageIsBigger(requesteNoteDTO);
+        return saveNote(requesteNoteDTO);
+    }
+    private void changeNoteOridinaireIfNoteRattrapageIsBigger(RequesteNoteDTO requesteNoteDTO){
+        long etudiantApogee=requesteNoteDTO.getEtudiantApogee();
+        Etudiant etudiant=etudiantRestClient.getEtudiantByApogee(etudiantApogee);
         if (requesteNoteDTO.getExamen().getType()==TypeExamen.RATTRAPAGE){
             TypeExamen typeExamen =TypeExamen.ORDINAIRE;
             String moduleName=requesteNoteDTO.getExamen().getModule().getModuleName();
-            long etudiantApogee=requesteNoteDTO.getEtudiant().getApogee();
-            Etudiant etudiant=etudiantRestClient.getEtudiantByApogee(requesteNoteDTO.getEtudiant().getApogee());
 
-           Note noteOrdinaire=noteDAO.findByEtudiantNameAndTypeExamenAndNomModule(typeExamen,etudiantApogee,moduleName);
+            Note noteOrdinaire=noteDAO.findByEtudiantNameAndTypeExamenAndNomModule(typeExamen,etudiantApogee,moduleName);
+            if (noteOrdinaire==null)
+                throw new NoteOrdinaireNotExistException("there is no ordinary exam mark, so you can't give resit (rattrapage) mark");
 
             if (requesteNoteDTO.getNote() > noteOrdinaire.getNote()){
+                //noteOrdinaire.setOldNote(requesteNoteDTO.getNote());
                 noteOrdinaire.setNote(requesteNoteDTO.getNote());
                 //noteOrdinaire.setMention(requesteNoteDTO.getEtudiant().getFirstname());
-                noteDAO.save(noteOrdinaire);
+                //noteDAO.save(noteOrdinaire);
+                saveNote(noteMapper.modelToRequestDto(noteOrdinaire));
+
+            }
+            else {
+                //System.out.println("La note ancienne "+noteOrdinaire.getNote());
+                noteOrdinaire.setNote(noteOrdinaire.getNote());
                 saveNote(noteMapper.modelToRequestDto(noteOrdinaire));
             }
-        }
-        return saveNote(requesteNoteDTO);
+        }else requesteNoteDTO.setOldNote(requesteNoteDTO.getNote());
+
     }
     /**
 
@@ -102,6 +116,7 @@ public class NoteServiceImpl implements NoteService {
      */
     @Override
     public ResponseNoteDTO UpdateNote(RequesteNoteDTO requesteNoteDTO) {
+        changeNoteOridinaireIfNoteRattrapageIsBigger(requesteNoteDTO);
         return saveNote(requesteNoteDTO);
     }
     /**

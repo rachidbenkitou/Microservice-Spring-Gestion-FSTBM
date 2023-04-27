@@ -14,9 +14,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Builder
 public class ResponseModuleDTO implements Serializable {
-    private int modeuleId;
+    private int moduleId;
     private String moduleName;
     private Semestre moduleSemestre;
-    private Module module;
-
 }
