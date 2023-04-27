@@ -13,6 +13,7 @@ import com.example.note2service.Mappers.NoteMapper;
 import com.example.note2service.Openfeign.EtudiantRestClient;
 import com.example.note2service.Services.ExamenService;
 import com.example.note2service.Services.NoteService;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -41,11 +42,21 @@ public class NoteServiceImpl implements NoteService {
     * Returns a list of all notes with associated students from the database.
      * @return a list of ResponseNoteDTO objects representing the notes and their associated students
      */
+    @CircuitBreaker(name = "notec" , fallbackMethod = "fallbackGetAllNotes")
     @Override
     public List<ResponseNoteDTO> getAllNotes() {
         List<Note> noteList =noteDAO.findAll();
         for ( Note n : noteList){
             n.setEtudiant(etudiantRestClient.getEtudiant(n.getId().getEtudiantId()));
+
+        }
+        return noteMapper.modelToDtos(noteList);
+    }
+    public List<ResponseNoteDTO> fallbackGetAllNotes(Exception e) {
+        List<Note> noteList =noteDAO.findAll();
+        for ( Note n : noteList){
+
+            n.setEtudiant(null);
 
         }
         return noteMapper.modelToDtos(noteList);
@@ -57,6 +68,8 @@ public class NoteServiceImpl implements NoteService {
      * @return a ResponseNoteDTO object representing the note and its associated student
      * @throws NoteNotFoundException if there is no note with the specified ID
      */
+
+    @CircuitBreaker(name = "notec" , fallbackMethod = "fallbackGetNoteById")
     @Override
     public ResponseNoteDTO getNoteById(NoteKey id) throws NoteNotFoundException {
         Optional<Note> note =  noteDAO.findById(id);
@@ -64,6 +77,14 @@ public class NoteServiceImpl implements NoteService {
         note.get().setEtudiant(etudiant);
         if (!note.isPresent()){
             throw new NoteNotFoundException("Il n' y a aucune note avec ce ID");
+        }
+        return noteMapper.modelToDto(note.get());
+    }
+    public ResponseNoteDTO fallbackGetNoteById(NoteKey id,Exception e) throws NoteNotFoundException {
+        Optional<Note> note =  noteDAO.findById(id);
+        note.get().setEtudiant(null);
+        if (note.isEmpty()){
+            throw new NoteNotFoundException ("Il n' y a aucune note avec ce ID");
         }
         return noteMapper.modelToDto(note.get());
     }
@@ -75,18 +96,21 @@ public class NoteServiceImpl implements NoteService {
 
      * @return a ResponseNoteDTO object representing the added note
      */
+    @CircuitBreaker(name = "notec" , fallbackMethod = "fallbackSaveOrUpdateNote")
     @Override
     public ResponseNoteDTO addNote(RequesteNoteDTO requesteNoteDTO){
 
         changeNoteOridinaireIfNoteRattrapageIsBigger(requesteNoteDTO);
         return saveNote(requesteNoteDTO);
     }
+
     private void changeNoteOridinaireIfNoteRattrapageIsBigger(RequesteNoteDTO requesteNoteDTO){
         long etudiantApogee=requesteNoteDTO.getEtudiantApogee();
+        Examen examen = examenDAO.findById(requesteNoteDTO.getId().getExamenId()).get();
         Etudiant etudiant=etudiantRestClient.getEtudiantByApogee(etudiantApogee);
-        if (requesteNoteDTO.getExamen().getType()==TypeExamen.RATTRAPAGE){
+        if ( examen.getType()==TypeExamen.RATTRAPAGE){
             TypeExamen typeExamen =TypeExamen.ORDINAIRE;
-            String moduleName=requesteNoteDTO.getExamen().getModule().getModuleName();
+            String moduleName=examen.getModule().getModuleName();
 
             Note noteOrdinaire=noteDAO.findByEtudiantNameAndTypeExamenAndNomModule(typeExamen,etudiantApogee,moduleName);
             if (noteOrdinaire==null)
@@ -110,6 +134,7 @@ public class NoteServiceImpl implements NoteService {
      * @param requesteNoteDTO a RequesteNoteDTO object representing the note to update
      * @return a ResponseNoteDTO object representing the updated note
      */
+    @CircuitBreaker(name = "notec" , fallbackMethod = "fallbackSaveOrUpdateNote")
     @Override
     public ResponseNoteDTO UpdateNote(RequesteNoteDTO requesteNoteDTO) {
         changeNoteOridinaireIfNoteRattrapageIsBigger(requesteNoteDTO);
@@ -120,6 +145,7 @@ public class NoteServiceImpl implements NoteService {
      * @param requesteNoteDTO a RequesteNoteDTO object representing the note to save
      * @return a ResponseNoteDTO object representing the saved note
      */
+
     private ResponseNoteDTO saveNote(RequesteNoteDTO requesteNoteDTO){
         Note note = noteMapper.dtoToModel(requesteNoteDTO);
         note.setMention(mention(note.getNote()));
@@ -128,6 +154,13 @@ public class NoteServiceImpl implements NoteService {
         savedNote.setEtudiant(etudiantRestClient.getEtudiant(savedNote.getId().getEtudiantId()));
         return noteMapper.modelToDto(savedNote);
     }
+    public ResponseNoteDTO fallbackSaveOrUpdateNote(RequesteNoteDTO requesteNoteDTO,Exception e){
+        // Log the error
+        System.out.println("U cant add or update now");
+        Note note =null;
+        return noteMapper.modelToDto(note);
+    }
+
   /**
    * Returns a specific note and the corresponding student information by student ID.
    * @param etudiantId The ID of the student

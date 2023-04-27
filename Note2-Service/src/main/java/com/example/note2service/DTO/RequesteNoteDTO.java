@@ -16,6 +16,5 @@ public class RequesteNoteDTO {
     private NoteKey id ;
     private double note;
     private double oldNote;
-    private Examen examen;
     private long etudiantApogee;
 }
