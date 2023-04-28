@@ -73,12 +73,14 @@ public class NoteServiceImpl implements NoteService {
     @Override
     public ResponseNoteDTO getNoteById(NoteKey id) throws NoteNotFoundException {
         Optional<Note> note =  noteDAO.findById(id);
-        Etudiant etudiant = etudiantRestClient.getEtudiant(note.get().getId().getEtudiantId());
-        note.get().setEtudiant(etudiant);
+
         if (!note.isPresent()){
             throw new NoteNotFoundException("Il n' y a aucune note avec ce ID");
+        }else {
+            Etudiant etudiant = etudiantRestClient.getEtudiant(note.get().getId().getEtudiantId());
+            note.get().setEtudiant(etudiant);
+            return noteMapper.modelToDto(note.get());
         }
-        return noteMapper.modelToDto(note.get());
     }
     public ResponseNoteDTO fallbackGetNoteById(NoteKey id,Exception e) throws NoteNotFoundException {
         Optional<Note> note =  noteDAO.findById(id);
