@@ -6,20 +6,29 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.enseignant.dto.EnseignantDto;
+import com.enseignant.entities.Departement;
 import com.enseignant.entities.Enseignant;
+import com.enseignant.exeption.DepartementNotFoundException;
 import com.enseignant.exeption.EnseignantNotFound;
 import com.enseignant.mapper.EnseignantMapper;
+import com.enseignant.repository.DepartementRepo;
 import com.enseignant.repository.EnseignantRepo;
 import com.enseignant.service.EnseignantService;
 
+import lombok.RequiredArgsConstructor;
+
 @Service
+@RequiredArgsConstructor
 public  class EnseignantServiceImp implements EnseignantService {
-	@Autowired
-	private EnseignantRepo enseignantRep;
-	private EnseignantMapper enseignantMap;
+	
+	private final EnseignantRepo enseignantRep;
+	private final EnseignantMapper enseignantMap;
+	private final DepartementRepo departementRepo;
 	@Override
 	public EnseignantDto addEnseignant(EnseignantDto ens) {
 		Enseignant enseignant=enseignantMap.dtoToEnseignant(ens);
+		Departement departement= departementRepo.findByNameDeparetement(ens.getDepartementName()).orElseThrow(()->new DepartementNotFoundException("departement not found"));
+		enseignant.setDepartement(departement);
 		enseignant= enseignantRep.save(enseignant);
 		return (EnseignantDto) enseignantMap.enseignantToDto(enseignant);
 	}

@@ -116,7 +116,7 @@ public class CourServiceImp implements CourService {
 	@Override
 	public CourDto addCour(CourDto courDto) {
 		Cour cour = courMapper.dtoTocour(courDto);
-		//TODO getModuleInfo and getEnseignant white repoEnseign
+		
 		if(courRepo.findByIdModule(courDto.getIdModule()).isPresent()) throw new ModuleAlrealyHasCour("this module has a cour");
 		
 		com.enseignant.entities.Module module=moduleFeignClient.getModuleById(courDto.getIdModule()).orElseThrow(()-> new ModuleNotFound("module not found"));
@@ -126,6 +126,7 @@ public class CourServiceImp implements CourService {
 		CourDto courDtoSave= courMapper.courToDto(courRepo.save(cour));
 		courDtoSave.setModuleName(module.getModuleName());
 		courDtoSave.setEnseignant_name(enseignant.getNom()+" "+enseignant.getPrenom());
+		courDtoSave.setId_enseignant(enseignant.getId());
 		return courDtoSave;
 	}
 

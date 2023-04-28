@@ -18,12 +18,14 @@ import com.enseignant.request.EnseignantRequest;
 import com.enseignant.response.EnseignantResponse;
 import com.enseignant.service.EnseignantService;
 
+import lombok.RequiredArgsConstructor;
+
 @RestController
 @RequestMapping("/enseignant")
-
+@RequiredArgsConstructor
 public class EnseignantController {
-	private EnseignantService enseignantService;
-	private EnseignantMapper enseignantMap;
+	private final EnseignantService enseignantService;
+	private final EnseignantMapper enseignantMap;
 	
 	 @GetMapping("/cin/{cin}")
 	 ResponseEntity<EnseignantResponse>getEnseignantByCIN(@PathVariable String cin){

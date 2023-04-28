@@ -10,5 +10,7 @@ public class EnseignantDto {
 	private String prenom;
 	private String adresse;
 	private String email;
-	private String cin;
+	private String CIN;
+	private String departementName;
+
 }

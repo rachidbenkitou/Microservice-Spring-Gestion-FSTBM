@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.enseignant.entities.Module;
 
-@FeignClient(name = "customer-service")
+@FeignClient(name = "note",url = "http://localhost:8222/api/note-service")
 public interface ModuleFeignClient {
 	
-	@GetMapping("/module/{id}")
-	Optional<Module> getModuleById(@PathVariable Long id);
+	@GetMapping("modules/moduleId/{moduleId}")
+	Optional<Module> getModuleById(@PathVariable Long moduleId);
 
 }
