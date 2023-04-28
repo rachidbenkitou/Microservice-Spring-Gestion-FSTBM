@@ -25,6 +25,6 @@ public class Departement {
 	private Long id;
 	@Column(unique = true)
 	private String nameDeparetement;
-	@OneToMany(fetch = FetchType.LAZY)
+	@OneToMany(fetch = FetchType.LAZY,mappedBy = "departement")
 	private List<Enseignant> enseignants;  
 }

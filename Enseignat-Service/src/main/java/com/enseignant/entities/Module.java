@@ -1,5 +1,9 @@
 package com.enseignant.entities;
 
-public class Module {
+import lombok.Data;
 
+@Data
+public class Module {
+	private String moduleName;
+	private int moduleId;
 }

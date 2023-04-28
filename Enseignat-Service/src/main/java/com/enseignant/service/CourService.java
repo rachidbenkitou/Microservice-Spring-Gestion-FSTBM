@@ -6,7 +6,6 @@ import java.io.InputStream;
 import java.util.Date;
 import java.util.List;
 
-import org.springframework.core.io.InputStreamResource;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.enseignant.dto.CourDto;

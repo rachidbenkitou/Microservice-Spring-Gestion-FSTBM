@@ -14,4 +14,6 @@ public class CourResponse {
 	private String dateUpdate;
 	private long idModule;
 	private long id_enseignant;
+	private String moduleName;
+	private String enseignant_name;
 }
