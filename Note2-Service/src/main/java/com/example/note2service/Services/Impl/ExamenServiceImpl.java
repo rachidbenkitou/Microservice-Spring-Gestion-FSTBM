@@ -3,7 +3,9 @@ package com.example.note2service.Services.Impl;
 import com.example.note2service.DAO.ExamenDAO;
 import com.example.note2service.DAO.ModuleDAO;
 import com.example.note2service.DTO.RequestExamenDTO;
+import com.example.note2service.DTO.RequesteNoteDTO;
 import com.example.note2service.DTO.ResponseExamenDTO;
+import com.example.note2service.DTO.ResponseNoteDTO;
 import com.example.note2service.Entities.Examen;
 import com.example.note2service.Entities.Note;
 import com.example.note2service.Exceptions.ExamenNotFoundException;
@@ -61,9 +63,7 @@ public class ExamenServiceImpl implements ExamenService {
      */
     @Override
     public ResponseExamenDTO addExamen(RequestExamenDTO requestExamenDTO) {
-       Examen examen = examenMapper.dtoToModel(requestExamenDTO);
-       Examen savedExamen = examenDAO.save(examen);
-        return examenMapper.modelToDto(savedExamen);
+        return  saveExamen(requestExamenDTO);
     }
     /**
      * Updates an Examen in the database.
@@ -73,6 +73,11 @@ public class ExamenServiceImpl implements ExamenService {
      */
     @Override
     public ResponseExamenDTO UpdateExamen(RequestExamenDTO requestExamenDTO) {
+
+        return saveExamen(requestExamenDTO);
+    }
+
+    public ResponseExamenDTO saveExamen(RequestExamenDTO requestExamenDTO){
         Examen examen = examenMapper.dtoToModel(requestExamenDTO);
         Examen savedExamen = examenDAO.save(examen);
         return examenMapper.modelToDto(savedExamen);
@@ -82,6 +87,8 @@ public class ExamenServiceImpl implements ExamenService {
      *
      * @param etudiantId the ID of the Examen to delete.
      */
+
+
     @Override
     public void deleteExamen(long etudiantId) {
         examenDAO.deleteById(etudiantId);
