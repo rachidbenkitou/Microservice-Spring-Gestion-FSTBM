@@ -16,3 +16,7 @@ spring:
           uri: http://localhost:8089
           predicates:
             - Path=/api/note-service/**
+        - id: enseignant
+          uri: http://localhost:8086
+          predicates:
+            - Path=/api/enseignant-service/**

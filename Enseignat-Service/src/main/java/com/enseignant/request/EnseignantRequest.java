@@ -10,5 +10,9 @@ import lombok.NoArgsConstructor;
 public class EnseignantRequest {
 	private String nom;
 	private String prenom;
+	private String adresse;
+	private String email;
+	private String CIN;
+	private String departementName;
 
 }
