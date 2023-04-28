@@ -10,7 +10,6 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.io.InputStreamResource;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
@@ -19,8 +18,14 @@ import org.springframework.web.multipart.MultipartFile;
 import com.enseignant.dto.CourDto;
 import com.enseignant.entities.Cour;
 import com.enseignant.entities.Enseignant;
+import com.enseignant.exeption.CourNoteFoundException;
+import com.enseignant.exeption.EnseignantNotFound;
+import com.enseignant.exeption.ModuleAlrealyHasCour;
+import com.enseignant.exeption.ModuleNotFound;
 import com.enseignant.mapper.CourMapper;
+import com.enseignant.openFeign.ModuleFeignClient;
 import com.enseignant.repository.CourRepo;
+import com.enseignant.repository.EnseignantRepo;
 import com.enseignant.request.Page;
 import com.enseignant.service.CourService;
 
@@ -35,7 +40,11 @@ public class CourServiceImp implements CourService {
 
 	private final CourRepo courRepo;
 	
+	private final EnseignantRepo enseignantRepo;
+	
 	private final CourMapper courMapper;
+	
+	private final ModuleFeignClient moduleFeignClient; 
 	
 	@Value("${path.downloadFile}")
 	private String path;
@@ -51,25 +60,30 @@ public class CourServiceImp implements CourService {
 
 	@Override
 	public List<CourDto> getCoursHavingIntituleLike(String intitule, Page page) {
-		List<Cour> cours=courRepo.findByIntituleLike("%"+intitule+"%", page.getPageRequest());
+		List<Cour> cours=courRepo.findByIntituleLike("%"+intitule+"%", page.getPageRequest())
+				.orElseThrow(()->new CourNoteFoundException("cours like "+intitule+"not found"));
 		return courMapper.coursToDtos(cours);
 	}
 
 	@Override
 	public CourDto getCourByModuleId(Long id_module) {
-		return courMapper.courToDto(courRepo.findByIdModule(id_module));
+		return courMapper.courToDto(courRepo.findByIdModule(id_module)
+				.orElseThrow(()->new CourNoteFoundException("cours found")));
 	}
 
 	@Override
 	public CourDto getCourByEnseignantId(Long id_enseign) {
 		
-		return courMapper.courToDto(courRepo.findByEnseignantId(id_enseign));
+		return courMapper.courToDto(courRepo.findByEnseignantId(id_enseign)
+				.orElseThrow(()->new CourNoteFoundException("cours found")));
 	}
 
 	@Override
 	public List<CourDto> getCoursBetweenDates(Date Date1, Date Date2, Page page) {
 		
-		return courMapper.coursToDtos(courRepo.findByDateDebutBetween(Date1, Date2, page.getPageRequest())) ;
+		return courMapper.coursToDtos(courRepo.findByDateDebutBetween(Date1, Date2, page.getPageRequest())
+				.orElseThrow(()->new CourNoteFoundException("cours found")));
+				
 	}
 
 	@Override
@@ -103,8 +117,16 @@ public class CourServiceImp implements CourService {
 	public CourDto addCour(CourDto courDto) {
 		Cour cour = courMapper.dtoTocour(courDto);
 		//TODO getModuleInfo and getEnseignant white repoEnseign
+		if(courRepo.findByIdModule(courDto.getIdModule()).isPresent()) throw new ModuleAlrealyHasCour("this module has a cour");
+		
+		com.enseignant.entities.Module module=moduleFeignClient.getModuleById(courDto.getIdModule()).orElseThrow(()-> new ModuleNotFound("module not found"));
+		Enseignant enseignant=enseignantRepo.findById(courDto.getId_enseignant()).orElseThrow(()->new EnseignantNotFound("enseignant not found"));
 		cour.setDateUpdate(new Date());
-		return courMapper.courToDto(courRepo.save(cour));
+		cour.setEnseignant(enseignant);
+		CourDto courDtoSave= courMapper.courToDto(courRepo.save(cour));
+		courDtoSave.setModuleName(module.getModuleName());
+		courDtoSave.setEnseignant_name(enseignant.getNom()+" "+enseignant.getPrenom());
+		return courDtoSave;
 	}
 
 	@Override

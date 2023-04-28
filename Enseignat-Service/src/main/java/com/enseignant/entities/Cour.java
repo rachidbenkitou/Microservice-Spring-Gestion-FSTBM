@@ -4,6 +4,7 @@ package com.enseignant.entities;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -25,7 +26,7 @@ public class Cour {
 	private String documentPaht;
 	private Date dateDebut;
 	private Date dateUpdate;
-	@OneToOne
+	@OneToOne(fetch = FetchType.EAGER)
 	private Enseignant enseignant;
 	private Long idModule;
 }

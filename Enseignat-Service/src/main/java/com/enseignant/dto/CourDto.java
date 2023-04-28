@@ -18,4 +18,6 @@ public class CourDto {
 	private Date dateUpdate;
 	private Long idModule;
 	private long id_enseignant;
+	private String moduleName;
+	private String enseignant_name;
 }
