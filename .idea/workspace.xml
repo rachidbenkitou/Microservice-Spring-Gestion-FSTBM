@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbe9c57a-ff47-4741-ac13-f400e2fa3140" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Exceptions/ModuleNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Note2-Service/src/test/java/com/example/note2service/Services/Impl/ModuleServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Controller/ModuleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Controller/ModuleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Controller/api/ModuleApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Controller/api/ModuleApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/ModuleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/ModuleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/ModuleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/ModuleService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +21,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -57,6 +54,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "ignore.preview.features.used": "true",
     "jdk.selected.JAVA_MODULE": "17",
     "last_opened_file_path": "C:/Users/Rachid Benkitou/Desktop/MyFirst/2-FullStack Projects/7-Microservices-Gestion-FSTBM/Microservice-Spring-Gestion-FSTBM/Note2-Service",
@@ -78,12 +77,89 @@
       <recent name="com.example.note2service.Exceptions" />
       <recent name="com.prjt.noteservice.Entities" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.example.note2service.Services.Impl" />
+    </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.EurekaDisApplication">
-    <configuration name="All in Note-Service" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Note-Service" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
+  <component name="RunManager" selected="JUnit.ModuleServiceImplTest">
+    <configuration name="ModuleServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Note2-Service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.note2service.Services.Impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.note2service.Services.Impl" />
+      <option name="MAIN_CLASS_NAME" value="com.example.note2service.Services.Impl.ModuleServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ModuleServiceImplTest.shouldDeleteModuleByName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Note2-Service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.note2service.Services.Impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.note2service.Services.Impl" />
+      <option name="MAIN_CLASS_NAME" value="com.example.note2service.Services.Impl.ModuleServiceImplTest" />
+      <option name="METHOD_NAME" value="shouldDeleteModuleByName" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ModuleServiceImplTest.shouldSaveModule" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Note2-Service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.note2service.Services.Impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.note2service.Services.Impl" />
+      <option name="MAIN_CLASS_NAME" value="com.example.note2service.Services.Impl.ModuleServiceImplTest" />
+      <option name="METHOD_NAME" value="shouldSaveModule" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ModuleServiceImplTest.shouldThrowExceptionIfCategoryAlreadyExist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Note2-Service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.note2service.Services.Impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.note2service.Services.Impl" />
+      <option name="MAIN_CLASS_NAME" value="com.example.note2service.Services.Impl.ModuleServiceImplTest" />
+      <option name="METHOD_NAME" value="shouldThrowExceptionIfCategoryAlreadyExist" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ModuleServiceImplTest.shouldUpdateCategory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Note2-Service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.note2service.Services.Impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.note2service.Services.Impl" />
+      <option name="MAIN_CLASS_NAME" value="com.example.note2service.Services.Impl.ModuleServiceImplTest" />
+      <option name="METHOD_NAME" value="shouldUpdateCategory" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -146,7 +222,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in Note-Service" />
+        <item itemvalue="JUnit.ModuleServiceImplTest" />
+        <item itemvalue="JUnit.ModuleServiceImplTest.shouldDeleteModuleByName" />
+        <item itemvalue="JUnit.ModuleServiceImplTest.shouldUpdateCategory" />
+        <item itemvalue="JUnit.ModuleServiceImplTest.shouldThrowExceptionIfCategoryAlreadyExist" />
+        <item itemvalue="JUnit.ModuleServiceImplTest.shouldSaveModule" />
       </list>
     </recent_temporary>
   </component>
@@ -168,7 +248,11 @@
       <workItem from="1682441203693" duration="45000" />
       <workItem from="1682543037919" duration="75000" />
       <workItem from="1682543140660" duration="15029000" />
-      <workItem from="1682596025453" duration="25419000" />
+      <workItem from="1682596025453" duration="25789000" />
+      <workItem from="1682635852384" duration="37000" />
+      <workItem from="1682644842077" duration="231000" />
+      <workItem from="1682645792548" duration="2425000" />
+      <workItem from="1682772079009" duration="4049000" />
     </task>
     <servers />
   </component>
@@ -196,5 +280,10 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Microservice_Spring_Gestion_FSTBM$ModuleServiceImplTest.ic" NAME="ModuleServiceImplTest Coverage Results" MODIFIED="1682775989495" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.example.note2service.Services.Impl.*</FILTER>
+    </SUITE>
   </component>
 </project>
