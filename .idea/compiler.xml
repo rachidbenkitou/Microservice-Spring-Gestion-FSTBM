@@ -11,7 +11,7 @@
         <module name="gateway" />
         <module name="Eureka_dis" />
       </profile>
-      <profile name="Annotation profile for Note2-Service" enabled="true">
+      <profile name="Annotation profile for Etudiant1-Service" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />

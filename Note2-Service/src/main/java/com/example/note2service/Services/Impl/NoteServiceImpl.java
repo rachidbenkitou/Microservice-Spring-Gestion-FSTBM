@@ -105,7 +105,38 @@ public class NoteServiceImpl implements NoteService {
         changeNoteOridinaireIfNoteRattrapageIsBigger(requesteNoteDTO);
         return saveNote(requesteNoteDTO);
     }
+    private void changeNoteOridinaireIfNoteRattrapageIsBigger(RequesteNoteDTO requesteNoteDTO) {
+        long etudiantApogee = requesteNoteDTO.getEtudiantApogee();
+        long examenId = requesteNoteDTO.getId().getExamenId();
 
+        Examen examen = examenDAO.findById(examenId)
+                .orElseThrow(() -> new ExamenNotFoundException("Examen not found with id: " + examenId));
+
+        if (examen.getType() == TypeExamen.ORDINAIRE) {
+            // If it's an ordinary exam, just update the note
+            requesteNoteDTO.setOldNote(requesteNoteDTO.getNote());
+            return;
+        }
+
+        // It's a resit exam, check if there's an ordinary exam mark
+        String moduleName = examen.getModule().getModuleName();
+        Note noteOrdinaire = noteDAO.findByEtudiantNameAndTypeExamenAndNomModule(TypeExamen.ORDINAIRE, etudiantApogee, moduleName);
+        if (noteOrdinaire == null) {
+            throw new NoteOrdinaireNotExistException("There is no ordinary exam mark, so you can't give a resit (rattrapage) mark");
+        }
+
+        // Update the note if it's bigger than the old mark
+        if (requesteNoteDTO.getNote() > noteOrdinaire.getOldNote()) {
+            noteOrdinaire.setNote(requesteNoteDTO.getNote());
+            saveNote(noteMapper.modelToRequestDto(noteOrdinaire));
+        } else {
+            System.out.println("La note ancienne " + noteOrdinaire.getOldNote());
+            noteOrdinaire.setNote(noteOrdinaire.getOldNote());
+            saveNote(noteMapper.modelToRequestDto(noteOrdinaire));
+        }
+    }
+
+    /*
     private void changeNoteOridinaireIfNoteRattrapageIsBigger(RequesteNoteDTO requesteNoteDTO){
         long etudiantApogee=requesteNoteDTO.getEtudiantApogee();
         Examen examen = examenDAO.findById(requesteNoteDTO.getId().getExamenId()).get();
@@ -130,6 +161,8 @@ public class NoteServiceImpl implements NoteService {
         }else requesteNoteDTO.setOldNote(requesteNoteDTO.getNote());
 
     }
+
+     */
     /**
 
      * Updates an existing note in the database.

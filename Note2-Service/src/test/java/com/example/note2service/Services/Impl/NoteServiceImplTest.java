@@ -1,5 +1,6 @@
 package com.example.note2service.Services.Impl;
 
+import com.example.note2service.DAO.ExamenDAO;
 import com.example.note2service.DAO.NoteDAO;
 import com.example.note2service.DTO.RequesteNoteDTO;
 import com.example.note2service.DTO.ResponseModuleDTO;
@@ -8,6 +9,7 @@ import com.example.note2service.Entities.*;
 import com.example.note2service.Entities.Module;
 import com.example.note2service.Exceptions.ExamenNotFoundException;
 import com.example.note2service.Exceptions.NoteNotFoundException;
+import com.example.note2service.Exceptions.NoteOrdinaireNotExistException;
 import com.example.note2service.Mappers.NoteMapper;
 import com.example.note2service.Openfeign.EtudiantRestClient;
 import io.github.resilience4j.circuitbreaker.CircuitBreakerRegistry;
@@ -37,6 +39,9 @@ class NoteServiceImplTest {
     private NoteDAO noteDAO;
     @Mock
     private NoteMapper noteMapper;
+
+    @Mock
+    private ExamenDAO examenDAO;
     @Mock
     private CircuitBreakerRegistry circuitBreakerRegistry;
 
@@ -170,22 +175,6 @@ class NoteServiceImplTest {
         org.assertj.core.api.Assertions.assertThat(exception).isNotNull();
         org.assertj.core.api.Assertions.assertThat("Il n' y a aucune note avec ce ID")
                 .isEqualTo(exception.getMessage());
-    }
-
-    @Test
-    void addNote() {
-    }
-
-    @Test
-    void updateNote() {
-    }
-
-    @Test
-    void fallbackSaveOrUpdateNote() {
-    }
-
-    @Test
-    void noteByEtudiant() {
     }
 
     @Test

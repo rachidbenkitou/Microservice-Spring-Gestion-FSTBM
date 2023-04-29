@@ -184,23 +184,4 @@ class ModuleServiceImplTest {
         Assertions.assertThat(moduleDTOS1.get(1).getModuleName()).isEqualTo(module2.getModuleName());
     }
 
-    @Test
-    void getModulesByName() {
-    }
-
-    @Test
-    void addModule() {
-    }
-
-    @Test
-    void updateModule() {
-    }
-
-    @Test
-    void entityResponseModuleDto() {
-    }
-
-    @Test
-    void deleteModuleByName() {
-    }
 }
