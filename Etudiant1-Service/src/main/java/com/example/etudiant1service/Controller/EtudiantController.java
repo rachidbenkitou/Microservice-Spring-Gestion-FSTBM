@@ -6,6 +6,8 @@ import com.example.etudiant1service.Exceptions.EtudiantNotFoundException;
 import com.example.etudiant1service.Services.EtudiantService;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,6 +20,7 @@ public class EtudiantController {
     private EtudiantService etudiantService;
 
     @GetMapping
+    @PreAuthorize("hasAuthority('SCOPE_ADMIN')")
     List<ResponseEtudiantDTO> getAllEtudiants(){
         return etudiantService.getAllEtudiants();
     }
