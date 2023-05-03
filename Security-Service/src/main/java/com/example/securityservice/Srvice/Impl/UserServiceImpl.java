@@ -10,6 +10,7 @@ import com.example.securityservice.Mappers.UserMapper;
 import com.example.securityservice.Srvice.UserService;
 import com.example.securityservice.exceptions.EntityAlreadyExistException;
 import com.example.securityservice.exceptions.EntityNotFoundException;
+import com.example.securityservice.exceptions.IncorrectPasswordException;
 import com.example.securityservice.exceptions.InvalidEntityException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -49,21 +50,23 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserResponseDTO getUserByEmail(String email) {
-        Optional<User> user = userDAO.findByEmail(email);
+    public UserResponseDTO getUserByEmail(String email) throws EntityNotFoundException{
+        Optional<User> user = Optional.ofNullable(userDAO.findByEmail(email).orElseThrow(
+                () -> new EntityNotFoundException("No user with email "+email+"were found")));
         return userMapper.modelToDto(user.get());
     }
 
     @Override
-    public UserResponseDTO updatePassword(UpdatePasswordDTO updatePasswordDTO) {
+    public UserResponseDTO updatePassword(UpdatePasswordDTO updatePasswordDTO) throws EntityNotFoundException, IncorrectPasswordException{
 
-           Optional<User> user = userDAO.findByEmail(updatePasswordDTO.getEmail());
-           if (user.isEmpty()){
-               throw new RuntimeException("user not found");
-           }
+           Optional<User> user = Optional.ofNullable(userDAO.findByEmail(updatePasswordDTO.getEmail()).orElseThrow(
+                   () -> new EntityNotFoundException("No user with email " + updatePasswordDTO.getEmail() + "were found")));
            if(!updatePasswordDTO.getPassword().equals(user.get().getPassword())){
-               throw new RuntimeException("password incorrect");
+               throw new IncorrectPasswordException("password incorrect");
            }
+            if (updatePasswordDTO.getNewPassword().equals(user.get().getPassword())) {
+                throw new IncorrectPasswordException("New password cannot be the same as the current password");
+            }
            user.get().setPassword(passwordEncoder.encode(updatePasswordDTO.getNewPassword()));
            User userUpdated = userDAO.save(user.get());
            return userMapper.modelToDto(userUpdated);

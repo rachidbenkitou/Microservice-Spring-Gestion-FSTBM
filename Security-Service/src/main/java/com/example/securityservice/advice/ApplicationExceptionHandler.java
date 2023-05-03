@@ -2,6 +2,7 @@ package com.example.securityservice.advice;
 
 import com.example.securityservice.exceptions.EntityAlreadyExistException;
 import com.example.securityservice.exceptions.EntityNotFoundException;
+import com.example.securityservice.exceptions.IncorrectPasswordException;
 import com.example.securityservice.exceptions.InvalidEntityException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -50,6 +51,16 @@ public class ApplicationExceptionHandler {
         errors.put("message",ex.getMessage());
         errors.put("description", request.getDescription(false));
         errors.put("status", HttpStatus.CONFLICT.toString());
+        return errors;
+    }
+
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+    @ExceptionHandler(IncorrectPasswordException.class)
+    public Map<String,String> handleIncorrectPasswordException(IncorrectPasswordException ex, WebRequest request){
+        Map<String,String> errors = new HashMap<>();
+        errors.put("message",ex.getMessage());
+        errors.put("description", request.getDescription(false));
+        errors.put("status", HttpStatus.UNAUTHORIZED.toString());
         return errors;
     }
 }
