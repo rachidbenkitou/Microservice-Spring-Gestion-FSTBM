@@ -11,6 +11,7 @@ import java.util.List;
 public interface InscriptionService {
      List<InscriptionResponseDto> getAll();
      InscriptionResponseDto getInscription(String id)throws EntityNotFoundException;
+     InscriptionResponseDto getInscriptionByCin(String cin) throws EntityNotFoundException;
      InscriptionResponseDto save(InscriptionRequestDto inscriptionRequestDto)throws EntityAlreadyExistException, InvalidEntityException;
      InscriptionResponseDto update(InscriptionRequestDto inscriptionRequestDto)throws InvalidEntityException;
     void delete(String id)throws EntityNotFoundException;

@@ -16,6 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 /**
  * Implementation of {@link InscriptionService} that uses a {@link InscriptionRepository} to perform CRUD operations on {@link Inscription} entities.
@@ -54,6 +55,21 @@ public class InscriptionServiceImpl implements InscriptionService{
                 inscriptionRepository.findById(id)
                         .orElseThrow(()->new EntityNotFoundException("No inscritopn with ID: "+id+" were found")));
     }
+    /**
+     * Retrieves a {@link Inscription} entity from the database by its ID.
+     *
+     * @param cin the ID of the entity to retrieve
+     * @return a {@link InscriptionResponseDto} object representing the retrieved entity
+     * @throws EntityNotFoundException if no {@link Inscription} entity with the specified ID is found in the database
+     */
+    @Override
+    public InscriptionResponseDto getInscriptionByCin(String cin) throws EntityNotFoundException {
+        Optional<Inscription> inscription = Optional.ofNullable(
+                inscriptionRepository.findByEtudiant_Cin(cin)
+                        .orElseThrow(() -> new EntityNotFoundException("No inscritopn with CIN: "+cin+" were found")));
+        return inscriptionMapper.fromModel(inscription.get());
+    }
+
     /**
      * Saves a new {@link Inscription} entity in the database.
      *

@@ -49,6 +49,15 @@ public class EtudiantServiceImpl implements EtudiantService {
     }
 
     @Override
+    public ResponseEtudiantDto getEtudiantByCin(String cin) {
+        Optional<Etudiant> etudiant = Optional.ofNullable(
+                etudiantRepository.findByCin(cin)
+                        .orElseThrow(() ->
+                                new EntityNotFoundException("L' cin: " + cin + "n'existe pas")));
+        return etudiantMapper.fromModel(etudiant.get());
+    }
+
+    @Override
     public ResponseEtudiantDto addEtudiant(RequestEtudiantDto requestEtudiantDTo) throws EntityAlreadyExistException , InvalidEntityException {
         if(requestEtudiantDTo.equals(null))
             throw new InvalidEntityException("L'etudiant n'existe pas");

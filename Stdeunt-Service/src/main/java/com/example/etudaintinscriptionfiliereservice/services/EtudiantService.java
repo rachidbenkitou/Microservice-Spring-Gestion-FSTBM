@@ -13,6 +13,7 @@ public interface EtudiantService {
     List<ResponseEtudiantDto> getAllEtudiants();
     ResponseEtudiantDto getEtudiantById(String id) throws EntityNotFoundException ;
     ResponseEtudiantDto getEtudiantByApogee(Long apogee);
+    ResponseEtudiantDto getEtudiantByCin(String cin);
     ResponseEtudiantDto addEtudiant(RequestEtudiantDto requestEtudiantDTo)throws EntityAlreadyExistException;
     ResponseEtudiantDto updateEtudiant(RequestEtudiantDto requestEtudiantDTo);
     void  deleteEtudiant(String etudiantId)throws EntityNotFoundException;

@@ -18,6 +18,8 @@ public class Etudiant {
     private String id;
     @Column(unique = true)
     private Long apogee;
+    @Column(unique = true)
+    private String cin;
     private String nom;
     private String prenom;
     private String email;

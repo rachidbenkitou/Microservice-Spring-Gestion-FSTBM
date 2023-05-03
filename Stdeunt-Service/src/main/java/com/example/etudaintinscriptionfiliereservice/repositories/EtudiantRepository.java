@@ -8,5 +8,6 @@ import java.util.Optional;
 @Repository
 public interface EtudiantRepository extends JpaRepository<Etudiant, String> {
     Etudiant findByApogee(Long apogee);
+    Optional<Etudiant> findByCin(String cin);
 
 }

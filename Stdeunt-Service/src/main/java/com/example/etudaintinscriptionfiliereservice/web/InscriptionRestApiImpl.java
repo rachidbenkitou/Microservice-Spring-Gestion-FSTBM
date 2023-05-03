@@ -48,6 +48,17 @@ public class InscriptionRestApiImpl implements InscriptionRestApi{
         return inscriptionService.getInscription(id);
     }
 
+    @Operation(summary = "Find inscription by CIN", description = "Find an inscription by its CIN")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Successfully retrieved the inscription",
+                    content = { @Content(mediaType = "application/json", schema = @Schema(implementation = InscriptionResponseDto.class)) }),
+            @ApiResponse(responseCode = "404", description = "Inscription not found"),
+            @ApiResponse(responseCode = "500", description = "Internal server error") })
+    @Override
+    public InscriptionResponseDto getInscriptionByCin(String cin) {
+        return inscriptionService.getInscriptionByCin(cin);
+    }
+
     @Operation(summary = "Add inscription", description = "Add a new inscription")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Successfully added the inscription",

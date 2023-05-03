@@ -14,6 +14,7 @@ public class ResponseEtudiantDto {
 
     private String id;
     private Long apogee;
+    private String cin;
     private String nom;
     private String prenom;
     private String email;

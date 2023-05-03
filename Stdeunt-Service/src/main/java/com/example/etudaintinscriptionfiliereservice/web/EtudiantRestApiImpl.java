@@ -72,6 +72,18 @@ public class EtudiantRestApiImpl implements  EtudiantRestApi{
     public ResponseEtudiantDto findEtudiantByApogee(Long apogee) throws MethodArgumentNotValidException {
         return etudiantService.getEtudiantByApogee(apogee);
     }
+    @Operation(summary = "Trouver étudiant par cin", description = "Trouver un étudiant par  son cin")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Etudiant trouvé",
+                    content = {@Content(mediaType = "application/json",
+                            schema = @Schema(implementation = ResponseEtudiantDto.class))}),
+            @ApiResponse(responseCode = "404", description = "Etudiant introuvable"),
+            @ApiResponse(responseCode = "400", description = "cin étudiante invalide")
+    })
+    @Override
+    public ResponseEtudiantDto getEtudiantByCin(String cin) {
+        return etudiantService.getEtudiantByCin(cin);
+    }
 
 
     @Operation(summary = "Ajouter un nouvel étudiant", description = "Ajouter un nouvel étudiant a la base de donnees")
