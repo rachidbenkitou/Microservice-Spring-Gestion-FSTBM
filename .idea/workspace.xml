@@ -5,41 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbe9c57a-ff47-4741-ac13-f400e2fa3140" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_4_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_4_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_micrometer_micrometer_commons_1_10_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_micrometer_micrometer_observation_1_10_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_10_1_7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_10_1_7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_10_1_7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_2_0_7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_2_0_7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_2_0_7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_3_0_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_3_0_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_3_0_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_3_0_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_3_0_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_3_0_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_3_0_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_validation_3_0_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_3_0_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_3_0_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_3_0_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_6_0_7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_6_0_7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_6_0_7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_6_0_7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_6_0_7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_6_0_7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_6_0_7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_6_0_7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_6_0_7.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/NoteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/NoteServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Note2-Service/src/test/java/com/example/note2service/Services/Impl/ModuleServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/test/java/com/example/note2service/Services/Impl/ModuleServiceImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Note2-Service/src/test/java/com/example/note2service/Services/Impl/NoteServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/test/java/com/example/note2service/Services/Impl/NoteServiceImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +57,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "ignore.preview.features.used": "true",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/Rachid Benkitou/Desktop/MyFirst/2-FullStack Projects/7-Microservices-Gestion-FSTBM/Microservice-Spring-Gestion-FSTBM/Note2-Service",
+    "last_opened_file_path": "C:/Users/habon/IdeaProjects/Microservice-Spring-Gestion-FSTBM",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -117,22 +83,7 @@
       <recent name="com.example.note2service.Services.Impl" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.NoteServiceImplTest.getExamenById_shouldThrowExamenNotFoundException_whenExamenNotFound">
-    <configuration name="ExamenServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Note2-Service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.note2service.Services.Impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.note2service.Services.Impl" />
-      <option name="MAIN_CLASS_NAME" value="com.example.note2service.Services.Impl.ExamenServiceImplTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.ModuleServiceImplTest">
     <configuration name="ModuleServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Note2-Service" />
       <extension name="coverage">
@@ -164,7 +115,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NoteServiceImplTest.getExamenById_shouldThrowExamenNotFoundException_whenExamenNotFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ModuleServiceImplTest.shouldSaveModule" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Note2-Service" />
       <extension name="coverage">
         <pattern>
@@ -173,14 +124,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.example.note2service.Services.Impl" />
-      <option name="MAIN_CLASS_NAME" value="com.example.note2service.Services.Impl.NoteServiceImplTest" />
-      <option name="METHOD_NAME" value="getExamenById_shouldThrowExamenNotFoundException_whenExamenNotFound" />
+      <option name="MAIN_CLASS_NAME" value="com.example.note2service.Services.Impl.ModuleServiceImplTest" />
+      <option name="METHOD_NAME" value="shouldSaveModule" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NoteServiceImplTest.testChangeNoteOridinaireIfNoteRattrapageIsBiggerWithoutNoteOrdinaire" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ModuleServiceImplTest.shouldThrowExceptionIfCategoryAlreadyExist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Note2-Service" />
       <extension name="coverage">
         <pattern>
@@ -189,8 +140,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.example.note2service.Services.Impl" />
-      <option name="MAIN_CLASS_NAME" value="com.example.note2service.Services.Impl.NoteServiceImplTest" />
-      <option name="METHOD_NAME" value="testChangeNoteOridinaireIfNoteRattrapageIsBiggerWithoutNoteOrdinaire" />
+      <option name="MAIN_CLASS_NAME" value="com.example.note2service.Services.Impl.ModuleServiceImplTest" />
+      <option name="METHOD_NAME" value="shouldThrowExceptionIfCategoryAlreadyExist" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ModuleServiceImplTest.shouldUpdateCategory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Note2-Service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.note2service.Services.Impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.note2service.Services.Impl" />
+      <option name="MAIN_CLASS_NAME" value="com.example.note2service.Services.Impl.ModuleServiceImplTest" />
+      <option name="METHOD_NAME" value="shouldUpdateCategory" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -254,11 +221,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.NoteServiceImplTest.getExamenById_shouldThrowExamenNotFoundException_whenExamenNotFound" />
-        <item itemvalue="JUnit.NoteServiceImplTest.testChangeNoteOridinaireIfNoteRattrapageIsBiggerWithoutNoteOrdinaire" />
-        <item itemvalue="JUnit.ExamenServiceImplTest" />
         <item itemvalue="JUnit.ModuleServiceImplTest" />
         <item itemvalue="JUnit.ModuleServiceImplTest.shouldDeleteModuleByName" />
+        <item itemvalue="JUnit.ModuleServiceImplTest.shouldUpdateCategory" />
+        <item itemvalue="JUnit.ModuleServiceImplTest.shouldThrowExceptionIfCategoryAlreadyExist" />
+        <item itemvalue="JUnit.ModuleServiceImplTest.shouldSaveModule" />
       </list>
     </recent_temporary>
   </component>
@@ -284,7 +251,8 @@
       <workItem from="1682635852384" duration="37000" />
       <workItem from="1682644842077" duration="231000" />
       <workItem from="1682645792548" duration="2425000" />
-      <workItem from="1682772079009" duration="7178000" />
+      <workItem from="1682772079009" duration="4049000" />
+      <workItem from="1683076958189" duration="640000" />
     </task>
     <servers />
   </component>
@@ -314,10 +282,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Microservice_Spring_Gestion_FSTBM$ExamenServiceImplTest.ic" NAME="ExamenServiceImplTest Coverage Results" MODIFIED="1682778140259" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.example.note2service.Services.Impl.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/Microservice_Spring_Gestion_FSTBM$ModuleServiceImplTest.ic" NAME="ModuleServiceImplTest Coverage Results" MODIFIED="1682776187241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Microservice_Spring_Gestion_FSTBM$ModuleServiceImplTest.ic" NAME="ModuleServiceImplTest Coverage Results" MODIFIED="1682775989495" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.example.note2service.Services.Impl.*</FILTER>
     </SUITE>
   </component>
