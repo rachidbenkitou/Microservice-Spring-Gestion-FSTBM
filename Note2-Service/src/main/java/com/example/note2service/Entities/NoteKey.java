@@ -16,7 +16,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Builder
 public class NoteKey  implements Serializable {
-    private long etudiantId;
+    private String etudiantId;
     @Column(name = "examen_id")
     private long examenId;
 }

@@ -31,7 +31,7 @@ public interface NoteApi {
                             schema = @Schema(implementation = ResponseNoteDTO.class))})
     })
     @GetMapping("/{etudiantId}/{examenId}")
-    ResponseNoteDTO getNoteById(@PathVariable(name = "etudiantId") long etudiantId , @PathVariable(name = "examenId") long examenId ) throws ExamenNotFoundException, NoteNotFoundException;
+    ResponseNoteDTO getNoteById(@PathVariable(name = "etudiantId") String etudiantId , @PathVariable(name = "examenId") long examenId ) throws ExamenNotFoundException, NoteNotFoundException;
 
     @Operation(summary = "Add note", description = "this method allows you to add a Note.")
     @ApiResponses(value = {
@@ -49,7 +49,7 @@ public interface NoteApi {
                             schema = @Schema(implementation = ResponseNoteDTO.class))})
     })
     @PutMapping ("/{etudiantId}/{examenId}")
-    ResponseNoteDTO update(@PathVariable(name = "etudiantId") long etudiantId,@PathVariable(name = "examenId") long examentId ,@RequestBody RequesteNoteDTO requesteNoteDTO);
+    ResponseNoteDTO update(@PathVariable(name = "etudiantId") String etudiantId,@PathVariable(name = "examenId") long examentId ,@RequestBody RequesteNoteDTO requesteNoteDTO);
 
     @Operation(summary = "delete note", description = "this method allows you to delete a Note by Id.")
     @ApiResponses(value = {
@@ -58,5 +58,5 @@ public interface NoteApi {
                             schema = @Schema(implementation = ResponseNoteDTO.class))})
     })
     @DeleteMapping("/{etudiantId}/{examenId}")
-    void delete(@PathVariable(name = "etudiantId") long etudiantId,@PathVariable(name = "examenId") long examentId);
+    void delete(@PathVariable(name = "etudiantId") String etudiantId,@PathVariable(name = "examenId") long examentId);
 }

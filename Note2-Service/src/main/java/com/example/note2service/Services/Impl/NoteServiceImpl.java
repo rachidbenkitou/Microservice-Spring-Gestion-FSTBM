@@ -47,7 +47,7 @@ public class NoteServiceImpl implements NoteService {
     public List<ResponseNoteDTO> getAllNotes() {
         List<Note> noteList =noteDAO.findAll();
         for ( Note n : noteList){
-            n.setEtudiant(etudiantRestClient.getEtudiant(n.getId().getEtudiantId()));
+            n.setEtudiant(etudiantRestClient.findEtudiantById(n.getId().getEtudiantId()));
 
         }
         return noteMapper.modelToDtos(noteList);
@@ -77,7 +77,7 @@ public class NoteServiceImpl implements NoteService {
         if (!note.isPresent()){
             throw new NoteNotFoundException("Il n' y a aucune note avec ce ID");
         }else {
-            Etudiant etudiant = etudiantRestClient.getEtudiant(note.get().getId().getEtudiantId());
+            Etudiant etudiant = etudiantRestClient.findEtudiantById(note.get().getId().getEtudiantId());
             note.get().setEtudiant(etudiant);
             return noteMapper.modelToDto(note.get());
         }
@@ -186,7 +186,7 @@ public class NoteServiceImpl implements NoteService {
         note.setMention(mention(note.getNote()));
         note.setExamen(examenDAO.findById(note.getId().getExamenId()).get());
         Note savedNote = noteDAO.save(note);
-        savedNote.setEtudiant(etudiantRestClient.getEtudiant(savedNote.getId().getEtudiantId()));
+        savedNote.setEtudiant(etudiantRestClient.findEtudiantById(savedNote.getId().getEtudiantId()));
         return noteMapper.modelToDto(savedNote);
     }
     public ResponseNoteDTO fallbackSaveOrUpdateNote(RequesteNoteDTO requesteNoteDTO,Exception e){
@@ -195,15 +195,15 @@ public class NoteServiceImpl implements NoteService {
         Note note =null;
         return noteMapper.modelToDto(note);
     }
-
-  /**
-   * Returns a specific note and the corresponding student information by student ID.
-   * @param etudiantId The ID of the student
- */
-    @Override
-    public ResponseNoteDTO NoteByEtudiant(long etudiantId) {
-        return null;
-    }
+//
+//  /**
+//   * Returns a specific note and the corresponding student information by student ID.
+//   * @param etudiantId The ID of the student
+// */
+//    @Override
+//    public ResponseNoteDTO NoteByEtudiant(long etudiantId) {
+//        return null;
+//    }
 
     @Override
     public void deleteNote(NoteKey noteId) {

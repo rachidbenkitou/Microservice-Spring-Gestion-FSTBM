@@ -13,6 +13,6 @@ public interface NoteService {
     ResponseNoteDTO getNoteById(NoteKey id) throws ExamenNotFoundException, NoteNotFoundException;
     ResponseNoteDTO addNote(RequesteNoteDTO requesteNoteDTO) throws ExamenNotFoundException, NoteNotFoundException;
     ResponseNoteDTO UpdateNote(RequesteNoteDTO requesteNoteDTO);
-    ResponseNoteDTO NoteByEtudiant(long etudiantId);
+//    ResponseNoteDTO NoteByEtudiant(long etudiantId);
     void  deleteNote(NoteKey noteId);
 }

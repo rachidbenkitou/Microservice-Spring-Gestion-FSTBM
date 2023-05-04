@@ -64,20 +64,20 @@ class NoteServiceImplTest {
     void getAllNotes() {
         //Arrange
         List<Note> noteList = new ArrayList<>();
-            noteList.add(Note.builder().id(new NoteKey(1, 1)).mention("Bien")
+            noteList.add(Note.builder().id(new NoteKey("aaa", 1)).mention("Bien")
                     .note(13).oldNote(0).etudiantApogee(10200).build());
-        noteList.add(Note.builder().id(new NoteKey(2, 1)).mention("Tres Bien")
+        noteList.add(Note.builder().id(new NoteKey("BBB", 1)).mention("Tres Bien")
                 .note(16).oldNote(0).etudiantApogee(10201).build());
         List<Etudiant> etudiantList = new ArrayList<>();
-        etudiantList.add( Etudiant.builder().id(1).firstname("youssef").lastname("mahdoubi").adress("dsds").ville("khouribga").apogee(10200).build());
-        etudiantList.add(Etudiant.builder().id(2).firstname("rachid").lastname("benkitou").adress("dsds").ville("casablanca").apogee(10201).build());
+        etudiantList.add( Etudiant.builder().id("aaa").nom("youssef").prenom("mahdoubi").adress("dsds").ville("khouribga").apogee(10200L).tel(2232424L).cin("Q1334").dateNaissance(new Date()).email("YSF@gmail.com").build());
+        etudiantList.add(Etudiant.builder().id("BBB").nom("rachid").prenom("benkitou").adress("dsds").ville("casablanca").apogee(10201L).tel(2232424L).cin("Q13345").dateNaissance(new Date()).email("RACHID@gmail.com").build());
         when(noteDAO.findAll()).thenReturn(noteList);
-        when(etudiantRestClient.getEtudiant(1)).thenReturn(etudiantList.get(0));
-        when(etudiantRestClient.getEtudiant(2)).thenReturn(etudiantList.get(1));
+        when(etudiantRestClient.findEtudiantById("aaa")).thenReturn(etudiantList.get(0));
+        when(etudiantRestClient.findEtudiantById("BBB")).thenReturn(etudiantList.get(1));
         List<ResponseNoteDTO> responseNoteDTOS = new ArrayList<>();
-        responseNoteDTOS.add(ResponseNoteDTO.builder().id(new NoteKey(1, 1)).mention("Bien")
+        responseNoteDTOS.add(ResponseNoteDTO.builder().id(new NoteKey("aaa", 1)).mention("Bien")
                 .note(13).oldNote(0).etudiant(etudiantList.get(0)).examen(examen).build());
-        responseNoteDTOS.add(ResponseNoteDTO.builder().id(new NoteKey(2, 1)).mention("Tres Bien")
+        responseNoteDTOS.add(ResponseNoteDTO.builder().id(new NoteKey("BBB", 1)).mention("Tres Bien")
                 .note(16).oldNote(0).etudiant(etudiantList.get(1)).examen(examen).build());
         when(noteMapper.modelToDtos(noteList)).thenReturn(responseNoteDTOS);
         // When
@@ -90,7 +90,7 @@ class NoteServiceImplTest {
         assertEquals(responseNoteDTOS, actualResponseNoteDTOs );
         // Verify that the DAO and RestClient methods were called
         verify(noteDAO, times(1)).findAll();
-        verify(etudiantRestClient, times(2)).getEtudiant(anyLong());
+        verify(etudiantRestClient, times(2)).findEtudiantById(anyString());
         verify(noteMapper, times(1)).modelToDtos(noteList);
 
 
@@ -101,16 +101,16 @@ class NoteServiceImplTest {
         //Arrange
 
         List<Note> noteList = new ArrayList<>();
-        noteList.add(Note.builder().id(new NoteKey(1, 1)).mention("Bien")
+        noteList.add(Note.builder().id(new NoteKey("aaa", 1)).mention("Bien")
                 .note(13).oldNote(0).etudiantApogee(10200).build());
-        noteList.add(Note.builder().id(new NoteKey(2, 1)).mention("Tres Bien")
+        noteList.add(Note.builder().id(new NoteKey("BBB", 1)).mention("Tres Bien")
                 .note(16).oldNote(0).etudiantApogee(10201).build());
         when(noteDAO.findAll()).thenReturn(noteList);
         Exception exception = new Exception();
         List<ResponseNoteDTO> responseNoteDTOS = new ArrayList<>();
-        responseNoteDTOS.add(ResponseNoteDTO.builder().id(new NoteKey(1, 1)).mention("Bien")
+        responseNoteDTOS.add(ResponseNoteDTO.builder().id(new NoteKey("aaa", 1)).mention("Bien")
                 .note(13).oldNote(0).etudiant(null).examen(examen).build());
-        responseNoteDTOS.add(ResponseNoteDTO.builder().id(new NoteKey(2, 1)).mention("Tres Bien")
+        responseNoteDTOS.add(ResponseNoteDTO.builder().id(new NoteKey("BBB", 1)).mention("Tres Bien")
                 .note(16).oldNote(0).etudiant(null).examen(examen).build());
         when(noteMapper.modelToDtos(noteList)).thenReturn(responseNoteDTOS);
 
@@ -127,13 +127,13 @@ class NoteServiceImplTest {
     @Test
     void getNoteById() throws NoteNotFoundException {
         //Arrange
-         NoteKey id=new NoteKey(1, 1);
+         NoteKey id=new NoteKey("aaa", 1);
           Note note = Note.builder().id(id).mention("Bien")
                   .note(13).oldNote(0).etudiantApogee(10200).build();
         when(noteDAO.findById(id)).thenReturn(Optional.of(note));
-        Etudiant etudiant = Etudiant.builder().id(1).firstname("youssef").lastname("mahdoubi").adress("dsds").ville("khouribga").apogee(10200).build();
-        when(etudiantRestClient.getEtudiant(1)).thenReturn(etudiant);
-        ResponseNoteDTO responseNoteDTO = ResponseNoteDTO.builder().id(new NoteKey(1, 1)).mention("Bien")
+        Etudiant etudiant = Etudiant.builder().id("aaa").nom("youssef").prenom("mahdoubi").adress("dsds").ville("khouribga").apogee(10200L).tel(2232424L).cin("Q1334").dateNaissance(new Date()).email("YSF@gmail.com").build();
+        when(etudiantRestClient.findEtudiantById("aaa")).thenReturn(etudiant);
+        ResponseNoteDTO responseNoteDTO = ResponseNoteDTO.builder().id(new NoteKey("aaa", 1)).mention("Bien")
                 .note(13).oldNote(0).etudiant(etudiant).examen(examen).build();
         when(noteMapper.modelToDto(note)).thenReturn(responseNoteDTO);
         //Act
@@ -147,12 +147,12 @@ class NoteServiceImplTest {
     @Test
     void fallbackGetNoteById() throws NoteNotFoundException {
         //Arrange
-        NoteKey id=new NoteKey(1, 1);
+        NoteKey id=new NoteKey("aaa", 1);
         Note note = Note.builder().id(id).mention("Bien")
                 .note(13).oldNote(0).etudiantApogee(10200).build();
         when(noteDAO.findById(id)).thenReturn(Optional.of(note));
         Exception exception = new Exception();
-        ResponseNoteDTO responseNoteDTO = ResponseNoteDTO.builder().id(new NoteKey(1, 1)).mention("Bien")
+        ResponseNoteDTO responseNoteDTO = ResponseNoteDTO.builder().id(new NoteKey("aaa", 1)).mention("Bien")
                 .note(13).oldNote(0).etudiant(null).examen(examen).build();
         when(noteMapper.modelToDto(note)).thenReturn(responseNoteDTO);
         // Call the method under test
@@ -166,7 +166,7 @@ class NoteServiceImplTest {
     @Test
     void getExamenById_shouldThrowExamenNotFoundException_whenExamenNotFound() {
         //Arrange
-        NoteKey id = new NoteKey(1,1);
+        NoteKey id=new NoteKey("aaa", 1);
         when(noteDAO.findById(id)).thenReturn(Optional.empty());
         //Act
         NoteNotFoundException exception = Assertions.assertThrows( NoteNotFoundException.class
@@ -179,7 +179,7 @@ class NoteServiceImplTest {
 
     @Test
     void deleteNote() {
-        NoteKey id = new NoteKey(1,1);
+        NoteKey id=new NoteKey("aaa", 1);
         noteService.deleteNote(id);
         verify(noteDAO).deleteById(id);
     }

@@ -7,13 +7,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
-@FeignClient(name = "ETUDIANT-SERVICE" , url = "http://localhost:8082")
+@FeignClient(name = "ETUDAINTINSCRIPTIONFILIERE-SERVICE" , url = "http://localhost:8222")
 public interface EtudiantRestClient {
-    @GetMapping(path = "/etudiants/{id}")
-    Etudiant getEtudiant(@PathVariable(name = "id") long id);
-    @GetMapping(path = "/etudiants/apogee/{apogee}")
-    Etudiant getEtudiantByApogee(@PathVariable(name = "apogee") long apogee);
-    @GetMapping(path = "/etudiants")
-    List<Etudiant> allEtudiants();
+    @GetMapping(path = "/Etudiants/id/{id}")
+    Etudiant findEtudiantById(@PathVariable String id);
+    @GetMapping(path = "/Etudiants/apogee/{apogee}")
+    Etudiant findEtudiantByApogee(@PathVariable Long apogee);
+    @GetMapping(path = "/Etudiants")
+    List<Etudiant>  getAll();
+
 }
 

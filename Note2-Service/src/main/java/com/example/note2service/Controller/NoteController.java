@@ -27,7 +27,7 @@ public class NoteController implements NoteApi {
         return noteService.getAllNotes();
     }
     @Override
-    public ResponseNoteDTO getNoteById(@PathVariable(name = "etudiantId") long etudiantId , @PathVariable(name = "examenId") long examenId ) throws ExamenNotFoundException, NoteNotFoundException {
+    public ResponseNoteDTO getNoteById(@PathVariable(name = "etudiantId") String etudiantId , @PathVariable(name = "examenId") long examenId ) throws ExamenNotFoundException, NoteNotFoundException {
         NoteKey id = NoteKey.builder().etudiantId(etudiantId).examenId(examenId).build();
         return noteService.getNoteById(id);
     }
@@ -36,14 +36,14 @@ public class NoteController implements NoteApi {
         return noteService.addNote(requesteNoteDTO);
     }
     @Override
-    public ResponseNoteDTO update(@PathVariable(name = "etudiantId") long etudiantId,@PathVariable(name = "examenId") long examentId ,@RequestBody RequesteNoteDTO requesteNoteDTO){
+    public ResponseNoteDTO update(@PathVariable(name = "etudiantId") String etudiantId,@PathVariable(name = "examenId") long examentId ,@RequestBody RequesteNoteDTO requesteNoteDTO){
         NoteKey id = NoteKey.builder().etudiantId(etudiantId).examenId(examentId).build();
         requesteNoteDTO.setId(id);
         return noteService.UpdateNote(requesteNoteDTO);
     }
 
     @Override
-    public void delete(@PathVariable(name = "etudiantId") long etudiantId,@PathVariable(name = "examenId") long examentId){
+    public void delete(@PathVariable(name = "etudiantId") String etudiantId,@PathVariable(name = "examenId") long examentId){
         NoteKey id = NoteKey.builder().etudiantId(etudiantId).examenId(examentId).build();
         noteService.deleteNote(id);
     }
