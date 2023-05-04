@@ -9,6 +9,7 @@ import java.io.InputStream;
 import java.util.Date;
 import java.util.List;
 
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
@@ -112,7 +113,7 @@ public class CourServiceImp implements CourService {
 		cour.setDateUpdate(new Date());
 		return "File is upload seccessfuly";
 	}
-
+	@CircuitBreaker(name = "enseignantc" , fallbackMethod = "fallbackSaveOrUpdateCour")
 	@Override
 	public CourDto addCour(CourDto courDto) {
 		Cour cour = courMapper.dtoTocour(courDto);
@@ -129,7 +130,7 @@ public class CourServiceImp implements CourService {
 		courDtoSave.setId_enseignant(enseignant.getId());
 		return courDtoSave;
 	}
-
+	@CircuitBreaker(name = "enseignantc" , fallbackMethod = "fallbackSaveOrUpdateCour")
 	@Override
 	public CourDto updateCour(Long idCour, CourDto courDto) {
 		Cour cour=courRepo.findById(idCour).orElseThrow();
@@ -145,6 +146,12 @@ public class CourServiceImp implements CourService {
         if(courDto.getIntitule()!=null) cour.setIntitule(courDto.getIntitule());
         courRepo.save(cour);
 		return courMapper .courToDto(courRepo.save(cour)) ;
+	}
+	public CourDto fallbackSaveOrUpdateCour(Exception e){
+		// Log the error
+		System.out.println("U cant add or update  any cours now");
+		Cour cour =null;
+		return courMapper.courToDto(cour);
 	}
 
 	@Override
