@@ -8,6 +8,7 @@ class Enseigant1ServiceApplicationTests {
 
     @Test
     void contextLoads() {
+    	
     }
 
 }

@@ -34,7 +34,7 @@ public class SecConfig {
 		
 	}
 	JwtDecoder jwtDecoder() {
-		 return NimbusJwtDecoder.withPublicKey(rsaKeysConfig.publicKey()).build();
+		 return NimbusJwtDecoder.withPublicKey(rsakeysConfig.publicKey()).build();
 	}
 
 }
