@@ -1,0 +1,8 @@
+rsa: 
+   public-key: classpath:Certif/pub.pem
+   private-key: classpath:Certif/pri.pem
+spring: 
+      application: 
+                 name: security-service
+      config:
+            import: optional:configserver:http://localhost:8888

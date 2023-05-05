@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
-import com.example.securityservice.config.RsaKeysConfig;
+import com.enseignant.configuration.RsaKeysConfig;
 @EnableConfigurationProperties(RsaKeysConfig.class)
 @SpringBootApplication
 @EnableFeignClients

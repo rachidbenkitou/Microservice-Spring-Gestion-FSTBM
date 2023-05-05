@@ -1,0 +1,13 @@
+spring: 
+      jpa:
+         hibernate:
+                  ddl-auto: update
+         show-sql: true
+      datasource: 
+                 url: jdbc:mysql://localhost/security-service?createDatabaseIfNotExist=true
+                 username: root
+                 password: 
+                 driverClassName: com.mysql.cj.jdbc.Driver
+server:
+      port: 9898
+serverTimezone: UTC

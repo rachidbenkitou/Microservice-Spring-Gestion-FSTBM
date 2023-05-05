@@ -1,0 +1,7 @@
+spring: 
+      application: 
+                 name: enseigant-service
+      config:
+           import: optional:configserver:http://localhost:8888
+rsa: 
+   public-key: classpath:certs/pub.pem

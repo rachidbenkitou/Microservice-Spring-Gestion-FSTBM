@@ -1,7 +1,5 @@
 package com.enseignant.configuration;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.oauth2.client.servlet.OAuth2ClientAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -12,13 +10,13 @@ import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
 import org.springframework.security.web.SecurityFilterChain;
 
-import lombok.Data;
+
 
 @Configuration
-@EnableGlobalMethodSecurity
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 @EnableWebSecurity
 public class SecConfig {
-	@Autowired
+	
 	private RsaKeysConfig rsakeysConfig;
 	public SecConfig(RsaKeysConfig rsakeysConfig) {
 		this.rsakeysConfig=rsakeysConfig;
@@ -33,6 +31,7 @@ public class SecConfig {
 				.build();
 		
 	}
+	@Bean
 	JwtDecoder jwtDecoder() {
 		 return NimbusJwtDecoder.withPublicKey(rsakeysConfig.publicKey()).build();
 	}

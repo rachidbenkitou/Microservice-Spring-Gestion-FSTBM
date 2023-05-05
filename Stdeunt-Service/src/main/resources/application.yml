@@ -1,0 +1,7 @@
+rsa: 
+   public-key: classpath:certs/pub.pem
+spring: 
+      application: 
+                 name: ETUDAINTINSCRIPTIONFILIERE-SERVICE
+      config:
+            import: optional:configserver:http://localhost:8888

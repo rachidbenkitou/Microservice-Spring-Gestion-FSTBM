@@ -1,5 +1,48 @@
 spring:
+      jpa:
+          hibernate:
+                   ddl-auto: update
+          show-sql: true
+      datasource:
+                url: jdbc:mysql://localhost/enseigant-service?createDatabaseIfNotExist=true
+                username: root
+                password: 
+                driverClassName: com.mysql.cj.jdbc.Driver
       servlet:
              multipart:
                        max-file-size: 10MB
                        max-request-size: 10MB
+      cloud: 
+           discovery: 
+                    enabled: true
+path: 
+    downloadFile: src/main/resources/cours                       
+server:
+      port: 8086
+      servlet: 
+             context-path: /api/enseignant-service    
+management:
+  health:
+    circuitbreakers:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include : health
+  endpoint:
+    health:
+      show-details: always
+resilience4j:
+  circuitbreaker:
+    instances:
+     enseignantc:
+        registerHealthIndicator: true
+        eventConsumerBufferSize: 10
+        failureRateThreshold: 50
+        minimumNumberOfCalls: 5
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        waitDurationInOpenState: 5s
+        permittedNumberOfCallsInHalfOpenState : 3
+        slidingWindowSize: 10
+        slidingWindowType: COUNT_BASED
+                                
