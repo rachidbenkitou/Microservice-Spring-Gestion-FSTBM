@@ -82,7 +82,7 @@ public class UserServiceImpl implements UserService {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         List<String> roles = userRequestDto.getRoleNames();
         List<Role>roleList = new ArrayList<>();
-        for( String role : roles){
+        if(roles!= null) for( String role : roles){
             roleList.add(roleDAO.findByRole(role).get());
         }
         user.setRoles(roleList);
