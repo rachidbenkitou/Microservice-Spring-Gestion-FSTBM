@@ -7,15 +7,15 @@ spring:
              discovery: 
                       enabled: false
        datasource:
-                 url: jdbc:h2:mem:etudiantInscriptionFiliere-service
-                 driverClassName: org.h2.Driver
-                 username: AF
-                 password: 
+         url: jdbc:mysql://localhost/student-service?createDatabaseIfNotExist=true&serverTimezone=UTC
+         username: root
+         password:
+         driver-class-name: com.mysql.cj.jdbc.Driver
        jpa:
-           database-platform: org.hibernate.dialect.H2Dialect    
-       h2: 
-         console: 
-                enabled: true           
+         hibernate:
+           ddl-auto: update
+         show-sql: true
+
 springdoc: 
          api-docs: 
                  enabled: true    
