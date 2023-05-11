@@ -1,6 +1,7 @@
 package com.enseignant.service.Imp;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.stereotype.Service;
 
@@ -73,6 +74,13 @@ public class DepartementServiceImp implements DepartementService {
 	public List<Enseignant> getProfsByNomeDepartment(String name) {
 		Departement departement=departementRepo.findByNameDeparetement(name).orElseThrow(()->new DepartementNotFoundException("departement not found"));
 		return departement.getEnseignants();
+	}
+
+	@Override
+	public Set<String> getAllDeparetementNames() {
+		
+//		return departementRepo.findNameDeparetements().get();
+		return null;
 	}
 
 }

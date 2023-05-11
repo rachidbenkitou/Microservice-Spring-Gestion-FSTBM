@@ -1,6 +1,7 @@
 package com.enseignant.controller;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -48,6 +49,12 @@ public class DepartementContoller {
 	ResponseEntity<List<DepartementResponse>> getAllDeparetement(){
 		return new ResponseEntity<List<DepartementResponse>>(
 				departementMapper.departementDtssToResponses(departementService.getAllDeparetement()),
+				HttpStatus.OK);
+	}
+	@GetMapping("/name/all")
+	ResponseEntity<Set<String>> getAllDeparetementNames(){
+		return new ResponseEntity<Set<String>>(
+				departementService.getAllDeparetementNames(),
 				HttpStatus.OK);
 	}
 	@GetMapping("/profsByname/{name}")
