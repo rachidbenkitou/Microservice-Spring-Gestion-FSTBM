@@ -1,11 +1,9 @@
 package com.enseignant.controller;
 
 import java.util.List;
-import java.util.Set;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -49,12 +47,6 @@ public class DepartementContoller {
 	ResponseEntity<List<DepartementResponse>> getAllDeparetement(){
 		return new ResponseEntity<List<DepartementResponse>>(
 				departementMapper.departementDtssToResponses(departementService.getAllDeparetement()),
-				HttpStatus.OK);
-	}
-	@GetMapping("/name/all")
-	ResponseEntity<Set<String>> getAllDeparetementNames(){
-		return new ResponseEntity<Set<String>>(
-				departementService.getAllDeparetementNames(),
 				HttpStatus.OK);
 	}
 	@GetMapping("/profsByname/{name}")

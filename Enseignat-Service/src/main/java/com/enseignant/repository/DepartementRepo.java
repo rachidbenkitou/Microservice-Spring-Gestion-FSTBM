@@ -12,6 +12,7 @@ public interface DepartementRepo extends JpaRepository<Departement, Long>{
 
 	Optional<Departement> findByNameDeparetement(String nameDeparetement);
 	boolean existsByNameDeparetement(String nameDeparetement);
+
 	@Query("select d.nameDeparetement from Departement d")
 	Optional<Set<String>> findNameDeparetements();
 	

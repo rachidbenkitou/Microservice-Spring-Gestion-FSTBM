@@ -76,10 +76,12 @@ public class DepartementServiceImp implements DepartementService {
 		return departement.getEnseignants();
 	}
 
+
 	@Override
 	public Set<String> getAllDeparetementNames() {
 		
-		return departementRepo.findNameDeparetements().get();
+		
+	return departementRepo.findNameDeparetements().get();
 	}
 
 }

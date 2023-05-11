@@ -3,10 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Etudiant1-Service/Etudiant1-Service.iml" filepath="$PROJECT_DIR$/Etudiant1-Service/Etudiant1-Service.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Eureka_dis/Eureka_dis.iml" filepath="$PROJECT_DIR$/Eureka_dis/Eureka_dis.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Note2-Service/Note2-Service.iml" filepath="$PROJECT_DIR$/Note2-Service/Note2-Service.iml" />
-      <module fileurl="file://$PROJECT_DIR$/config-server/config-server.iml" filepath="$PROJECT_DIR$/config-server/config-server.iml" />
-      <module fileurl="file://$PROJECT_DIR$/gateway/gateway.iml" filepath="$PROJECT_DIR$/gateway/gateway.iml" />
     </modules>
   </component>
 </project>
