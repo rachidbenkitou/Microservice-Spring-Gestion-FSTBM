@@ -79,8 +79,7 @@ public class DepartementServiceImp implements DepartementService {
 	@Override
 	public Set<String> getAllDeparetementNames() {
 		
-//		return departementRepo.findNameDeparetements().get();
-		return null;
+		return departementRepo.findNameDeparetements().get();
 	}
 
 }
