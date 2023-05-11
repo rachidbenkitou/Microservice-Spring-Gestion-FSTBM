@@ -15,6 +15,7 @@ spring:
       cloud: 
            discovery: 
                     enabled: true
+                
 path: 
     downloadFile: src/main/resources/cours                       
 server:

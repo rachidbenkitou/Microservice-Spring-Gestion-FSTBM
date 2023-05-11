@@ -1,27 +1,28 @@
-eureka:
-  instance:
-    hostname: localhost
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
 spring:
-   application:
-       name: ETUDAINTINSCRIPTIONFILIERE-SERVICE
-   datasource:
-         url: jdbc:mysql://localhost/student-service?createDatabaseIfNotExist=true&serverTimezone=UTC
-         username: root
-         password:
-         driver-class-name: com.mysql.cj.jdbc.Driver
-   jpa:
-         hibernate:
-           ddl-auto: update
-         show-sql: true
-
+       cloud: 
+             config: 
+                   enabled: false
+                   import-check: 
+                                enabled: false
+             discovery: 
+                      enabled: false
+       datasource:
+                 url: jdbc:h2:mem:etudiantInscriptionFiliere-service
+                 driverClassName: org.h2.Driver
+                 username: AF
+                 password: 
+       jpa:
+           database-platform: org.hibernate.dialect.H2Dialect    
+       h2: 
+         console: 
+                enabled: true           
 springdoc: 
          api-docs: 
                  enabled: true    
          swagger-ui: 
                    enabled: true 
 server: 
-      port: 1010   
-                                           
+      port: 1010
+
+
+
