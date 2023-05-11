@@ -1,4 +1,12 @@
-spring: 
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+spring:
+      application:
+         name: security-service
       jpa:
          hibernate:
                   ddl-auto: update
@@ -9,5 +17,5 @@ spring:
                  password: 
                  driverClassName: com.mysql.cj.jdbc.Driver
 server:
-      port: 9898
+      port: 9800
 serverTimezone: UTC

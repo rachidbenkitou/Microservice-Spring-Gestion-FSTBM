@@ -9,6 +9,7 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,6 +23,7 @@ public interface NoteApi {
                             schema = @Schema(implementation = ResponseNoteDTO.class))})
     })
     @GetMapping
+    @PreAuthorize("hasAuthority('SCOPE_ADMIN')")
     List<ResponseNoteDTO> getAllNotes();
 
     @Operation(summary = "Get note by id", description = "This method allows you to find the Notes by Id and returns a  ResponseNoteDTO object.")

@@ -47,7 +47,12 @@ public class NoteServiceImpl implements NoteService {
     public List<ResponseNoteDTO> getAllNotes() {
         List<Note> noteList =noteDAO.findAll();
         for ( Note n : noteList){
-            n.setEtudiant(etudiantRestClient.findEtudiantById(n.getId().getEtudiantId()));
+            try {
+                n.setEtudiant(etudiantRestClient.findEtudiantById(n.getId().getEtudiantId()));
+            }catch (Exception e){
+                System.out.printf("error"+e.getMessage());
+            }
+
 
         }
         return noteMapper.modelToDtos(noteList);
