@@ -4,6 +4,10 @@ spring:
 
   config:
     import: optional:configserver:http://localhost:8888
+  main:
+    web-application-type: reactive
+    allow-bean-definition-overriding: true
+
 
 
 
