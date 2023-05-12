@@ -30,7 +30,6 @@ public class Enseignant {
 	private String CIN;
 	private String adresse;
 	private String email;
-	private String password;
 	@ManyToOne
 	private Departement departement;
 	@OneToOne(mappedBy = "enseignant")

@@ -1,6 +1,7 @@
 package com.enseignant.controller;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,8 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.enseignant.entities.Enseignant;
 import com.enseignant.mapper.DepartementMapper;
+import com.enseignant.mapper.EnseignantMapper;
 import com.enseignant.request.DepartementRequest;
 import com.enseignant.response.DepartementResponse;
+import com.enseignant.response.EnseignantResponse;
 import com.enseignant.service.DepartementService;
 
 import lombok.RequiredArgsConstructor;
@@ -29,6 +32,8 @@ public class DepartementContoller {
 	private final DepartementService departementService;
 	
 	private final DepartementMapper departementMapper;
+	
+	private final EnseignantMapper enseignantMapper;
 	
 	
 	@GetMapping("/id/{id}")
@@ -43,6 +48,12 @@ public class DepartementContoller {
 				departementMapper.departementDtoToResponse(departementService.getDeparementByName(name)),
 				HttpStatus.OK);
 	}
+	@GetMapping("/name/all")
+	ResponseEntity<Set<String>> getDeparementNames(){
+		return new ResponseEntity<Set<String>>(
+				departementService.getAllDeparetementNames(),
+				HttpStatus.OK);
+	}
 	@GetMapping("/all")
 	ResponseEntity<List<DepartementResponse>> getAllDeparetement(){
 		return new ResponseEntity<List<DepartementResponse>>(
@@ -50,9 +61,9 @@ public class DepartementContoller {
 				HttpStatus.OK);
 	}
 	@GetMapping("/profsByname/{name}")
-	ResponseEntity<List<Enseignant>> getProfsByNomeDepartment(@PathVariable String name){
-		return new ResponseEntity<List<Enseignant>>(
-				departementService.getProfsByNomeDepartment(name),
+	ResponseEntity<List<EnseignantResponse>> getProfsByNomeDepartment(@PathVariable String name){
+		return new ResponseEntity<List<EnseignantResponse>>(
+				enseignantMapper.enseignantDtosToResponses(departementService.getProfsByNomeDepartment(name)) ,
 				HttpStatus.OK);
 	}
 	@PostMapping("/add")

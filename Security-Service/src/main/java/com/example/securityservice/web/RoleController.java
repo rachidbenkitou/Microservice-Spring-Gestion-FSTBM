@@ -19,7 +19,7 @@ public class RoleController {
     }
 
     @PostMapping
-    @PreAuthorize("hasAuthority('SCOPE_ADMIN')")
+//    @PreAuthorize("hasAuthority('SCOPE_ADMIN')")
     public RoleResponseDTO addRole(@RequestBody RoleRequestDto roleRequestDto) {
         return roleService.addRole(roleRequestDto);
     }

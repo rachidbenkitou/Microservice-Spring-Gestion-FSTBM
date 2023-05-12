@@ -13,6 +13,6 @@ public class EnseignantRequest {
 	private String adresse;
 	private String email;
 	private String CIN;
-	private String departementName;
+	private DepartementRequest departement;
 
 }

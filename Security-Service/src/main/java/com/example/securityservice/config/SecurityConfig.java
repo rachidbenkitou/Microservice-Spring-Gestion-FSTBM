@@ -62,7 +62,7 @@ public class SecurityConfig {
          return httpSecurity
                  .csrf(csrf->csrf.disable())
                  .authorizeHttpRequests(auth->auth.antMatchers("/token/**").permitAll())
-                 .authorizeHttpRequests(auth->auth.anyRequest().authenticated())
+                 .authorizeHttpRequests(auth->auth.anyRequest().permitAll())
                  .sessionManagement(sess->sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                  .oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)
                  .build();

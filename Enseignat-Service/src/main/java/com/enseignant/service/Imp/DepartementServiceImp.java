@@ -6,11 +6,13 @@ import java.util.Set;
 import org.springframework.stereotype.Service;
 
 import com.enseignant.dto.DepartementDto;
+import com.enseignant.dto.EnseignantDto;
 import com.enseignant.entities.Departement;
 import com.enseignant.entities.Enseignant;
 import com.enseignant.exeption.DepartementAlreadyExist;
 import com.enseignant.exeption.DepartementNotFoundException;
 import com.enseignant.mapper.DepartementMapper;
+import com.enseignant.mapper.EnseignantMapper;
 import com.enseignant.repository.DepartementRepo;
 import com.enseignant.service.DepartementService;
 
@@ -26,6 +28,7 @@ public class DepartementServiceImp implements DepartementService {
 	
 	private final DepartementMapper departementMapper;
 	
+	private final EnseignantMapper enseignantMapper;
 	
 
 	@Override
@@ -70,10 +73,9 @@ public class DepartementServiceImp implements DepartementService {
 	}
 
 	@Override
-	// TODO Enseignant dto
-	public List<Enseignant> getProfsByNomeDepartment(String name) {
+	public List<EnseignantDto> getProfsByNomeDepartment(String name) {
 		Departement departement=departementRepo.findByNameDeparetement(name).orElseThrow(()->new DepartementNotFoundException("departement not found"));
-		return departement.getEnseignants();
+		return enseignantMapper.enseignantToDtos(departement.getEnseignants());
 	}
 
 

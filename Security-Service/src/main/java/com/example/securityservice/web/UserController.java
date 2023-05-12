@@ -22,7 +22,7 @@ public class UserController {
     private UserService userService;
 
     @PostMapping
-    @PreAuthorize("hasAuthority('SCOPE_ADMIN')")
+//    @PreAuthorize("hasAuthority('SCOPE_ADMIN')")
     public UserResponseDTO addUser(@RequestBody UserRequestDto userRequestDto){
         return userService.signIn(userRequestDto);
     }
