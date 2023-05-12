@@ -23,6 +23,8 @@ springdoc:
                    enabled: true 
 server: 
       port: 1010
+      servlet:
+        context-path: /api/v1
 
 
 
