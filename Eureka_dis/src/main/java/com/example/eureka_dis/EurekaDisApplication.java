@@ -12,7 +12,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
 @SpringBootApplication
-@EnableEurekaServer
+@ EnableEurekaServer
 public class EurekaDisApplication {
 
 	public static void main(String[] args) {

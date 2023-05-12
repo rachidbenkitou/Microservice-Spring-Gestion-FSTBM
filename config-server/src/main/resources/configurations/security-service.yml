@@ -1,4 +1,13 @@
-spring: 
+
+
+spring:
+      cloud:
+        config:
+           enabled: false
+           import-check:
+                 enabled: false
+        discovery:
+           enabled: true
       jpa:
          hibernate:
                   ddl-auto: update
