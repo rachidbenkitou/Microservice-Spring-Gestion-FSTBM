@@ -46,10 +46,14 @@ public class NoteServiceImpl implements NoteService {
     @Override
     public List<ResponseNoteDTO> getAllNotes() {
         List<Note> noteList =noteDAO.findAll();
+        if(noteList.isEmpty())
+            throw new ExamenNotFoundException("The list is empty");
+        /*
         for ( Note n : noteList){
             n.setEtudiant(etudiantRestClient.findEtudiantById(n.getId().getEtudiantId()));
 
         }
+         */
         return noteMapper.modelToDtos(noteList);
     }
     public List<ResponseNoteDTO> fallbackGetAllNotes(Exception e) {
