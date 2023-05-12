@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Set;
 
 import com.enseignant.dto.DepartementDto;
+import com.enseignant.dto.EnseignantDto;
 import com.enseignant.entities.Enseignant;
 
 public interface DepartementService {
@@ -20,7 +21,7 @@ public interface DepartementService {
 
 	List<DepartementDto> getAllDeparetement();
 	
-	List<Enseignant> getProfsByNomeDepartment(String name);
+	List<EnseignantDto> getProfsByNomeDepartment(String name);
 	
 	Set<String> getAllDeparetementNames();
 	 

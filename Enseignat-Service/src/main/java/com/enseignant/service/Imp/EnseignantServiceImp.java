@@ -27,7 +27,7 @@ public  class EnseignantServiceImp implements EnseignantService {
 	@Override
 	public EnseignantDto addEnseignant(EnseignantDto ens) {
 		Enseignant enseignant=enseignantMap.dtoToEnseignant(ens);
-		Departement departement= departementRepo.findByNameDeparetement(ens.getDepartementName()).orElseThrow(()->new DepartementNotFoundException("departement not found"));
+		Departement departement= departementRepo.findByNameDeparetement(ens.getDepartement().getNameDeparetement()).orElseThrow(()->new DepartementNotFoundException("departement not found"));
 		enseignant.setDepartement(departement);
 		enseignant= enseignantRep.save(enseignant);
 		return (EnseignantDto) enseignantMap.enseignantToDto(enseignant);

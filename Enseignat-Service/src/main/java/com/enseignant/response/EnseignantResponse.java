@@ -9,11 +9,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class EnseignantResponse {
+	private Integer id;
 	private String nom;
 	private String prenom;
 	private String adresse;
 	private String email;
 	private String CIN;
-	private String departementName;
+	private DepartementResponse departement;
 
 }

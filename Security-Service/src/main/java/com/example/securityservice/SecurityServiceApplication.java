@@ -10,6 +10,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 @SpringBootApplication
 @EnableConfigurationProperties(RsaKeysConfig.class)
+
 public class SecurityServiceApplication {
 
 	public static void main(String[] args) {
