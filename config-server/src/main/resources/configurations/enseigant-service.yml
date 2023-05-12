@@ -21,7 +21,7 @@ path:
 server:
       port: 8086
       servlet: 
-             context-path: /api/enseignant-service    
+             context-path: /api/  
 management:
   health:
     circuitbreakers:
