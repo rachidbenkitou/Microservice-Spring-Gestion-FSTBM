@@ -24,7 +24,6 @@ public class Note {
     @JoinColumn(name = "examen_id")
     private Examen examen;
     private long etudiantApogee;
-    @Column(unique = true)
     private String etudiantCin;
     @Transient
     private  Etudiant etudiant;
