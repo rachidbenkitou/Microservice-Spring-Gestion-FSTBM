@@ -11,6 +11,7 @@ import java.util.List;
 public interface NoteService {
     List<ResponseNoteDTO> getAllNotes();
     ResponseNoteDTO getNoteById(NoteKey id) throws ExamenNotFoundException, NoteNotFoundException;
+    List<ResponseNoteDTO> getNoteByCin(String cin);
     ResponseNoteDTO addNote(RequesteNoteDTO requesteNoteDTO) throws ExamenNotFoundException, NoteNotFoundException;
     ResponseNoteDTO UpdateNote(RequesteNoteDTO requesteNoteDTO);
 //    ResponseNoteDTO NoteByEtudiant(long etudiantId);

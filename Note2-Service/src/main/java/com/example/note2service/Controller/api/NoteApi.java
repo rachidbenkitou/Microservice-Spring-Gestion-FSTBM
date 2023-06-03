@@ -51,6 +51,8 @@ public interface NoteApi {
     @PutMapping ("/{etudiantId}/{examenId}")
     ResponseNoteDTO update(@PathVariable(name = "etudiantId") String etudiantId,@PathVariable(name = "examenId") long examentId ,@RequestBody RequesteNoteDTO requesteNoteDTO);
 
+    @GetMapping("cin/{cin}")
+    List<ResponseNoteDTO> getAllByCin(@PathVariable(name = "cin") String cin);
     @Operation(summary = "delete note", description = "this method allows you to delete a Note by Id.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "the Note object deleted",

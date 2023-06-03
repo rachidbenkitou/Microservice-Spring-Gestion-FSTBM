@@ -17,4 +17,5 @@ public class RequesteNoteDTO {
     private double note;
     private double oldNote;
     private long etudiantApogee;
+    private String etudiantCin;
 }
