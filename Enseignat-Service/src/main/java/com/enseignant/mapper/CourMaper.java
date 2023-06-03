@@ -12,7 +12,7 @@ import com.enseignant.request.CourRequest;
 import com.enseignant.response.CourResponse;
 @Mapper(componentModel = "spring",uses=Cour.class,injectionStrategy = InjectionStrategy.CONSTRUCTOR,unmappedTargetPolicy = ReportingPolicy.IGNORE)
 
-public interface CourMapper {
+public interface CourMaper {
 	
 	Cour dtoTocour(CourDto dto);
 	CourDto courToDto(Cour cour);

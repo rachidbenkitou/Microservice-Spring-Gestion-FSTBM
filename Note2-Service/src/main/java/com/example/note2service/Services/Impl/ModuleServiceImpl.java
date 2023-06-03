@@ -107,4 +107,13 @@ public class ModuleServiceImpl implements ModuleService {
                 new ModuleNotFoundException(String.format("the module with id %d not exist.", moduleId)));
         return mapper.modelToDto(module);
     }
+
+    @Override
+    public List<ResponseModuleDTO> getModulesByIds(List<Integer> moduleIds) {
+
+        System.out.println(moduleIds);
+        return mapper.modelToDtos(moduleIds.stream().map((id)->dao.findById(id).orElseThrow(()->
+                new ModuleNotFoundException(String.format("the module with id %d not exist.", id)))).toList());
+
+    }
 }

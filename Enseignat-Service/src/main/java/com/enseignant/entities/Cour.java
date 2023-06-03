@@ -28,5 +28,5 @@ public class Cour {
 	private Date dateUpdate;
 	@OneToOne(fetch = FetchType.EAGER)
 	private Enseignant enseignant;
-	private Long idModule;
+	private Integer idModule;
 }

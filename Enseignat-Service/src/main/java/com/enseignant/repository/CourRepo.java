@@ -13,7 +13,7 @@ public interface CourRepo extends JpaRepository<Cour, Long>{
 
 	Optional<List<Cour>> findByIntituleLike(String intitule,Pageable pageable);
 	
-	Optional<Cour> findByIdModule(Long idModule);
+	Optional<Cour> findByIdModule(Integer idModule);
 	
 	Optional<Cour> findByEnseignantId(Long id);
 	

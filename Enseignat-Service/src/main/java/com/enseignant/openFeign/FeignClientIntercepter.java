@@ -30,13 +30,16 @@ public class FeignClientIntercepter implements RequestInterceptor {
         ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         if (Objects.nonNull(requestAttributes)) {
             String authorizationHeader = requestAttributes.getRequest().getHeader(HttpHeaders.AUTHORIZATION);
-            Matcher matcher = BEARER_TOKEN_HEADER_PATTERN.matcher(authorizationHeader);
-            if (matcher.matches()) {
-                // token
-                template.header(authorization);
-                template.header(authorization, authorizationHeader);
-            }
+          if(authorizationHeader!=null){
+              Matcher matcher = BEARER_TOKEN_HEADER_PATTERN.matcher(authorizationHeader);
+              if (matcher.matches()) {
+                  // token
+                  template.header(authorization);
+                  template.header(authorization, authorizationHeader);
+              }
+          }
         }
+
     }	  
 
 }

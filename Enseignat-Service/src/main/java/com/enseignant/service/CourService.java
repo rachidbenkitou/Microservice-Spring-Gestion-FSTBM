@@ -15,7 +15,7 @@ public interface CourService {
 	
 	CourDto getCourById(Long id_cour);
 	List<CourDto> getCoursHavingIntituleLike(String intitule,Page page);
-	CourDto getCourByModuleId(Long id_module);
+	CourDto getCourByModuleId(Integer id_module);
 	CourDto getCourByEnseignantId(Long id_enseign);
 	List<CourDto> getCoursBetweenDates(Date Date1,Date Date2,Page page);
 	InputStream downloadDoducment(Long courId) throws FileNotFoundException ;
