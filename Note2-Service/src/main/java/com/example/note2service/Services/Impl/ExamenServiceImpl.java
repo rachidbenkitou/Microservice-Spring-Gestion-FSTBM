@@ -8,12 +8,15 @@ import com.example.note2service.DTO.ResponseExamenDTO;
 import com.example.note2service.DTO.ResponseNoteDTO;
 import com.example.note2service.Entities.Examen;
 import com.example.note2service.Entities.Note;
+import com.example.note2service.Entities.Semestre;
 import com.example.note2service.Exceptions.ExamenNotFoundException;
 import com.example.note2service.Mappers.ExamenMapper;
 import com.example.note2service.Services.ExamenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 /**
@@ -75,6 +78,13 @@ public class ExamenServiceImpl implements ExamenService {
     public ResponseExamenDTO UpdateExamen(RequestExamenDTO requestExamenDTO) {
 
         return saveExamen(requestExamenDTO);
+    }
+
+    @Override
+    public List<ResponseExamenDTO> getExamenByDate(String keyword1, Semestre keyword2) {
+
+        List<Examen> examenList = examenDAO.findExamenByModuleAndSemestre(keyword1,keyword2);
+        return examenMapper.modelToDtos(examenList);
     }
 
     public ResponseExamenDTO saveExamen(RequestExamenDTO requestExamenDTO){

@@ -20,8 +20,8 @@ path:
     downloadFile: Enseignat-Service\src\main\resources\cours
 server:
       port: 8086
-      servlet: 
-             context-path: /api/  
+      servlet:
+        context-path: /api/v1
 management:
   health:
     circuitbreakers:

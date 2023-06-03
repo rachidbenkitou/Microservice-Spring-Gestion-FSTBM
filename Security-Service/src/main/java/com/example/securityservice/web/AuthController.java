@@ -11,6 +11,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.oauth2.jwt.*;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.Instant;
@@ -29,7 +30,7 @@ public class AuthController {
     }
 
     @PostMapping("/token")
-    public Map<String,String>jwToken(TokenDto tokenDto){
+    public Map<String,String>jwToken(@RequestBody TokenDto tokenDto){
         return tokenService.jwToken(tokenDto);
     }
 }

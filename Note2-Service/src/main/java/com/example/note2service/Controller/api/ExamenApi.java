@@ -10,6 +10,8 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 @RequestMapping("/examens")
@@ -57,4 +59,6 @@ public interface ExamenApi {
     })
     @DeleteMapping("/{id}")
     void delete(@PathVariable(name = "id") long id);
+    @GetMapping ("/search")
+    public List<ResponseExamenDTO>  searchExamen(@RequestParam(name = "key1") String keyword1,@RequestParam(name = "key2")  String keyword2);
 }
