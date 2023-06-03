@@ -12,4 +12,6 @@ public interface ModuleService {
     ResponseModuleDTO updateModule(RequestModuleDTO moduleDTO);
     void deleteModuleByName(String moduleName);
     ResponseModuleDTO getModuleById(int moduleId);
+
+    List<ResponseModuleDTO> getModulesByIds(List<Integer> moduleIds);
 }

@@ -9,6 +9,8 @@ import java.io.InputStream;
 import java.util.Date;
 import java.util.List;
 
+import com.enseignant.entities.Module;
+import com.enseignant.mapper.CourMaper;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.PageRequest;
@@ -23,7 +25,6 @@ import com.enseignant.exeption.CourNoteFoundException;
 import com.enseignant.exeption.EnseignantNotFound;
 import com.enseignant.exeption.ModuleAlrealyHasCour;
 import com.enseignant.exeption.ModuleNotFound;
-import com.enseignant.mapper.CourMapper;
 import com.enseignant.openFeign.ModuleFeignClient;
 import com.enseignant.repository.CourRepo;
 import com.enseignant.repository.EnseignantRepo;
@@ -43,7 +44,7 @@ public class CourServiceImp implements CourService {
 	
 	private final EnseignantRepo enseignantRepo;
 	
-	private final CourMapper courMapper;
+	private final CourMaper courMapper;
 	
 	private final ModuleFeignClient moduleFeignClient; 
 	
@@ -67,7 +68,7 @@ public class CourServiceImp implements CourService {
 	}
 
 	@Override
-	public CourDto getCourByModuleId(Long id_module) {
+	public CourDto getCourByModuleId(Integer id_module) {
 		return courMapper.courToDto(courRepo.findByIdModule(id_module)
 				.orElseThrow(()->new CourNoteFoundException("cours found")));
 	}
@@ -98,10 +99,27 @@ public class CourServiceImp implements CourService {
 
 	@Override
 	public List<CourDto> getAllCoursSortByDateUpdate(Page page) {
-		List<Cour> cours= courRepo.findAll(PageRequest.of(page.getPage(), page.getNbrElemet(), Sort.by("DateUpdate"))).getContent();
-		return courMapper.coursToDtos(cours);
-	}
 
+		List<Cour> cours = courRepo.findAll(PageRequest.of(page.getPage(), page.getNbrElemet(), Sort.by("DateUpdate"))).getContent();
+		List<Module> modules = moduleFeignClient.getModulesByIds(
+				cours.stream().map((cour -> cour.getIdModule())).
+				toList()).orElseThrow(() -> new ModuleNotFound("modules not found"));
+		List<CourDto> dtos = courMapper.coursToDtos(cours);
+		dtos= dtos.stream().map((dto)->{
+			Enseignant enseignant= cours.stream()
+					.filter((cour) -> cour.getId_cour() == dto.getId_cour()).toList().get(0).getEnseignant();
+			dto.setId_enseignant(enseignant.getId());
+			dto.setEnseignant_name(enseignant.getPrenom() + " "+ enseignant.getNom());
+			return dto;
+		}).toList();
+		return dtos.stream().map((cour) -> {
+			cour.setModuleName(modules.stream()
+					.filter((module) -> module.getModuleId() == cour.getIdModule()).toList().get(0).getModuleName());
+			return cour;
+		}).toList();
+
+
+	}
 	@Override
 	public String uploadDocument(Long id_cour, MultipartFile file) throws IOException {
 		Cour cour=courRepo.findById(id_cour).orElseThrow();
@@ -109,6 +127,7 @@ public class CourServiceImp implements CourService {
 		FileOutputStream fout=new FileOutputStream(convertfile);
 		fout.write(file.getBytes());
 		fout.close();
+
 		cour.setDocumentPaht(path);
 		cour.setDateUpdate(new Date());
 		return "File is upload seccessfuly";
@@ -117,14 +136,18 @@ public class CourServiceImp implements CourService {
 	@Override
 	public CourDto addCour(CourDto courDto) {
 		Cour cour = courMapper.dtoTocour(courDto);
-		
+
 		if(courRepo.findByIdModule(courDto.getIdModule()).isPresent()) throw new ModuleAlrealyHasCour("this module has a cour");
-		
+		System.out.println(cour);
 		com.enseignant.entities.Module module=moduleFeignClient.getModuleById(courDto.getIdModule()).orElseThrow(()-> new ModuleNotFound("module not found"));
 		Enseignant enseignant=enseignantRepo.findById(courDto.getId_enseignant()).orElseThrow(()->new EnseignantNotFound("enseignant not found"));
+		if(enseignant.getCour()!=null) throw
+				new ModuleAlrealyHasCour("prof has alrealy cour");
 		cour.setDateUpdate(new Date());
 		cour.setEnseignant(enseignant);
+
 		CourDto courDtoSave= courMapper.courToDto(courRepo.save(cour));
+		System.out.println(courDtoSave);
 		courDtoSave.setModuleName(module.getModuleName());
 		courDtoSave.setEnseignant_name(enseignant.getNom()+" "+enseignant.getPrenom());
 		courDtoSave.setId_enseignant(enseignant.getId());

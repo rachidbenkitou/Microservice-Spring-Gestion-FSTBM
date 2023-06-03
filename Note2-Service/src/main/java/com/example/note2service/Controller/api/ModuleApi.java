@@ -11,6 +11,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
+
 @RequestMapping("/modules")
 public interface ModuleApi {
     @GetMapping
@@ -62,6 +64,9 @@ public interface ModuleApi {
                             schema = @Schema(implementation = ResponseModuleDTO.class))})
     })
     ResponseEntity<?> deleteModule(@PathVariable String name);
+
+    @PostMapping("moduleIds")
+    ResponseEntity<List<ResponseModuleDTO>> getModulesByIds(@RequestBody List<Integer> moduleIds);
 
 
 

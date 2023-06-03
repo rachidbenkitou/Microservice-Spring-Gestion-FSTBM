@@ -13,6 +13,6 @@ public class CourRequest {
 	private String intitule;
 	private Date dateDebut;
 	private Date date_update;
-	private long idModule;
+	private Integer idModule;
 	private long id_enseignant;
 }

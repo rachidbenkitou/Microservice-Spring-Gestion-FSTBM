@@ -17,10 +17,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
 public class ModuleController implements ModuleApi {
+
     private final ModuleService service;
 
     @Override
@@ -50,5 +52,12 @@ public class ModuleController implements ModuleApi {
     public ResponseEntity<?> deleteModule(String name) {
         service.deleteModuleByName(name);
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @Override
+    public ResponseEntity<List<ResponseModuleDTO>> getModulesByIds(List<Integer> moduleIds) {
+
+
+        return new ResponseEntity(service.getModulesByIds(moduleIds),HttpStatus.OK);
     }
 }

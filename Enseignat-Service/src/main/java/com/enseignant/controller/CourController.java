@@ -5,9 +5,11 @@ import java.io.InputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletResponse;
 
+import com.enseignant.mapper.CourMaper;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -23,7 +25,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.enseignant.mapper.CourMapper;
 import com.enseignant.request.CourRequest;
 import com.enseignant.request.Page;
 import com.enseignant.response.CourResponse;
@@ -37,7 +38,7 @@ public class CourController {
 
 	private final CourService courService;
 	
-	private final CourMapper courMapper;
+	private final CourMaper courMapper;
 	
 	@GetMapping("/id/{id_cour}")
 	ResponseEntity<CourResponse>  getCourById(@PathVariable Long id_cour){
@@ -54,7 +55,7 @@ public class CourController {
 						),HttpStatus.OK);
 	}
 	@GetMapping("/module/id/{id_module}")
-	ResponseEntity<CourResponse>  getCourByModuleId(@PathVariable Long id_module){
+	ResponseEntity<CourResponse>  getCourByModuleId(@PathVariable Integer id_module){
 		return new ResponseEntity<CourResponse>(
 				courMapper.courDtoToResponse(
 						courService.getCourByModuleId(id_module)
@@ -78,10 +79,11 @@ public class CourController {
 						courService.getCoursBetweenDates(formatter.parse(date1),formatter.parse(date2),  new Page(page,nbrElement))
 						),HttpStatus.OK);
 	}
-	@GetMapping("/downloadDodument/{courId}")
+	@GetMapping(value = "/downloadDodument/{courId}", consumes = MediaType.APPLICATION_PDF_VALUE)
 	ResponseEntity<?>  downloadDoducment(@PathVariable Long courId,HttpServletResponse response) throws IOException{
 		InputStream inputStream= courService.downloadDoducment(courId);
-		
+
+
 		
 		IOUtils.copy(inputStream,response.getOutputStream());
 	
@@ -95,16 +97,16 @@ public class CourController {
 						),HttpStatus.OK);
 	}
 	@PostMapping(value = "uploadDocument/id/{id_cour}",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-	ResponseEntity<String> uploadDocument(@PathVariable Long id_cour,@RequestParam("file") MultipartFile file) throws IOException {
-		return new ResponseEntity<String>(courService.uploadDocument(id_cour, file),HttpStatus.OK);
+	ResponseEntity<Map<String,String>> uploadDocument(@PathVariable Long id_cour,@RequestParam("file") MultipartFile file) throws IOException {
+		return new ResponseEntity<Map<String,String>>(Map.of("message",courService.uploadDocument(id_cour, file)),HttpStatus.OK);
 	}
 	
 	@PostMapping("/add")
-	ResponseEntity<CourResponse>  addCour(@RequestBody CourRequest courDto){
+	ResponseEntity<CourResponse>  addCour(@RequestBody CourRequest cour){
 		return new ResponseEntity<CourResponse>(
 				courMapper.courDtoToResponse(
 						courService.addCour(
-								courMapper.requestTocourDto(courDto)
+								courMapper.requestTocourDto(cour)
 								)
 						),HttpStatus.OK);
 	}
