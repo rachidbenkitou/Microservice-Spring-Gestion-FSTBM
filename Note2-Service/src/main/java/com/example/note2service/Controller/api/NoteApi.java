@@ -53,6 +53,8 @@ public interface NoteApi {
 
     @GetMapping("cin/{cin}")
     List<ResponseNoteDTO> getAllByCin(@PathVariable(name = "cin") String cin);
+    @GetMapping("/{cin}/{id}")
+    List<ResponseNoteDTO> getAllByCinModuleId(@PathVariable(name = "cin") String cin,@PathVariable(name = "id") long id);
     @Operation(summary = "delete note", description = "this method allows you to delete a Note by Id.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "the Note object deleted",

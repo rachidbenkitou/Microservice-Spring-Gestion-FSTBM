@@ -93,6 +93,12 @@ public class NoteServiceImpl implements NoteService {
         return noteMapper.modelToDtos(note);
     }
 
+    @Override
+    public List<ResponseNoteDTO> getNoteByCinAndModuleId(String cin, long id) {
+        List<Note> noteList = noteDAO.findAllByCinAndModuleId(cin,id);
+        return noteMapper.modelToDtos(noteList);
+    }
+
     public ResponseNoteDTO fallbackGetNoteById(NoteKey id,Exception e) throws NoteNotFoundException {
         Optional<Note> note =  noteDAO.findById(id);
         note.get().setEtudiant(null);

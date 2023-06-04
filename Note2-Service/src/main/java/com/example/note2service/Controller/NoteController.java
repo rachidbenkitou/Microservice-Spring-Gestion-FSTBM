@@ -48,6 +48,11 @@ public class NoteController implements NoteApi {
     }
 
     @Override
+    public List<ResponseNoteDTO> getAllByCinModuleId(String cin, long id) {
+        return noteService.getNoteByCinAndModuleId(cin,id);
+    }
+
+    @Override
     public void delete(@PathVariable(name = "etudiantId") String etudiantId,@PathVariable(name = "examenId") long examentId){
         NoteKey id = NoteKey.builder().etudiantId(etudiantId).examenId(examentId).build();
         noteService.deleteNote(id);
