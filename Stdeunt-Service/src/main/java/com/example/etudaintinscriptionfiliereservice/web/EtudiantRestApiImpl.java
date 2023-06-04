@@ -56,6 +56,11 @@ public class EtudiantRestApiImpl implements  EtudiantRestApi{
         return etudiantService.getEtudiantById(id);
     }
 
+    @Override
+    public List<ResponseEtudiantDto> getEtudiantsByFiliereId(String filiereId) {
+        return etudiantService.getEtudiantsByFiliereId(filiereId);
+    }
+
 
     @Operation(summary = "Trouver étudiant par apogée", description = "Trouver un étudiant par  son apogée")
     @ApiResponses(value = {

@@ -2,6 +2,7 @@ package com.example.etudaintinscriptionfiliereservice.services;
 
 import com.example.etudaintinscriptionfiliereservice.dtos.RequestEtudiantDto;
 import com.example.etudaintinscriptionfiliereservice.dtos.ResponseEtudiantDto;
+import com.example.etudaintinscriptionfiliereservice.entities.Etudiant;
 import com.example.etudaintinscriptionfiliereservice.exceptions.EntityAlreadyExistException;
 import com.example.etudaintinscriptionfiliereservice.exceptions.EntityNotFoundException;
 
@@ -14,6 +15,7 @@ public interface EtudiantService {
     ResponseEtudiantDto getEtudiantById(String id) throws EntityNotFoundException ;
     ResponseEtudiantDto getEtudiantByApogee(Long apogee);
     ResponseEtudiantDto getEtudiantByCin(String cin);
+    List<ResponseEtudiantDto>getEtudiantsByFiliereId(String filiereId);
     ResponseEtudiantDto addEtudiant(RequestEtudiantDto requestEtudiantDTo)throws EntityAlreadyExistException;
     ResponseEtudiantDto updateEtudiant(RequestEtudiantDto requestEtudiantDTo);
     void  deleteEtudiant(String etudiantId)throws EntityNotFoundException;

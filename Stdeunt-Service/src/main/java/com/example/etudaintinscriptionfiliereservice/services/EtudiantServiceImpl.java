@@ -58,6 +58,9 @@ public class EtudiantServiceImpl implements EtudiantService {
         return etudiantMapper.fromModel(etudiant.get());
     }
 
+    public List<ResponseEtudiantDto> getEtudiantsByFiliereId(String filiereId) {
+        return etudiantMapper.fromModels(etudiantRepository.findByInscription_FiliereId(filiereId));
+    }
     @Override
     public ResponseEtudiantDto addEtudiant(RequestEtudiantDto requestEtudiantDTo) throws EntityAlreadyExistException , InvalidEntityException {
         if(requestEtudiantDTo.equals(null))

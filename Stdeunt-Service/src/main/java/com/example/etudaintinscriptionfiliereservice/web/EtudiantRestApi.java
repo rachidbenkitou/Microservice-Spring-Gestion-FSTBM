@@ -15,6 +15,8 @@ public interface EtudiantRestApi {
     @GetMapping(path = "/id/{id}")
     //@PreAuthorize("hasAnyAuthority('SCOPE_ADMIN', 'SCOPE_TEACHER')")
     ResponseEtudiantDto findEtudiantById(@PathVariable String id);
+    @GetMapping("/filiere/{filiereId}")
+    public List<ResponseEtudiantDto> getEtudiantsByFiliereId(@PathVariable String filiereId);
     @GetMapping(path = "/apogee/{apogee}")
     //@PreAuthorize("hasAnyAuthority('SCOPE_ADMIN', 'SCOPE_TEACHER')")
     ResponseEtudiantDto findEtudiantByApogee(@PathVariable Long apogee) throws MethodArgumentNotValidException;
