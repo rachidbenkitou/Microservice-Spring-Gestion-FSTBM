@@ -81,8 +81,8 @@ public class InscriptionServiceImpl implements InscriptionService{
     @Override
     public InscriptionResponseDto save(InscriptionRequestDto inscriptionRequestDto) throws EntityAlreadyExistException, InvalidEntityException {
         if(inscriptionRequestDto.equals(null))throw new InvalidEntityException("Inscription not valid");
-        if(inscriptionRepository.existsByEtudiant(etudiantMapper.toModel(inscriptionRequestDto.getRequestEtudiantDto())))
-            throw new EntityAlreadyExistException("Inscription with Etudiant "+inscriptionRequestDto.getRequestEtudiantDto().getApogee()+" already exists");
+//        if(inscriptionRepository.existsByEtudiant(inscriptionRequestDto.getEtudiant()))
+//            throw new EntityAlreadyExistException("Inscription with Etudiant "+inscriptionRequestDto.getEtudiant().getApogee()+" already exists");
         inscriptionRequestDto.setIdInscription(UUID.randomUUID().toString());
         inscriptionRequestDto.setDateInscripton(new Date());
         return inscriptionMapper.fromModel(

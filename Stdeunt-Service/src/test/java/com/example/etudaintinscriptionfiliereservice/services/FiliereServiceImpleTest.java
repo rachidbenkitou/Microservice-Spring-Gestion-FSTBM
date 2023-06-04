@@ -71,7 +71,7 @@ public class FiliereServiceImpleTest {
 
         FiliereResponseDto result = filiereServiceImple.getFiliereById("id1");
 
-        assertEquals(myResponseFiliere.getIdFiliere(), result.getIdFiliere());
+        assertEquals(myResponseFiliere.getId(), result.getId());
         assertEquals(myResponseFiliere.getName(), result.getName());
         assertEquals(myResponseFiliere.getNiveau(), result.getNiveau());
         assertEquals(myResponseFiliere.getInscriptions(), result.getInscriptions());
@@ -84,7 +84,7 @@ public class FiliereServiceImpleTest {
 
         FiliereResponseDto result = filiereServiceImple.getFiliereByNmae("JAVA");
 
-        assertEquals(myResponseFiliere.getIdFiliere(), result.getIdFiliere());
+        assertEquals(myResponseFiliere.getId(), result.getId());
         assertEquals(myResponseFiliere.getName(), result.getName());
         assertEquals(myResponseFiliere.getNiveau(), result.getNiveau());
         assertEquals(myResponseFiliere.getInscriptions(), result.getInscriptions());

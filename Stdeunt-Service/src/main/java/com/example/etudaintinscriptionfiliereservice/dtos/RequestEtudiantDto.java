@@ -17,7 +17,7 @@ public class RequestEtudiantDto {
     private String prenom;
     private String email;
     private Date DateNaissance;
-    private Long tel;
+    private String tel;
     private String ville;
     private String adress;
 }
