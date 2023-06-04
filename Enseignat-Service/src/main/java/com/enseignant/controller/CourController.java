@@ -9,6 +9,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletResponse;
 
+import com.enseignant.entities.Module;
 import com.enseignant.mapper.CourMaper;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.http.HttpStatus;
@@ -125,4 +126,10 @@ public class CourController {
 		courService.deleteCour(idCour);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
+
+
+    @GetMapping("/module/enseignant/{cin}")
+    ResponseEntity<Module> getModuleByIdEnseigant(String cin){
+        return  new ResponseEntity<>(courService.getModuleByIdEnseigant(cin),HttpStatus.OK);
+    }
 }

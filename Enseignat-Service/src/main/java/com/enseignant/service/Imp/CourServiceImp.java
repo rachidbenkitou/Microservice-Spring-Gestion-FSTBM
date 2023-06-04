@@ -50,7 +50,7 @@ public class CourServiceImp implements CourService {
 	
 	@Value("${path.downloadFile}")
 	private String path;
-	
+
 	@Override
 	public CourDto getCourById(Long id_cour) {
 
@@ -184,7 +184,13 @@ public class CourServiceImp implements CourService {
 		
 	}
 
-	
-	
-	
+	@Override
+	public Module getModuleByIdEnseigant(String cin) {
+		Enseignant enseignant=enseignantRepo.findByCIN(cin);
+		Cour cour= courRepo.findByEnseignantId(enseignant.getId()).get();
+
+		return moduleFeignClient.getModuleById(cour.getIdModule()).get();
+	}
+
+
 }
