@@ -24,7 +24,7 @@ public class Etudiant {
     private String prenom;
     private String email;
     private Date dateNaissance;
-    private Long tel;
+    private String tel;
     private String ville;
     private String adress;
     @OneToOne(mappedBy = "etudiant", cascade = CascadeType.ALL, orphanRemoval = true)

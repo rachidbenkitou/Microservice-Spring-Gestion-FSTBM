@@ -21,4 +21,6 @@ public interface NoteDAO extends JpaRepository<Note, NoteKey> {
 
     @Query("select n from Note n where n.etudiantCin =?1")
     java.util.List<Note> findAllBycin(String cin);
+    @Query("select n from Note n inner join n.examen e inner join e.module m where n.etudiantCin =?1 and m.moduleId =?2")
+    java.util.List<Note> findAllByCinAndModuleId(String cin,long id);
 }

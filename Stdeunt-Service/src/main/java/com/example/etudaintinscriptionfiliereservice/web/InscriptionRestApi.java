@@ -13,21 +13,21 @@ import java.util.List;
 
 public interface InscriptionRestApi {
     @GetMapping
-    @PreAuthorize("hasAnyAuthority('SCOPE_ADMIN')")
+    //@PreAuthorize("hasAnyAuthority('SCOPE_ADMIN')")
     List<InscriptionResponseDto> getAll();
     @GetMapping(path = "/{id}")
-    @PreAuthorize("hasAnyAuthority('SCOPE_ADMIN')")
+    //@PreAuthorize("hasAnyAuthority('SCOPE_ADMIN')")
     InscriptionResponseDto findInscriptionById(@PathVariable String id);
-    @GetMapping(path = "/{cin}")
-    @PreAuthorize("hasAnyAuthority('SCOPE_ADMIN')")
+    @GetMapping(path = "/cin/{cin}")
+    //@PreAuthorize("hasAnyAuthority('SCOPE_ADMIN')")
     InscriptionResponseDto getInscriptionByCin(@PathVariable String cin);
     @PostMapping
-    @PreAuthorize("hasAnyAuthority('SCOPE_ADMIN', 'SCOPE_STUDENT')")
+    //@PreAuthorize("hasAnyAuthority('SCOPE_ADMIN', 'SCOPE_STUDENT')")
     InscriptionResponseDto add(@RequestBody InscriptionRequestDto inscriptionRequestDto);
     @PutMapping
-    @PreAuthorize("hasAnyAuthority('SCOPE_ADMIN', 'SCOPE_STUDENT')")
+    //@PreAuthorize("hasAnyAuthority('SCOPE_ADMIN', 'SCOPE_STUDENT')")
     InscriptionResponseDto edite(@RequestBody InscriptionRequestDto inscriptionRequestDto);
     @DeleteMapping(path="/{id}")
-    @PreAuthorize("hasAnyAuthority('SCOPE_ADMIN', 'SCOPE_STUDENT')")
+    //@PreAuthorize("hasAnyAuthority('SCOPE_ADMIN', 'SCOPE_STUDENT')")
     void delete(@PathVariable String id);
 }

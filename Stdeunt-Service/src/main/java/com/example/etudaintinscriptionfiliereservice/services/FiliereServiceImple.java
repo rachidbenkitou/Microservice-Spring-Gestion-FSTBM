@@ -54,8 +54,8 @@ public class FiliereServiceImple implements FiliereService {
      */
     @Override
     public FiliereResponseDto getFiliereById(String idFiliere) throws EntityNotFoundException {
-        Filiere filiere = filiereRepository.findById(idFiliere)
-                .orElseThrow(()->new EntityNotFoundException("No filiere with ID "+idFiliere+" were found"));
+        Filiere filiere = filiereRepository.findById(idFiliere).
+                orElseThrow(()->new EntityNotFoundException("No filiere with ID "+idFiliere+" were found"));
         return filiereMapper.fromModel(filiere);
     }
 
@@ -86,7 +86,7 @@ public class FiliereServiceImple implements FiliereService {
         if (filiereRequestDto.equals(null))throw new InvalidEntityException("Filiere Not Valid");
         Optional<Filiere> filiere = filiereRepository.findByName(filiereRequestDto.getName());
         if(filiere.isPresent()) throw new EntityAlreadyExistException("Filiere with name "+filiereRequestDto.getName()+" already exists");
-        filiereRequestDto.setIdFiliere(UUID.randomUUID().toString());
+        filiereRequestDto.setId(UUID.randomUUID().toString());
         return filiereMapper.fromModel(filiereRepository.save(filiereMapper.toModel(filiereRequestDto)));
     }
 

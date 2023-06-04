@@ -17,6 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 import java.util.UUID;
 
 @Service
@@ -60,11 +61,11 @@ public class EtudiantServiceImpl implements EtudiantService {
     @Override
     public ResponseEtudiantDto addEtudiant(RequestEtudiantDto requestEtudiantDTo) throws EntityAlreadyExistException , InvalidEntityException {
         if(requestEtudiantDTo.equals(null))
-            throw new InvalidEntityException("L'etudiant n'existe pas");
-        Optional<Etudiant> etudiant = Optional.ofNullable(etudiantRepository.findByApogee(requestEtudiantDTo.getApogee()));
-        if(etudiant.isPresent()) throw new EntityAlreadyExistException(" L' APOGEE: "+requestEtudiantDTo.getApogee()+"existe deja");
+            throw new InvalidEntityException("Etudiant Not Valid");
+       Optional<Etudiant> etudiant = etudiantRepository.findByCin(requestEtudiantDTo.getCin());
+        if(etudiant.isPresent()) throw new EntityAlreadyExistException(" L' CIN: "+requestEtudiantDTo.getCin()+" existe deja");
         requestEtudiantDTo.setId(UUID.randomUUID().toString());
-        Long uniqueApogee = System.currentTimeMillis();
+        Long uniqueApogee = Long.valueOf(System.currentTimeMillis());
         requestEtudiantDTo.setApogee(uniqueApogee);
         return etudiantMapper.fromModel(etudiantRepository.save(etudiantMapper.toModel(requestEtudiantDTo)));
     }

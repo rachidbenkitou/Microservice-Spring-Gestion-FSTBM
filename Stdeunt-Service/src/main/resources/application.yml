@@ -1,7 +1,10 @@
 rsa: 
    public-key: classpath:certs/pub.pem
-spring: 
-      application: 
-                 name: ETUDAINTINSCRIPTIONFILIERE-SERVICE
+spring:
+      jackson:
+        serialization:
+            FAIL_ON_EMPTY_BEANS: false
+      application:
+                 name: etudiant-service
       config:
             import: optional:configserver:http://localhost:8888

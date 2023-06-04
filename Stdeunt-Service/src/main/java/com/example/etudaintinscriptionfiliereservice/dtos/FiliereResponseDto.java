@@ -12,7 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class FiliereResponseDto {
-    private String IdFiliere;
+    private String id;
     private String name;
     private Niveau niveau;
     private List<Inscription> inscriptions;

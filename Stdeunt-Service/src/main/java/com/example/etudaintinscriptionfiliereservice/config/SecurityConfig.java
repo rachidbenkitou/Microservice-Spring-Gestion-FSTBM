@@ -25,10 +25,15 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         return  httpSecurity
                 .csrf(csrf->csrf.disable())
-                .authorizeRequests(auth->auth.antMatchers("/swagger-ui/**").permitAll())
-                .authorizeRequests(auth->auth.anyRequest().authenticated())
+                .authorizeHttpRequests(auth->auth.anyRequest().permitAll())
                 .oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)
                 .build();
+        /*.csrf(csrf->csrf.disable())
+                .authorizeRequests(auth->auth.antMatchers("/swagger-ui/**").permitAll())
+                //.authorizeRequests(auth->auth.anyRequest().authenticated())
+                .authorizeRequests(auth->auth.anyRequest().permitAll())
+                .oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)
+                .build();*/
     }
     @Bean
     JwtDecoder jwtDecoder(){

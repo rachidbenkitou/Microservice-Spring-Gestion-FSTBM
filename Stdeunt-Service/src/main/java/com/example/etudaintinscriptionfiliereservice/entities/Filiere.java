@@ -15,7 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 public class Filiere {
     @Id
-    private String IdFiliere;
+    private String id;
     @NotBlank(message = "name should not be empty")
     private String name;
     @Enumerated(EnumType.STRING)

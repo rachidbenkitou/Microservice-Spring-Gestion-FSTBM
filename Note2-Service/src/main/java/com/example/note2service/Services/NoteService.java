@@ -12,6 +12,7 @@ public interface NoteService {
     List<ResponseNoteDTO> getAllNotes();
     ResponseNoteDTO getNoteById(NoteKey id) throws ExamenNotFoundException, NoteNotFoundException;
     List<ResponseNoteDTO> getNoteByCin(String cin);
+    List<ResponseNoteDTO> getNoteByCinAndModuleId(String cin , long id);
     ResponseNoteDTO addNote(RequesteNoteDTO requesteNoteDTO) throws ExamenNotFoundException, NoteNotFoundException;
     ResponseNoteDTO UpdateNote(RequesteNoteDTO requesteNoteDTO);
 //    ResponseNoteDTO NoteByEtudiant(long etudiantId);

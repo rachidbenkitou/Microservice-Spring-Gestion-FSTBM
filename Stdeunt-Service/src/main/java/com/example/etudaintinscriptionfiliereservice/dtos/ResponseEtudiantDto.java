@@ -19,7 +19,7 @@ public class ResponseEtudiantDto {
     private String prenom;
     private String email;
     private Date dateNaissance;
-    private Long tel;
+    private String tel;
     private String ville;
     private String adress;
 
