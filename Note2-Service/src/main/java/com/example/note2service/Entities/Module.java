@@ -27,4 +27,6 @@ public class Module implements Serializable {
     @JsonIgnore
     private List<Examen> examens;
 
+    private String idFiliere;
+
 }

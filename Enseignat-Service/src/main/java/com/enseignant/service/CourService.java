@@ -6,6 +6,7 @@ import java.io.InputStream;
 import java.util.Date;
 import java.util.List;
 
+import com.enseignant.entities.Module;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.enseignant.dto.CourDto;
@@ -24,6 +25,8 @@ public interface CourService {
 	CourDto addCour(CourDto courDto);
 	CourDto updateCour(Long idCour,CourDto courDto);
     void deleteCour(Long idCour);
+
+	Module getModuleByIdEnseigant(String cin);
     
 	
 
