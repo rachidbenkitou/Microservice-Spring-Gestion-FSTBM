@@ -57,18 +57,23 @@ public class DepartementContoller {
 				HttpStatus.OK);
 	}
 	@GetMapping("/all")
+	@PreAuthorize("hasAnyAuthority('SCOPE_ADMIN','SCOPE_ENSEIGNANT','SCOPE_ETUDIANT')")
+
 	ResponseEntity<List<DepartementResponse>> getAllDeparetement(){
 		return new ResponseEntity<List<DepartementResponse>>(
 				departementMapper.departementDtssToResponses(departementService.getAllDeparetement()),
 				HttpStatus.OK);
 	}
 	@GetMapping("/profsByname/{name}")
+	@PreAuthorize("hasAnyAuthority('SCOPE_ADMIN','SCOPE_ENSEIGNANT','SCOPE_ETUDIANT')")
 	ResponseEntity<List<EnseignantResponse>> getProfsByNomeDepartment(@PathVariable String name){
 		return new ResponseEntity<List<EnseignantResponse>>(
 				enseignantMapper.enseignantDtosToResponses(departementService.getProfsByNomeDepartment(name)) ,
 				HttpStatus.OK);
 	}
 	@PostMapping("/add")
+	@PreAuthorize("hasAnyAuthority('SCOPE_ADMIN')")
+
 	ResponseEntity<DepartementResponse> addDepartement(@RequestBody DepartementRequest request){
 		return new ResponseEntity<DepartementResponse>(
 				departementMapper.departementDtoToResponse(departementService.addDepartement(
@@ -77,6 +82,8 @@ public class DepartementContoller {
 	}
 	
 	@PutMapping("/update/id/{id}")
+	@PreAuthorize("hasAnyAuthority('SCOPE_ADMIN')")
+
 	ResponseEntity<DepartementResponse> updateDepartement(@PathVariable long id,@RequestBody DepartementRequest request){
 		return new ResponseEntity<DepartementResponse>(
 				departementMapper.departementDtoToResponse(departementService.updateDepartement(id,
@@ -85,6 +92,7 @@ public class DepartementContoller {
 	}
 	
 	@DeleteMapping("delete/id/{idD}")
+	@PreAuthorize("hasAnyAuthority('SCOPE_ADMIN')")
 	ResponseEntity<?> deleteDepartement(@PathVariable long idD){
 		departementService.deleteDepartement(idD);
 		return new ResponseEntity<>(HttpStatus.OK);
