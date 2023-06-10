@@ -70,6 +70,15 @@ public class CourController {
 						courService.getCourByEnseignantId(id_enseign)
 						),HttpStatus.OK);
 	}
+
+	@GetMapping("enseignant/cin/{cin}")
+	ResponseEntity<CourResponse> getCourByEnseignantCin(@PathVariable String cin) {
+		return new ResponseEntity<CourResponse>(
+				courMapper.courDtoToResponse(
+						courService.getCourByEnseignantCin(cin)
+				),HttpStatus.OK);
+	}
+
 	@GetMapping("/search/bettewenDates")
 	ResponseEntity<List<CourResponse>>  getCoursBetweenDates(@RequestParam  String date1,@RequestParam  String date2,@RequestParam Integer  page,@RequestParam Integer nbrElement) throws ParseException{
 		
@@ -129,7 +138,7 @@ public class CourController {
 
 
     @GetMapping("/module/enseignant/{cin}")
-    ResponseEntity<Module> getModuleByIdEnseigant(String cin){
+    ResponseEntity<Module> getModuleByIdEnseigant(@PathVariable String cin){
         return  new ResponseEntity<>(courService.getModuleByIdEnseigant(cin),HttpStatus.OK);
     }
 }

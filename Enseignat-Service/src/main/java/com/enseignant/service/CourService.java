@@ -18,6 +18,8 @@ public interface CourService {
 	List<CourDto> getCoursHavingIntituleLike(String intitule,Page page);
 	CourDto getCourByModuleId(Integer id_module);
 	CourDto getCourByEnseignantId(Long id_enseign);
+
+	CourDto getCourByEnseignantCin(String cin);
 	List<CourDto> getCoursBetweenDates(Date Date1,Date Date2,Page page);
 	InputStream downloadDoducment(Long courId) throws FileNotFoundException ;
 	List<CourDto> getAllCoursSortByDateUpdate(Page page);

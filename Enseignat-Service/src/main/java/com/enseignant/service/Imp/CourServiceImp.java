@@ -81,6 +81,13 @@ public class CourServiceImp implements CourService {
 	}
 
 	@Override
+	public CourDto getCourByEnseignantCin(String cin) {
+		Enseignant enseignant=enseignantRepo.findByCIN(cin);
+
+		return courMapper.courToDto(enseignant.getCour());
+	}
+
+	@Override
 	public List<CourDto> getCoursBetweenDates(Date Date1, Date Date2, Page page) {
 		
 		return courMapper.coursToDtos(courRepo.findByDateDebutBetween(Date1, Date2, page.getPageRequest())

@@ -11,7 +11,7 @@ import com.enseignant.entities.Module;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-@FeignClient(name = "note-service",url = "http://localhost:8222/note-service/")
+@FeignClient(name = "note-service",url = "http://localhost:8222/note-service/api/v1")
 public interface ModuleFeignClient {
 	
 	@GetMapping("modules/moduleId/{moduleId}")

@@ -34,6 +34,7 @@ public class FeignClientIntercepter implements RequestInterceptor {
               Matcher matcher = BEARER_TOKEN_HEADER_PATTERN.matcher(authorizationHeader);
               if (matcher.matches()) {
                   // token
+                  System.out.println(authorizationHeader);
                   template.header(authorization);
                   template.header(authorization, authorizationHeader);
               }
