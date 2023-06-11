@@ -5,10 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbe9c57a-ff47-4741-ac13-f400e2fa3140" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Entities/Departement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Entities/Enseignant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Openfeign/EnseignantRestClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Note2ServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Note2ServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stdeunt-Service/src/main/java/com/example/etudaintinscriptionfiliereservice/web/EtudiantRestApiImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Stdeunt-Service/src/main/java/com/example/etudaintinscriptionfiliereservice/web/EtudiantRestApiImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-server/src/main/resources/configurations/ETUDAINTINSCRIPTIONFILIERE-SERVICE.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/resources/configurations/etudiant-service.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Controller/ModuleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Controller/ModuleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Controller/api/ModuleApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Controller/api/ModuleApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/DAO/ModuleDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/DAO/ModuleDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/DTO/RequestModuleDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/DTO/RequestModuleDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/DTO/ResponseModuleDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/DTO/ResponseModuleDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Entities/Examen.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Entities/Examen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Entities/Module.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Entities/Module.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Openfeign/EtudiantRestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Openfeign/EtudiantRestClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/ModuleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/ModuleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/ModuleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/ModuleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/config/SecConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/config/SecConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,9 +32,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -96,6 +107,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.note2service.Entities" />
       <recent name="com.example.note2service.Exceptions" />
       <recent name="com.prjt.noteservice.Entities" />
     </key>
@@ -106,7 +118,7 @@
       <recent name="com.example.note2service.Services.Impl" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.GatewayApplication">
+  <component name="RunManager" selected="Spring Boot.Note2ServiceApplication">
     <configuration name="ConfigServerApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.wecouldcode.configserver.ConfigServerApplication" />
       <module name="config-server" />
@@ -251,8 +263,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.EtudaintInscriptionFiliereServiceApplication" />
         <item itemvalue="Application.Note2ServiceApplication" />
+        <item itemvalue="Application.EtudaintInscriptionFiliereServiceApplication" />
         <item itemvalue="Application.GatewayApplication" />
         <item itemvalue="Application.ServiceEnseignantApplication" />
       </list>
@@ -284,7 +296,7 @@
       <workItem from="1683076958189" duration="640000" />
       <workItem from="1686397825984" duration="3248000" />
       <workItem from="1686419053075" duration="100000" />
-      <workItem from="1686512054720" duration="883000" />
+      <workItem from="1686512054720" duration="9619000" />
     </task>
     <servers />
   </component>
@@ -309,6 +321,41 @@
           <url>file://$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Mappers/ExamenMapper.java</url>
           <line>11</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/ModuleServiceImpl.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/ModuleServiceImpl.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/ModuleServiceImpl.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/ModuleServiceImpl.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/ModuleServiceImpl.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/ModuleServiceImpl.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/ModuleServiceImpl.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

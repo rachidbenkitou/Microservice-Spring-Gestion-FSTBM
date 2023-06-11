@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
-@FeignClient(name = "ETUDAINTINSCRIPTIONFILIERE-SERVICE" , url = "http://localhost:8222")
+@FeignClient(name = "etudiant-service" , url = "http://localhost:8222")
 public interface EtudiantRestClient {
     @GetMapping(path = "/Etudiants/id/{id}")
     Etudiant findEtudiantById(@PathVariable String id);
-    @GetMapping(path = "/Etudiants/apogee/{apogee}")
+    @GetMapping(path = "api/v1/etudiants/apogee/{apogee}")
     Etudiant findEtudiantByApogee(@PathVariable Long apogee);
     @GetMapping(path = "/Etudiants")
     List<Etudiant>  getAll();

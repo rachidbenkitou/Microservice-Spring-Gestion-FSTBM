@@ -30,8 +30,8 @@ public class Examen implements Serializable {
    @OneToMany(mappedBy = "examen", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
    @JsonIgnore
    private List<Note> noteList;
+
     @ManyToOne
-    @JoinColumn(name = "module_id")
     private Module module;
 
 }
