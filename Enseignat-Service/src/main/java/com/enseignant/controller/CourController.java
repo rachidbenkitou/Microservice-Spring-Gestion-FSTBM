@@ -120,23 +120,23 @@ public class CourController {
 						),HttpStatus.OK);
 	}
 	@PostMapping(value = "uploadDocument/id/{id_cour}",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-	@PreAuthorize("hasAnyAuthority('SCOPE_ENSEIGNANT'")
+	@PreAuthorize("hasAnyAuthority('SCOPE_ENSEIGNANT')")
 	ResponseEntity<Map<String,String>> uploadDocument(@PathVariable Long id_cour,@RequestParam("file") MultipartFile file) throws IOException {
 		return new ResponseEntity<Map<String,String>>(Map.of("message",courService.uploadDocument(id_cour, file)),HttpStatus.OK);
 	}
 	
-	@PostMapping("/add")
+	@PostMapping("/add/{cin}")
 	@PreAuthorize("hasAnyAuthority('SCOPE_ENSEIGNANT')")
-	ResponseEntity<CourResponse>  addCour(@RequestBody CourRequest cour){
+	ResponseEntity<CourResponse>  addCour(@RequestBody CourRequest cour,@PathVariable String cin){
 		return new ResponseEntity<CourResponse>(
 				courMapper.courDtoToResponse(
 						courService.addCour(
-								courMapper.requestTocourDto(cour)
+								courMapper.requestTocourDto(cour),cin
 								)
 						),HttpStatus.OK);
 	}
 	@PutMapping("update/id/{idCour}")
-	@PreAuthorize("hasAnyAuthority('SCOPE_ADMIN','SCOPE_ENSEIGNANT'")
+	@PreAuthorize("hasAnyAuthority('SCOPE_ADMIN','SCOPE_ENSEIGNANT')")
 	ResponseEntity<CourResponse> updateCour(@PathVariable Long idCour,@RequestBody CourRequest courDto) {
 		return new ResponseEntity<CourResponse>(
 				courMapper.courDtoToResponse(
@@ -154,7 +154,7 @@ public class CourController {
 
 
     @GetMapping("/module/enseignant/{cin}")
-	@PreAuthorize("hasAnyAuthority('SCOPE_ADMIN','SCOPE_ENSEIGNANT','SCOPE_ETUDIANT'")
+	@PreAuthorize("hasAnyAuthority('SCOPE_ADMIN','SCOPE_ENSEIGNANT','SCOPE_ETUDIANT')")
 	ResponseEntity<Module> getModuleByIdEnseigant(@PathVariable String cin){
         return  new ResponseEntity<>(courService.getModuleByIdEnseigant(cin),HttpStatus.OK);
     }
