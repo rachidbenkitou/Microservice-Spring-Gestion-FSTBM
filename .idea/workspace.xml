@@ -6,15 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="bbe9c57a-ff47-4741-ac13-f400e2fa3140" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Note2ServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Note2ServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Security-Service/src/main/java/com/example/securityservice/Srvice/Impl/TokenServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security-Service/src/main/java/com/example/securityservice/Srvice/Impl/TokenServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Security-Service/src/main/java/com/example/securityservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security-Service/src/main/java/com/example/securityservice/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Security-Service/src/main/java/com/example/securityservice/web/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security-Service/src/main/java/com/example/securityservice/web/UserController.java" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Note2ServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Note2ServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Stdeunt-Service/src/main/java/com/example/etudaintinscriptionfiliereservice/web/EtudiantRestApiImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Stdeunt-Service/src/main/java/com/example/etudaintinscriptionfiliereservice/web/EtudiantRestApiImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config-server/src/main/resources/configurations/ETUDAINTINSCRIPTIONFILIERE-SERVICE.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/resources/configurations/etudiant-service.yml" afterDir="false" />
->>>>>>> 24faaf4fd237eb0765ae868caf40922cbb02fc39
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,35 +65,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "main",
-    "ignore.preview.features.used": "true",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/Rachid Benkitou/Desktop/MyFirst/2-FullStack Projects/7-Microservices-Gestion-FSTBM/Microservice-Spring-Gestion-FSTBM",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.propCompiler",
-    "spring.configuration.checksum": "c612375515be800fb72a54601bf90f32",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Rachid Benkitou/Desktop/MyFirst/2-FullStack Projects/7-Microservices-Gestion-FSTBM/Microservice-Spring-Gestion-FSTBM&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;c612375515be800fb72a54601bf90f32&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -112,11 +109,7 @@
       <recent name="com.example.note2service.Services.Impl" />
     </key>
   </component>
-<<<<<<< HEAD
   <component name="RunManager" selected="Application.GatewayApplication">
-=======
-  <component name="RunManager" selected="Spring Boot.GatewayApplication">
->>>>>>> 24faaf4fd237eb0765ae868caf40922cbb02fc39
     <configuration name="ConfigServerApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.wecouldcode.configserver.ConfigServerApplication" />
       <module name="config-server" />
@@ -287,11 +280,8 @@
     </configuration>
     <recent_temporary>
       <list>
-<<<<<<< HEAD
         <item itemvalue="Application.GatewayApplication" />
-=======
         <item itemvalue="Application.EtudaintInscriptionFiliereServiceApplication" />
->>>>>>> 24faaf4fd237eb0765ae868caf40922cbb02fc39
         <item itemvalue="Application.Note2ServiceApplication" />
         <item itemvalue="Application.GatewayApplication" />
         <item itemvalue="Application.ServiceEnseignantApplication" />
