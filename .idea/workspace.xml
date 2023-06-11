@@ -5,21 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbe9c57a-ff47-4741-ac13-f400e2fa3140" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Entities/Departement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Entities/Enseignant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Openfeign/EnseignantRestClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Controller/ModuleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Controller/ModuleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Controller/api/ModuleApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Controller/api/ModuleApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/DAO/ModuleDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/DAO/ModuleDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/DTO/RequestModuleDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/DTO/RequestModuleDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/DTO/ResponseModuleDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/DTO/ResponseModuleDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Entities/Examen.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Entities/Examen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Entities/Module.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Entities/Module.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Openfeign/EtudiantRestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Openfeign/EtudiantRestClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/ModuleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/ModuleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/ModuleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/ModuleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/config/SecConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/config/SecConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security-Service/src/main/java/com/example/securityservice/Srvice/Impl/TokenServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security-Service/src/main/java/com/example/securityservice/Srvice/Impl/TokenServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security-Service/src/main/java/com/example/securityservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security-Service/src/main/java/com/example/securityservice/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security-Service/src/main/java/com/example/securityservice/web/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security-Service/src/main/java/com/example/securityservice/web/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +74,7 @@
     "WebServerToolWindowFactoryState": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Merging main",
     "ignore.preview.features.used": "true",
     "jdk.selected.JAVA_MODULE": "17",
     "last_opened_file_path": "C:/Users/Rachid Benkitou/Desktop/MyFirst/2-FullStack Projects/7-Microservices-Gestion-FSTBM/Microservice-Spring-Gestion-FSTBM",
@@ -296,7 +285,7 @@
       <workItem from="1683076958189" duration="640000" />
       <workItem from="1686397825984" duration="3248000" />
       <workItem from="1686419053075" duration="100000" />
-      <workItem from="1686512054720" duration="9619000" />
+      <workItem from="1686512054720" duration="9960000" />
     </task>
     <servers />
   </component>
