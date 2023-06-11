@@ -13,6 +13,7 @@ public class Note2ServiceApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Note2ServiceApplication.class, args);
+
 	}
 
 }

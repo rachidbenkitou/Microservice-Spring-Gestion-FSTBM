@@ -1,6 +1,7 @@
 package com.example.note2service.Entities;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,6 +10,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
@@ -25,6 +27,9 @@ public class Examen implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     Date creationDateTime;
     private Date dateExam;
+   @OneToMany(mappedBy = "examen", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+   @JsonIgnore
+   private List<Note> noteList;
     @ManyToOne
     @JoinColumn(name = "module_id")
     private Module module;
