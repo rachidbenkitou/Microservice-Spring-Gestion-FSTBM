@@ -141,13 +141,13 @@ public class CourServiceImp implements CourService {
 	}
 	@CircuitBreaker(name = "enseignantc" , fallbackMethod = "fallbackSaveOrUpdateCour")
 	@Override
-	public CourDto addCour(CourDto courDto) {
+	public CourDto addCour(CourDto courDto,String cin) {
 		Cour cour = courMapper.dtoTocour(courDto);
 
 		if(courRepo.findByIdModule(courDto.getIdModule()).isPresent()) throw new ModuleAlrealyHasCour("this module has a cour");
 		System.out.println(cour);
 		com.enseignant.entities.Module module=moduleFeignClient.getModuleById(courDto.getIdModule()).orElseThrow(()-> new ModuleNotFound("module not found"));
-		Enseignant enseignant=enseignantRepo.findById(courDto.getId_enseignant()).orElseThrow(()->new EnseignantNotFound("enseignant not found"));
+		Enseignant enseignant=enseignantRepo.findByCIN(cin);
 		if(enseignant.getCour()!=null) throw
 				new ModuleAlrealyHasCour("prof has alrealy cour");
 		cour.setDateUpdate(new Date());

@@ -24,7 +24,7 @@ public interface CourService {
 	InputStream downloadDoducment(Long courId) throws FileNotFoundException ;
 	List<CourDto> getAllCoursSortByDateUpdate(Page page);
 	String uploadDocument(Long id_cour,MultipartFile file)throws IOException ;
-	CourDto addCour(CourDto courDto);
+	CourDto addCour(CourDto courDto,String cin);
 	CourDto updateCour(Long idCour,CourDto courDto);
     void deleteCour(Long idCour);
 

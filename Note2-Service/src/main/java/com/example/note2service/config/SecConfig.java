@@ -21,7 +21,7 @@ public class SecConfig {
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity
                 .csrf(csrf->csrf.disable())
-                .authorizeHttpRequests(auth->auth.anyRequest().permitAll())
+                .authorizeRequests(auth->auth.anyRequest().authenticated())
                 .oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)
                 .build();
     }
