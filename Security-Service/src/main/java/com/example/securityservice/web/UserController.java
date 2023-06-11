@@ -20,9 +20,10 @@ import java.util.Optional;
 public class UserController {
     @Autowired
     private UserService userService;
+//    @PreAuthorize("hasAuthority('SCOPE_ADMIN')")
 
     @PostMapping
-//    @PreAuthorize("hasAuthority('SCOPE_ADMIN')")
+    @PreAuthorize("hasAuthority('SCOPE_ADMIN')")
     public UserResponseDTO addUser(@RequestBody UserRequestDto userRequestDto){
         return userService.signIn(userRequestDto);
     }

@@ -6,30 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="bbe9c57a-ff47-4741-ac13-f400e2fa3140" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Enseignat-Service/src/main/java/com/enseignant/controller/CourController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Enseignat-Service/src/main/java/com/enseignant/controller/CourController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Enseignat-Service/src/main/java/com/enseignant/entities/Module.java" beforeDir="false" afterPath="$PROJECT_DIR$/Enseignat-Service/src/main/java/com/enseignant/entities/Module.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Enseignat-Service/src/main/java/com/enseignant/service/CourService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Enseignat-Service/src/main/java/com/enseignant/service/CourService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Enseignat-Service/src/main/java/com/enseignant/service/Imp/CourServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/Enseignat-Service/src/main/java/com/enseignant/service/Imp/CourServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/DTO/RequestModuleDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/DTO/RequestModuleDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/DTO/ResponseModuleDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/DTO/ResponseModuleDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Entities/Module.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Entities/Module.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stdeunt-Service/src/main/java/com/example/etudaintinscriptionfiliereservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Stdeunt-Service/src/main/java/com/example/etudaintinscriptionfiliereservice/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stdeunt-Service/src/main/java/com/example/etudaintinscriptionfiliereservice/dtos/InscriptionRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Stdeunt-Service/src/main/java/com/example/etudaintinscriptionfiliereservice/dtos/InscriptionRequestDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stdeunt-Service/src/main/java/com/example/etudaintinscriptionfiliereservice/dtos/InscriptionResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Stdeunt-Service/src/main/java/com/example/etudaintinscriptionfiliereservice/dtos/InscriptionResponseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stdeunt-Service/src/main/java/com/example/etudaintinscriptionfiliereservice/dtos/RequestEtudiantDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Stdeunt-Service/src/main/java/com/example/etudaintinscriptionfiliereservice/dtos/RequestEtudiantDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stdeunt-Service/src/main/java/com/example/etudaintinscriptionfiliereservice/dtos/ResponseEtudiantDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Stdeunt-Service/src/main/java/com/example/etudaintinscriptionfiliereservice/dtos/ResponseEtudiantDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stdeunt-Service/src/main/java/com/example/etudaintinscriptionfiliereservice/entities/Etudiant.java" beforeDir="false" afterPath="$PROJECT_DIR$/Stdeunt-Service/src/main/java/com/example/etudaintinscriptionfiliereservice/entities/Etudiant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stdeunt-Service/src/main/java/com/example/etudaintinscriptionfiliereservice/entities/Inscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/Stdeunt-Service/src/main/java/com/example/etudaintinscriptionfiliereservice/entities/Inscription.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stdeunt-Service/src/main/java/com/example/etudaintinscriptionfiliereservice/mappers/EtudiantMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Stdeunt-Service/src/main/java/com/example/etudaintinscriptionfiliereservice/mappers/EtudiantMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stdeunt-Service/src/main/java/com/example/etudaintinscriptionfiliereservice/mappers/InscriptionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Stdeunt-Service/src/main/java/com/example/etudaintinscriptionfiliereservice/mappers/InscriptionMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stdeunt-Service/src/main/java/com/example/etudaintinscriptionfiliereservice/services/EtudiantServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Stdeunt-Service/src/main/java/com/example/etudaintinscriptionfiliereservice/services/EtudiantServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stdeunt-Service/src/main/java/com/example/etudaintinscriptionfiliereservice/services/InscriptionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Stdeunt-Service/src/main/java/com/example/etudaintinscriptionfiliereservice/services/InscriptionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stdeunt-Service/src/main/java/com/example/etudaintinscriptionfiliereservice/web/EtudiantRestApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/Stdeunt-Service/src/main/java/com/example/etudaintinscriptionfiliereservice/web/EtudiantRestApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stdeunt-Service/src/main/java/com/example/etudaintinscriptionfiliereservice/web/EtudiantRestApiImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Stdeunt-Service/src/main/java/com/example/etudaintinscriptionfiliereservice/web/EtudiantRestApiImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stdeunt-Service/src/main/java/com/example/etudaintinscriptionfiliereservice/web/FiliereRestApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/Stdeunt-Service/src/main/java/com/example/etudaintinscriptionfiliereservice/web/FiliereRestApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stdeunt-Service/src/main/java/com/example/etudaintinscriptionfiliereservice/web/InscriptionRestApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/Stdeunt-Service/src/main/java/com/example/etudaintinscriptionfiliereservice/web/InscriptionRestApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stdeunt-Service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Stdeunt-Service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stdeunt-Service/src/main/resources/certs/pub.pem" beforeDir="false" afterPath="$PROJECT_DIR$/Stdeunt-Service/src/main/resources/certs/pub.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security-Service/src/main/java/com/example/securityservice/Srvice/Impl/TokenServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security-Service/src/main/java/com/example/securityservice/Srvice/Impl/TokenServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security-Service/src/main/java/com/example/securityservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security-Service/src/main/java/com/example/securityservice/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security-Service/src/main/java/com/example/securityservice/web/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security-Service/src/main/java/com/example/securityservice/web/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +99,7 @@
       <recent name="com.example.note2service.Services.Impl" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ConfigServerApplication">
+  <component name="RunManager" selected="Application.GatewayApplication">
     <configuration name="ConfigServerApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.wecouldcode.configserver.ConfigServerApplication" />
       <module name="config-server" />
@@ -134,12 +113,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EtudaintInscriptionFiliereServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="EtudaintInscriptionFiliereServiceApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.etudaintinscriptionfiliereservice.EtudaintInscriptionFiliereServiceApplication" />
       <module name="EtudaintInscriptionFiliere-service" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.example.etudaintinscriptionfiliereservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaDisApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.eureka_dis.EurekaDisApplication" />
+      <module name="Eureka_dis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.eureka_dis.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -166,6 +158,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.example.note2service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SecurityServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.securityservice.SecurityServiceApplication" />
+      <module name="Security-Service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.securityservice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -245,9 +250,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.GatewayApplication" />
-        <item itemvalue="Application.EtudaintInscriptionFiliereServiceApplication" />
         <item itemvalue="Application.Note2ServiceApplication" />
         <item itemvalue="Application.ServiceEnseignantApplication" />
+        <item itemvalue="Application.SecurityServiceApplication" />
+        <item itemvalue="Application.EurekaDisApplication" />
       </list>
     </recent_temporary>
   </component>
