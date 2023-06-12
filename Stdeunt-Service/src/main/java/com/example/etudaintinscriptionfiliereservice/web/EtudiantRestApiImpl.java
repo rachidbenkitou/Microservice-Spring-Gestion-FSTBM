@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 @RestController
-@RequestMapping("/etudiants")
+@RequestMapping("/Etudiants")
 @Tag(name = "Etudiant API", description = "API for managing Etudiant")
 public class EtudiantRestApiImpl implements  EtudiantRestApi{
     private  final EtudiantService etudiantService;
