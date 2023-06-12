@@ -1,5 +1,6 @@
 package com.example.note2service.DTO;
 
+import com.example.note2service.Entities.Enseignant;
 import com.example.note2service.Entities.Module;
 import com.example.note2service.Entities.Semestre;
 import lombok.AllArgsConstructor;
@@ -17,7 +18,7 @@ public class ResponseModuleDTO implements Serializable {
     private int moduleId;
     private String moduleName;
     private Semestre moduleSemestre;
-
     private String idFiliere;
+    private Enseignant enseignant;
 
 }

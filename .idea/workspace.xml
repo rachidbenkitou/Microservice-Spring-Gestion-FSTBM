@@ -7,6 +7,9 @@
     <list default="true" id="bbe9c57a-ff47-4741-ac13-f400e2fa3140" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Stdeunt-Service/src/main/java/com/example/etudaintinscriptionfiliereservice/web/EtudiantRestApiImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Stdeunt-Service/src/main/java/com/example/etudaintinscriptionfiliereservice/web/EtudiantRestApiImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security-Service/src/main/java/com/example/securityservice/Srvice/Impl/TokenServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security-Service/src/main/java/com/example/securityservice/Srvice/Impl/TokenServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security-Service/src/main/java/com/example/securityservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security-Service/src/main/java/com/example/securityservice/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Security-Service/src/main/java/com/example/securityservice/web/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security-Service/src/main/java/com/example/securityservice/web/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,9 +22,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -72,7 +75,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Merging main&quot;,
     &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Rachid Benkitou/Desktop/MyFirst/2-FullStack Projects/7-Microservices-Gestion-FSTBM/Microservice-Spring-Gestion-FSTBM&quot;,
@@ -94,6 +97,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.note2service.Entities" />
       <recent name="com.example.note2service.Exceptions" />
       <recent name="com.prjt.noteservice.Entities" />
     </key>
@@ -118,7 +122,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EtudaintInscriptionFiliereServiceApplication" type="Application" factoryName="Application" nameIsGenerated="true">
+    <configuration name="EtudaintInscriptionFiliereServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.etudaintinscriptionfiliereservice.EtudaintInscriptionFiliereServiceApplication" />
       <module name="EtudaintInscriptionFiliere-service" />
       <extension name="coverage">
@@ -163,19 +167,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.example.note2service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SecurityServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.securityservice.SecurityServiceApplication" />
-      <module name="Security-Service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.securityservice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -278,7 +269,6 @@
         <item itemvalue="Application.Note2ServiceApplication" />
         <item itemvalue="Application.GatewayApplication" />
         <item itemvalue="Application.ServiceEnseignantApplication" />
-        <item itemvalue="Application.SecurityServiceApplication" />
         <item itemvalue="Application.EtudaintInscriptionFiliereServiceApplication" />
       </list>
     </recent_temporary>
@@ -309,7 +299,7 @@
       <workItem from="1683076958189" duration="640000" />
       <workItem from="1686397825984" duration="3248000" />
       <workItem from="1686419053075" duration="100000" />
-      <workItem from="1686512054720" duration="883000" />
+      <workItem from="1686512054720" duration="9960000" />
     </task>
     <servers />
   </component>
@@ -334,6 +324,41 @@
           <url>file://$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Mappers/ExamenMapper.java</url>
           <line>11</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/ModuleServiceImpl.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/ModuleServiceImpl.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/ModuleServiceImpl.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/ModuleServiceImpl.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/ModuleServiceImpl.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/ModuleServiceImpl.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/ModuleServiceImpl.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

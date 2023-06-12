@@ -11,4 +11,5 @@ public interface ModuleDAO extends JpaRepository<Module, Integer> {
     List<Module> findModulesByModuleNameLikeIgnoreCase(String name);
     void deleteByModuleName(String name);
     boolean existsByModuleName(String name);
+    List<Module> getModulesByCinEnseignant(String cinEnseigant);
 }
