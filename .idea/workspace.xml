@@ -6,9 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="bbe9c57a-ff47-4741-ac13-f400e2fa3140" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Security-Service/src/main/java/com/example/securityservice/Srvice/Impl/TokenServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security-Service/src/main/java/com/example/securityservice/Srvice/Impl/TokenServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Security-Service/src/main/java/com/example/securityservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security-Service/src/main/java/com/example/securityservice/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Security-Service/src/main/java/com/example/securityservice/web/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Security-Service/src/main/java/com/example/securityservice/web/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Controller/ModuleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Controller/ModuleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Controller/api/ModuleApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Controller/api/ModuleApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/DTO/RequestModuleDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/DTO/RequestModuleDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/DTO/ResponseModuleDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/DTO/ResponseModuleDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Entities/Enseignant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Entities/Module.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Entities/Module.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Openfeign/EnseignantRestClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/ModuleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/ModuleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/ModuleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/ModuleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stdeunt-Service/src/main/java/com/example/etudaintinscriptionfiliereservice/web/EtudiantRestApiImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Stdeunt-Service/src/main/java/com/example/etudaintinscriptionfiliereservice/web/EtudiantRestApiImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,35 +69,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "Merging main",
-    "ignore.preview.features.used": "true",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/Rachid Benkitou/Desktop/MyFirst/2-FullStack Projects/7-Microservices-Gestion-FSTBM/Microservice-Spring-Gestion-FSTBM",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.propCompiler",
-    "spring.configuration.checksum": "c612375515be800fb72a54601bf90f32",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Rachid Benkitou/Desktop/MyFirst/2-FullStack Projects/7-Microservices-Gestion-FSTBM/Microservice-Spring-Gestion-FSTBM&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;c612375515be800fb72a54601bf90f32&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -285,7 +292,8 @@
       <workItem from="1683076958189" duration="640000" />
       <workItem from="1686397825984" duration="3248000" />
       <workItem from="1686419053075" duration="100000" />
-      <workItem from="1686512054720" duration="9960000" />
+      <workItem from="1686512054720" duration="10230000" />
+      <workItem from="1686568566417" duration="1503000" />
     </task>
     <servers />
   </component>
@@ -310,41 +318,6 @@
           <url>file://$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Mappers/ExamenMapper.java</url>
           <line>11</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/ModuleServiceImpl.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/ModuleServiceImpl.java</url>
-          <line>50</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/ModuleServiceImpl.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/ModuleServiceImpl.java</url>
-          <line>52</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/ModuleServiceImpl.java</url>
-          <line>53</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/ModuleServiceImpl.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/ModuleServiceImpl.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

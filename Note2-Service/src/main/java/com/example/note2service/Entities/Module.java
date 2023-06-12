@@ -33,7 +33,5 @@ public class Module implements Serializable {
 
     private String cinEnseignant;
 
-    @Transient
-    private Enseignant enseignant;
 
 }

@@ -28,13 +28,6 @@ public class ModuleController implements ModuleApi {
     }
 
     @Override
-    public ResponseEntity<List<ResponseModuleDTO>> getModulesByEnseigantCin(String cinEnseigant) {
-        System.out.println("Hello");
-        return new ResponseEntity<>(service.getModulesByCinEnseignant(cinEnseigant), HttpStatus.OK);
-    }
-
-
-    @Override
     public ResponseEntity<ResponseModuleDTO> getModuleById(int moduleId) {
         return new ResponseEntity<>(service.getModuleById(moduleId), HttpStatus.OK);
     }

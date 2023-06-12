@@ -8,7 +8,6 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -33,8 +32,6 @@ public interface ModuleApi {
                             schema = @Schema(implementation = ResponseModuleDTO.class))})
     })
     ResponseEntity<List<ResponseModuleDTO>> getModulesByName(@PathVariable String name);
-    @GetMapping("/enseignant/{cinEnseigant}")
-    ResponseEntity<List<ResponseModuleDTO>> getModulesByEnseigantCin(@PathVariable String cinEnseigant);
 
     @GetMapping("/moduleId/{moduleId}")
     //@PreAuthorize("hasAnyAuthority('SCOPE_ADMIN','SCOPE_ENSEIGNANT','SCOPE_ETUDIANT')")
