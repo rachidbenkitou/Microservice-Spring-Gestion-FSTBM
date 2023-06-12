@@ -65,7 +65,7 @@ public class TokenServiceImpl implements TokenService {
         JwtClaimsSet jwtClaimsSet  = JwtClaimsSet.builder()
                 .subject(subject)
                 .issuedAt(instant)
-                .expiresAt(instant.plus(tokenDto.getWithRefreshToken()?10:60, ChronoUnit.MINUTES))
+                .expiresAt(instant.plus(tokenDto.getWithRefreshToken()?120:240, ChronoUnit.MINUTES))
                 .issuer("security-service")
                 .claim("scope",scope)
                 .build();
