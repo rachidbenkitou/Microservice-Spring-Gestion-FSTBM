@@ -14,6 +14,4 @@ public interface ModuleService {
     ResponseModuleDTO getModuleById(int moduleId);
 
     List<ResponseModuleDTO> getModulesByIds(List<Integer> moduleIds);
-
-    List<ResponseModuleDTO> getModulesByCinEnseignant(String cinEnseigant);
 }

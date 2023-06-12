@@ -3,14 +3,12 @@ package com.example.note2service.Services.Impl;
 import com.example.note2service.DAO.ModuleDAO;
 import com.example.note2service.DTO.RequestModuleDTO;
 import com.example.note2service.DTO.ResponseModuleDTO;
-import com.example.note2service.Entities.Enseignant;
 import com.example.note2service.Entities.Module;
 import com.example.note2service.Exceptions.ModuleNotFoundException;
 import com.example.note2service.Exceptions.module.ModuleAlreadyExistsException;
 import com.example.note2service.Exceptions.module.ModuleListIsEmptyException;
 import com.example.note2service.Exceptions.module.ModuleRequestIsNull;
 import com.example.note2service.Mappers.ModuleMapper;
-import com.example.note2service.Openfeign.EnseignantRestClient;
 import com.example.note2service.Services.ModuleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -22,7 +20,6 @@ import java.util.List;
 @RequiredArgsConstructor
 @Transactional
 public class ModuleServiceImpl implements ModuleService {
-    private final EnseignantRestClient enseignantRestClient;
     private  final ModuleDAO dao;
     private final ModuleMapper mapper;
     /**
@@ -45,17 +42,7 @@ public class ModuleServiceImpl implements ModuleService {
     public List<ResponseModuleDTO> getModulesByName(String moduleName) {
         return listOfResponseModuleDTOS(dao.findModulesByModuleNameLikeIgnoreCase(moduleName));
     }
-    @Override
-    public List<ResponseModuleDTO> getModulesByCinEnseignant(String cinEnseigant) {
-        Enseignant enseignant=enseignantRestClient.findEnseignantByCin(cinEnseigant);
-        System.out.println(enseignant.getCIN()+" "+enseignant.getNom());
-        List<Module> modules=dao.getModulesByCinEnseignant(cinEnseigant);
-        for (Module module : modules){
-            //module.setEnseignant(enseignant);
-            module.getCinEnseignant();
-        }
-        return listOfResponseModuleDTOS(modules);
-    }
+
     /**
      * Maps a list of Module objects to a list of ResponseModuleDTO objects.
      *

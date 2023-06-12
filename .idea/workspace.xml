@@ -6,6 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="bbe9c57a-ff47-4741-ac13-f400e2fa3140" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Controller/ModuleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Controller/ModuleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Controller/api/ModuleApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Controller/api/ModuleApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/DTO/RequestModuleDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/DTO/RequestModuleDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/DTO/ResponseModuleDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/DTO/ResponseModuleDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Entities/Enseignant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Entities/Module.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Entities/Module.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Openfeign/EnseignantRestClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/ModuleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/ModuleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/ModuleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/ModuleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stdeunt-Service/src/main/java/com/example/etudaintinscriptionfiliereservice/web/EtudiantRestApiImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Stdeunt-Service/src/main/java/com/example/etudaintinscriptionfiliereservice/web/EtudiantRestApiImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,10 +38,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
+    &quot;lastFilter&quot;: {
     &quot;state&quot;: &quot;OPEN&quot;
-  }
-}</component>
+    }
+    }</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -60,7 +70,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
+    &quot;keyToString&quot;: {
     &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
     &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
     &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
@@ -71,7 +81,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Merging main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Rachid Benkitou/Desktop/MyFirst/2-FullStack Projects/7-Microservices-Gestion-FSTBM/Microservice-Spring-Gestion-FSTBM&quot;,
@@ -86,8 +96,8 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;c612375515be800fb72a54601bf90f32&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  }
-}</component>
+    }
+    }</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -104,7 +114,7 @@
       <recent name="com.example.note2service.Services.Impl" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GatewayApplication">
+  <component name="RunManager" selected="Application.ConfigServerApplication">
     <configuration name="ConfigServerApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.wecouldcode.configserver.ConfigServerApplication" />
       <module name="config-server" />
@@ -131,19 +141,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EurekaDisApplication" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.eureka_dis.EurekaDisApplication" />
-      <module name="Eureka_dis" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.eureka_dis.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="GatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.wecouldcode.gateway.GatewayApplication" />
       <module name="gateway" />
@@ -163,19 +160,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.example.note2service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SecurityServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.securityservice.SecurityServiceApplication" />
-      <module name="Security-Service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.securityservice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -275,10 +259,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GatewayApplication" />
-        <item itemvalue="Application.SecurityServiceApplication" />
-        <item itemvalue="Application.EtudaintInscriptionFiliereServiceApplication" />
         <item itemvalue="Application.Note2ServiceApplication" />
+        <item itemvalue="Application.EtudaintInscriptionFiliereServiceApplication" />
+        <item itemvalue="Application.GatewayApplication" />
         <item itemvalue="Application.ServiceEnseignantApplication" />
       </list>
     </recent_temporary>
@@ -309,7 +292,8 @@
       <workItem from="1683076958189" duration="640000" />
       <workItem from="1686397825984" duration="3248000" />
       <workItem from="1686419053075" duration="100000" />
-      <workItem from="1686512054720" duration="9960000" />
+      <workItem from="1686512054720" duration="10230000" />
+      <workItem from="1686568566417" duration="1503000" />
     </task>
     <servers />
   </component>
@@ -334,41 +318,6 @@
           <url>file://$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Mappers/ExamenMapper.java</url>
           <line>11</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/ModuleServiceImpl.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/ModuleServiceImpl.java</url>
-          <line>50</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/ModuleServiceImpl.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/ModuleServiceImpl.java</url>
-          <line>52</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/ModuleServiceImpl.java</url>
-          <line>53</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/ModuleServiceImpl.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Note2-Service/src/main/java/com/example/note2service/Services/Impl/ModuleServiceImpl.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -16,6 +16,5 @@ public class RequestModuleDTO implements Serializable {
     private String moduleName;
     private Semestre moduleSemestre;
     private String idFiliere;
-    private String cinEnseignant;
 
 }
