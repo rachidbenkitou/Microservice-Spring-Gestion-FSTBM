@@ -42,12 +42,12 @@ public class FiliereServiceImpleTest {
         myFilieres = new ArrayList<>();
         myFilieres.add(new Filiere("id1", "JAVA", Niveau.MST, null));
         myFilieres.add(new Filiere("id2", "Spring", Niveau.LST, null));
-        myFilieres.add(new Filiere("id3", "Angular", Niveau.DEUG, null));
+        myFilieres.add(new Filiere("id3", "Angular", Niveau.DEUST, null));
 
         myResponseFiliereDto = new ArrayList<>();
         myResponseFiliereDto.add(new FiliereResponseDto("id1", "JAVA", Niveau.MST, null));
         myResponseFiliereDto.add(new FiliereResponseDto("id2", "Spring", Niveau.LST, null));
-        myResponseFiliereDto.add(new FiliereResponseDto("id3", "Angular", Niveau.DEUG, null));
+        myResponseFiliereDto.add(new FiliereResponseDto("id3", "Angular", Niveau.DEUST, null));
 
         myFiliere = new Filiere("id1", "JAVA", Niveau.MST, null);
         myResponseFiliere = new FiliereResponseDto("id1", "JAVA", Niveau.MST, null);
