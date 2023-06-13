@@ -1,38 +1,10 @@
 package com.example.etudaintinscriptionfiliereservice.services;
 
-import com.example.etudaintinscriptionfiliereservice.dtos.InscriptionRequestDto;
-import com.example.etudaintinscriptionfiliereservice.dtos.InscriptionResponseDto;
-import com.example.etudaintinscriptionfiliereservice.dtos.RequestEtudiantDto;
-import com.example.etudaintinscriptionfiliereservice.dtos.ResponseEtudiantDto;
-import com.example.etudaintinscriptionfiliereservice.entities.Etudiant;
-import com.example.etudaintinscriptionfiliereservice.entities.Inscription;
-import com.example.etudaintinscriptionfiliereservice.exceptions.EntityAlreadyExistException;
-import com.example.etudaintinscriptionfiliereservice.exceptions.EntityNotFoundException;
-import com.example.etudaintinscriptionfiliereservice.exceptions.InvalidEntityException;
-import com.example.etudaintinscriptionfiliereservice.mappers.EtudiantMapper;
-import com.example.etudaintinscriptionfiliereservice.mappers.InscriptionMapper;
-import com.example.etudaintinscriptionfiliereservice.repositories.InscriptionRepository;
-import org.junit.jupiter.api.Test;
-
-
-import static org.junit.jupiter.api.Assertions.*;
-
-import org.junit.jupiter.api.BeforeEach;
 
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
 
-
-import static org.mockito.Mockito.*;
 
 import org.mockito.junit.jupiter.MockitoExtension;
-
-
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Optional;
 
 @ExtendWith(MockitoExtension.class)
 class InscriptionServiceImplTest {

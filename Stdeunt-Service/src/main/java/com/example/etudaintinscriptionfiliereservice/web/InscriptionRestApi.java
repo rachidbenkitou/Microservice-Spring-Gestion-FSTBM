@@ -1,12 +1,7 @@
 package com.example.etudaintinscriptionfiliereservice.web;
 
-import com.example.etudaintinscriptionfiliereservice.dtos.FiliereRequestDto;
-import com.example.etudaintinscriptionfiliereservice.dtos.FiliereResponseDto;
 import com.example.etudaintinscriptionfiliereservice.dtos.InscriptionRequestDto;
 import com.example.etudaintinscriptionfiliereservice.dtos.InscriptionResponseDto;
-import com.example.etudaintinscriptionfiliereservice.exceptions.EntityNotFoundException;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

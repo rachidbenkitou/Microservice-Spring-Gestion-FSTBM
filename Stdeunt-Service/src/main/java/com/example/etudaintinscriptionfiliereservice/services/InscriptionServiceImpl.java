@@ -1,7 +1,8 @@
 package com.example.etudaintinscriptionfiliereservice.services;
 
-import com.example.etudaintinscriptionfiliereservice.dtos.InscriptionResponseDto;
+import com.example.etudaintinscriptionfiliereservice.dtos.InscriptionRequestDto;
 
+import com.example.etudaintinscriptionfiliereservice.dtos.InscriptionResponseDto;
 import com.example.etudaintinscriptionfiliereservice.entities.Etudiant;
 import com.example.etudaintinscriptionfiliereservice.entities.Filiere;
 import com.example.etudaintinscriptionfiliereservice.entities.Inscription;
@@ -88,8 +89,8 @@ public class InscriptionServiceImpl implements InscriptionService{
 //            throw new EntityAlreadyExistException("Inscription with Etudiant "+inscriptionRequestDto.getEtudiant().getApogee()+" already exists");
 
         Inscription inscription= new Inscription();
-        Filiere filiere=filiereRepository.findById(inscriptionRequestDto.getIdFilier()).get();
-        Etudiant etudiant=etudiantRepository.findByCin(inscriptionRequestDto.getCin()).get();
+        Filiere filiere=filiereRepository.findById(inscriptionRequestDto.getFiliere().getName()).get();
+        Etudiant etudiant=etudiantRepository.findByCin(inscriptionRequestDto.getEtudiant().getCin()).get();
         inscription.setEtudiant(etudiant);
         inscription.setFiliere(filiere);
         inscription.setIdInscription(UUID.randomUUID().toString());

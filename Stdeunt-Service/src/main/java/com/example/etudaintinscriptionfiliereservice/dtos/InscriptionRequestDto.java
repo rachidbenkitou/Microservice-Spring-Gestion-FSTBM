@@ -6,12 +6,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class InscriptionRequestDto {
     private String idInscription;
-    private String idFilier;
-    private String cin;
+    private Filiere filiere;
+    private Etudiant etudiant;
 }
