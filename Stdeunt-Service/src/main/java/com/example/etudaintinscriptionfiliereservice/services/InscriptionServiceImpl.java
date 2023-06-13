@@ -1,15 +1,19 @@
 package com.example.etudaintinscriptionfiliereservice.services;
 
-import com.example.etudaintinscriptionfiliereservice.dtos.InscriptionRequestDto;
 import com.example.etudaintinscriptionfiliereservice.dtos.InscriptionResponseDto;
 
+import com.example.etudaintinscriptionfiliereservice.entities.Etudiant;
+import com.example.etudaintinscriptionfiliereservice.entities.Filiere;
 import com.example.etudaintinscriptionfiliereservice.entities.Inscription;
 import com.example.etudaintinscriptionfiliereservice.exceptions.EntityAlreadyExistException;
 import com.example.etudaintinscriptionfiliereservice.exceptions.EntityNotFoundException;
 import com.example.etudaintinscriptionfiliereservice.exceptions.InvalidEntityException;
 import com.example.etudaintinscriptionfiliereservice.mappers.EtudiantMapper;
 import com.example.etudaintinscriptionfiliereservice.mappers.InscriptionMapper;
+import com.example.etudaintinscriptionfiliereservice.repositories.EtudiantRepository;
+import com.example.etudaintinscriptionfiliereservice.repositories.FiliereRepository;
 import com.example.etudaintinscriptionfiliereservice.repositories.InscriptionRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,16 +27,15 @@ import java.util.UUID;
  */
 @Service
 @Transactional
+@RequiredArgsConstructor
 public class InscriptionServiceImpl implements InscriptionService{
     private final InscriptionRepository inscriptionRepository;
     private final InscriptionMapper inscriptionMapper;
+
+    private final FiliereRepository filiereRepository;
+    private final EtudiantRepository etudiantRepository;
     private final EtudiantMapper etudiantMapper;
-    @Autowired
-    public InscriptionServiceImpl(InscriptionRepository inscriptionRepository, InscriptionMapper inscriptionMapper, EtudiantMapper etudiantMapper) {
-        this.inscriptionRepository = inscriptionRepository;
-        this.inscriptionMapper = inscriptionMapper;
-        this.etudiantMapper = etudiantMapper;
-    }
+
     /**
      * Retrieves a list of all {@link Inscription} entities from the database.
      *
@@ -83,14 +86,16 @@ public class InscriptionServiceImpl implements InscriptionService{
         if(inscriptionRequestDto.equals(null))throw new InvalidEntityException("Inscription not valid");
 //        if(inscriptionRepository.existsByEtudiant(inscriptionRequestDto.getEtudiant()))
 //            throw new EntityAlreadyExistException("Inscription with Etudiant "+inscriptionRequestDto.getEtudiant().getApogee()+" already exists");
-        inscriptionRequestDto.setIdInscription(UUID.randomUUID().toString());
-        inscriptionRequestDto.setDateInscripton(new Date());
+
+        Inscription inscription= new Inscription();
+        Filiere filiere=filiereRepository.findById(inscriptionRequestDto.getIdFilier()).get();
+        Etudiant etudiant=etudiantRepository.findByCin(inscriptionRequestDto.getCin()).get();
+        inscription.setEtudiant(etudiant);
+        inscription.setFiliere(filiere);
+        inscription.setIdInscription(UUID.randomUUID().toString());
+        inscription.setDateInscripton(new Date());
         return inscriptionMapper.fromModel(
-                inscriptionRepository.save(
-                        inscriptionMapper.toModel(
-                                inscriptionRequestDto
-                        )
-                )
+                inscriptionRepository.save(inscription)
         );
     }
     /**

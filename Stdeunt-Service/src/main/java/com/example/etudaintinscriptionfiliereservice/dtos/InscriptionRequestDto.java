@@ -12,7 +12,6 @@ import java.util.Date;
 @NoArgsConstructor
 public class InscriptionRequestDto {
     private String idInscription;
-    private Date dateInscripton;
-    private Filiere filiere;
-    private Etudiant etudiant;
+    private String idFilier;
+    private String cin;
 }
